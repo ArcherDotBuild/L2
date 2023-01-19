@@ -106,6 +106,8 @@ Every array comes with a bunch of built-in actions https://developer.mozilla.org
 
 **array.pop()** is going to always return its value to you
 
+## 5. Shift and Unshift
+
 MORE METHODS!
 concat - merge arrays
 includes - merge arrays
@@ -116,5 +118,26 @@ slice - copy portion of an array
 splice - remove/replace elements
 sort - sorts an array
 
+## 6. Concat
 
+Contact it's used to merge more than one or two or more arrays. You can combine them into a new array.
 
+```
+const array1 = ['a', 'b', 'c']
+const array2 = ['d', 'e', 'f']
+
+console.log(array1.concat(array2))
+// ['a', 'b', 'c', 'd', 'e', 'f']
+```
+
+We can pass in multiple we could concat 3 or 4 or 5 arrays by passing them 
+
+## 8. Reverse and Join
+
+We'll take a look at two in methods that are kind of similar, they have to do with searching or looking for a value includes and indexOf. They sound like they might do the same thing, but they return a different values.
+
+**includes** it is known as a boolean method, it returns true or false. It takes a value and it tells you if that array includes that value or not.
+
+**indexOf** works just like string.indexOf, So it will search for a value and if it finds it, it will return the index where it found it versus includes which returns true or false. And just like with string, if it does not find the value, if it's not present, it returns negative 1.
+
+Reverse and Join
