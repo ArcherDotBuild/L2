@@ -132,7 +132,7 @@ console.log(array1.concat(array2))
 
 We can pass in multiple we could concat 3 or 4 or 5 arrays by passing them 
 
-## 8. Reverse and Join
+## 7. Includes and IndexOf
 
 We'll take a look at two in methods that are kind of similar, they have to do with searching or looking for a value includes and indexOf. They sound like they might do the same thing, but they return a different values.
 
@@ -140,4 +140,30 @@ We'll take a look at two in methods that are kind of similar, they have to do wi
 
 **indexOf** works just like string.indexOf, So it will search for a value and if it finds it, it will return the index where it found it versus includes which returns true or false. And just like with string, if it does not find the value, if it's not present, it returns negative 1.
 
-Reverse and Join
+## 8. Reverse and Join
+
+**reverse** reverses an array in place, it does not make a copy, it actually impacts and mutates the original array.
+
+**reverse does actually mutate the array**
+
+**join** takes an array and it spits out a string where it joins all of the elements in that array into one single string. If you join things that are not strings like like numbers, boolean it turns them into a string.
+
+## 9. Slice
+
+Similar to the string slice method, It takes a portion of an array and it makes a new array with it, So it doesn't impact the original , It doesn't modify the original array, but allows you to select or copy a part of an array into a new array.
+
+## 10. Splice
+
+What it does is it either removes elements of replaces elements or adds in a new elements, So usually you would do it in the middle of an array because if you were just trying to remove or add to the beginning or end, we already have pushed pop shift and unshift. So there are three arguments, We have the start index, then how many things you want to delete and then whatever you want to insert, So you don't have to insert anything and you don't have to delete anything but those are the three values.
+
+## 11. Sorting
+
+Sort method, sort the array of elements or sorts the elements of an array in place and returns the sorted array.
+
+## 12. Intro to Reference Types
+
+Primitive types strings, numbers, booleans, null, undefined all those work differently than things like arrays and objects
+
+## 13. Using Const with Arrays
+
+## 14. Working with Nested Arrays

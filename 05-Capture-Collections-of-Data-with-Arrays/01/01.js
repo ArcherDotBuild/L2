@@ -189,21 +189,21 @@ console.log(beasts.indexOf('bison', 2)) // 4
 console.log(beasts.indexOf('giraffe')) // -1
  */
 
-
+// console.log('\n')
 // ******************************
 // Reverse and Join ******************************
 // Example 9
+/* let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i']
+console.log(letters.reverse());
 let arrayToReverse = ['one', 'two', 'three']
 console.log('array:', arrayToReverse)
-
 let arrayReversed = arrayToReverse.reverse()
-// ['three', 'two', 'one']
 console.log(arrayReversed)
 
+console.log('\n')
 let elements = ['fire', 'air', 'water']
 
 console.log(elements)
-// ['fire', 'air', 'water']
 console.log(elements.join())
 // fire,air,water
 console.log(elements.join(''))
@@ -217,6 +217,198 @@ console.log(elements.reverse().join('_'))
 console.log([12.3, 60, false])
 // [12.3, 60, false]
 console.log([12.3, 60, false].join())
-// 12.3,60,false
+// '12.3,60,false'
 console.log([12.3, 60, false].join(' # -> '))
-// 12.3 # -> 60 # -> false
+// '12.3 # -> 60 # -> false'
+
+console.log('\n')
+let respect = ['T', 'C', 'E', 'P', 'S', 'E', 'R']
+console.log(respect.reverse())
+console.log(respect.reverse())
+console.log(respect.reverse().join('.')) */
+
+// console.log('\n')
+// ******************************
+// Slice ******************************
+// Example 10
+
+/* let animals = [
+  'shark',
+  'salmon',
+  'whale',
+  'bear',
+  'lizard',
+  'tortoise',
+]
+
+// creates a new array with its own memory location
+console.log(animals)
+console.log(animals.slice(2))
+console.log(animals.slice(3))
+
+console.log('\n')
+console.log(animals.slice(2, 4))
+console.log(animals.slice(1, 5))
+
+console.log('\n')
+let swimmers = animals.slice(0, 3)
+console.log('swimmers:', swimmers)
+
+let mammals = animals.slice(2, 4)
+console.log('mammals:', mammals)
+
+let reptiles = animals.slice(4, 6)
+let reptiles2 = animals.slice(5)
+console.log('reptiles:', reptiles)
+console.log('reptiles:', reptiles2)
+
+console.log('\n')
+let quadruped = animals.slice(-3)
+console.log('quadruped:', quadruped)
+console.log(animals.slice(-3, -1))
+
+console.log('\n')
+// This makes a copy of the entire array
+// it doesn't impact the original, it's just make a new one
+let copySlice = animals.slice()
+console.log(copySlice)
+console.log(animals) */
+
+// console.log('\n')
+// ******************************
+// Splice ******************************
+// Example 11
+
+/* let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise']
+console.log(animals)
+animals.splice(1, 0, 'octopus')
+console.log(animals)
+
+console.log('\n')
+// We can also use it to delete
+// It returns the deleted values
+animals.splice(3, 2)
+console.log(animals)
+
+animals.splice(3, 0, 'snake', 'frog')
+console.log(animals)
+
+// We can also use it to replace
+animals.splice(0, 2, 'SHARK!', 'OCTOPUS!')
+console.log(animals) */
+
+// console.log('\n')
+// ******************************
+// Sorting ******************************
+// Example 12
+/* 
+let months = ['jan', 'march', 'april', 'june']
+console.log('months:', months)
+months.sort()
+console.log('months:', months)
+
+let people = ['Alberto', 'Josue', 'Yarelis', 'Beto']
+console.log('people:', people)
+people.sort()
+// Variable is updated, it was mutated, it was sorted in place
+// and people.sort() also returned the value to the sorted array
+// If you wanted to, you could capture the it
+console.log('people:', people)
+
+// The default sort order is built upon converting the elements
+// into strings, then comparing their sequences of UTF-16 code units values
+let numbersSort = [1, 30, 4, 21, 10000]
+numbersSort.sort()
+console.log(numbersSort) */
+
+// console.log('\n')
+// ******************************
+// Reference Types ******************************
+// Example 12
+/* 
+// primitive types are not linked
+let fruit = 'orange'
+let color = fruit
+console.log(fruit)
+console.log(color)
+fruit = 'watermelon'
+console.log(fruit)
+console.log(color)
+// What this means is that in memory JavaScript stores,
+// all of these variables, every single variable we ever
+// make is stored in a memory slot
+
+// Arrays can have tons of information in them. So instead of
+// storing all those values in the variable itself,
+// what JS does instead is it stores a reference to that array
+ 
+// When we work with arrays and we put them in a variable
+// the variable itself does not hold the array, It holds
+// an arrow, a pointer, a reference to where the array is in
+// memory compared to a value type variable where the actual
+// value is stored
+
+console.log('\n')
+let nums = [1, 2, 3, 4, 5]
+// nums = 1356982171 some reference in memory
+console.log('nums:', nums)
+let otherNums = nums
+// It will set otherNums to be the same reference as nums
+// Soo they're both pointing to the same thing in memory
+// instead of each version or each variable storing
+// the actual value of the array
+console.log('otherNums:', otherNums)
+
+nums.push(6, 7, 8)
+console.log('nums:', nums)
+console.log('otherNums:', otherNums)
+otherNums.pop()
+otherNums.pop()
+otherNums.pop()
+otherNums.pop()
+console.log('nums:', nums)
+console.log('otherNums:', otherNums) */
+
+
+// console.log('\n')
+// ******************************
+// Using Const with Arrays ******************************
+// Example 13
+
+// Using consts with Arrays
+let x = 34
+x += 5
+console.log(x)
+const city = 'Lisbon'
+console.log(city)
+// city = 'Londron'; // Uncaught TypeError: invalid assignment to const 'city'
+
+const foods = ['milk']
+foods.push('chocolate')
+console.log(foods)
+// ['milk', 'chocolate']
+foods.unshift('tortillas')
+console.log(foods)
+// ['tortillas', 'milk', 'chocolate']
+foods.pop()
+foods.pop()
+foods.pop()
+console.log(foods)
+// []
+// foods = []; // Uncaught TypeError: invalid assignment to const 'foods'
+
+const arrayWhatEverWeWant = [null, undefined, NaN, 'abcd', 123456789]
+console.log(arrayWhatEverWeWant)
+
+const animalPairs = [
+  ['doe', 'buck'], // 0
+  ['ewe', 'ram'], // 1
+  ['peahen', 'peacock'], // 2
+]
+console.log(animalPairs)
+console.log(animalPairs[2]) // ['peahen', 'peacock']
+console.log(animalPairs[2][0]) // 'peahen'
+console.log(animalPairs[2][1]) // 'peacock'
+console.log(animalPairs[1][1]) // 'ram'
+animalPairs[0][1] = 'stag' // 'buck' changes to 'stag'
+console.log(animalPairs[0]) // ['doe', 'buck']
