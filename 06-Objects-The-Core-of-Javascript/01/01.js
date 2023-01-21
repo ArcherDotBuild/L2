@@ -120,7 +120,7 @@ console.log(userReviews.mrSmith78) */
 // ******************************
 // Nested Arrays & Objects ******************************
 // Example 5
-
+/* 
 const student = {
   firstName: 'Alberto',
   lastName: 'Guzman',
@@ -137,8 +137,9 @@ console.log(
   student.strengths[0],
   ',',
   student.strengths[1]
-)
-
+) */
+/* 
+// Example 6
 console.log('\n')
 const tetrisGame = {
   player1: {
@@ -167,7 +168,9 @@ for(i = 0; i < tetrisGame.board.length; i++) {
     console.log(tetrisGame.board[i][j])
   }
 }
-
+ */
+/* 
+// Example 7
 console.log('\n')
 const shoppingCart = [
   {
@@ -191,3 +194,73 @@ console.log(shoppingCart)
 console.log(shoppingCart[0].product)
 console.log(shoppingCart[1].price)
 console.log(shoppingCart[2].quantity)
+ */
+// console.log('\n')
+// ******************************
+// Objects and Reference Types ******************************
+// Example 8
+/* 
+const palette = {
+  red: '#eb4d4b',
+  yellow: '#f9ca24',
+  blue: '#30336b',
+}
+
+const palette2 = palette
+palette2.green = '#ebf876'
+// You'll see that pallet has been updated, as has pallet2
+// The're referring to the same object, the same thing in memory
+console.log(palette);
+ */
+
+// console.log('\n')
+// ******************************
+// Array Object Equality ******************************
+// Example 9
+
+let nums = [1, 2, 3];
+let mystery = [1, 2, 3];
+
+console.log(nums == mystery); // false
+console.log(nums === mystery); // false
+
+let moreNums = nums;
+console.log(nums === moreNums); // true
+
+console.log('\n')
+const user = {
+  username : 'ElfGodd',
+  email: 'elfgodd@elfgodd.com',
+  notifications: []
+};
+
+// false can't compare Reference Types, new place in memory
+// They look the same, but each time i type
+// empty array, it's a new place in memory
+console.log('[] === []: ', [] === [])
+
+// This will not work
+if (user.notifications === []) {
+  console.log('user.notifications === []' + 'NO NEW NOTIFICATIONS!');
+}
+
+console.log('\n')
+if (user.notifications.length === 0) {
+  console.log('NO NEW NOTIFICATIONS!');
+}
+
+if (!user.notifications.length) {
+  console.log('NO NEW NOTIFICATIONS!');
+}
+
+console.log('\n')
+console.log({} === {}); // false
+console.log({a:1} === {a:1}); // false
+
+let data1 = {a: 1};
+let data2 = {a: 1};
+console.log(data1 === data2); // false
+let compareObject = data2;
+console.log(data1 === compareObject); // false
+let data3 = data1;
+console.log(data3 === data1); // true

@@ -5,6 +5,7 @@
 ### How would you store this?
 
 Health App, User dashboard
+
 - 308.272 total steps
 - 1.826 total floors
 - 211.70 total miles
@@ -13,12 +14,13 @@ Health App, User dashboard
 - 7 of 5 days exercising this week
 - 2 hrs 13 mins of restful sleep
 
-If we used an array, we definitely could, It just would be confusing and we'd have to come up with some arbitrary rules. 
+If we used an array, we definitely could, It just would be confusing and we'd have to come up with some arbitrary rules.
 
 ### OBJECTS
+
 - Objects are collections of properties
 - Properties are a key-value pair
-- Rather than accessing data using an index, we use custom keys.
+- Rather than accessing data using an index, we use custom keys
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
@@ -39,6 +41,7 @@ isAdmin: true
 ```
 
 ### AN OBJECT!
+
 ```
 const fitAppData = {
   totalSteps: 308727,
@@ -48,7 +51,9 @@ const fitAppData = {
   avgGoodSleep,: '2:13'
 };
 ```
+
 ALL TYPES WELCOME!
+
 ```
 let comment = {
   username: 'sillyGoose420',
@@ -64,12 +69,13 @@ let comment = {
 ## 2. Creating Object Literals
 
 ### VALID KEYS
+
 All keys are converted to strings, Except for Symbols  
 `key: value === string: data`
 
 ## 3. Accessing Object Properties
 
-### ACCESSING DATA  
+### ACCESSING DATA
 
 ```
 // This is converted
@@ -85,7 +91,7 @@ const numbers = {
 
 ```
 
-Why would you use square brackets aside from if you tried to store numbers as a key, Well sometimes you have property names that may not be valid JavaScript identifiers. Now, an identifier in JS is like the name of a variable. 
+Why would you use square brackets aside from if you tried to store numbers as a key, Well sometimes you have property names that may not be valid JavaScript identifiers. Now, an identifier in JS is like the name of a variable.
 
 ```
 // invalid name variable
@@ -101,7 +107,7 @@ object = {
 console.log(numbers2['76 trombones']); // 'great song!'
 ```
 
-Another reason sometimes you want to use a dynamic value like a variable to access data from an object. 
+Another reason sometimes you want to use a dynamic value like a variable to access data from an object.
 
 ```
 const palette = {
@@ -127,7 +133,7 @@ as a identifier like **let 76games = 'NBA team'**
 It's similar to viewing a property or accessing the data. We have the dot notation or the square brackets. The only difference is we use an equal sign to assign a value either to update that value or to give it an initial value.
 
 ```
-// Updating properties: 
+// Updating properties:
 fitAppData.workoutsThisWeek = '6 of 7';
 fitAppData.totalMiles += 7.5;
 
@@ -138,6 +144,7 @@ fitAppData.heartStillBeating = true;
 ## 5. Nested Arrays & Objects
 
 ### ARRAYS + OBJECTS
+
 ```
 const shoppingCart = [
   {
@@ -181,8 +188,41 @@ const game = {
 ]};
 ```
 
-Objects and Reference Types
-Objects and Arrays are Reference types
+## 5. Nested Arrays & Objects
 
-Array Object Equality
-Arrays and Objects behave the same way when we checking for Equality We are comparing Reference Types Addresses
+## 6. Objects and Reference Types
+
+### Objects and Arrays are Reference types
+
+## 7. Array Object Equality
+
+Arrays and Objects behave the same way when we checking for equality we are comparing Reference Types Addresses.
+
+When we compare with == or ====, we're comparing these memory slot addresses, variables might look the same, but it has it's own completely unique place in memory.
+
+```
+let nums = [1, 2, 3];
+let mystery = [1, 2, 3];
+
+console.log(nums == mystery); // false
+console.log(nums === mystery); // false
+
+nums -> 12873612783
+mystery -> 9912873621
+
+let moreNums = nums;
+console.log(nums === moreNums); // true
+```
+
+This means if you're trying to compare arrays, if you're trying to see if an array is equal to another array, it's not as straightforward as you might hope it would be, because a lot of times you're not trying to check if an array is the exact same array, Instead you often want to check if they look the same, if they contain the same information.
+
+
+So the next thing that it's a little trickier is trying to check if an array contains or looks like another array that isn't empty.
+
+So if i wanted to know if one array contained exactly the numbers one, two and three in that order, unfortunately there's not an easy option for us right now until we talk about loops. We don't really have a way of checking for array equality of values, what we will need to do is manually compare every element in an array to another array.
+
+**The exact same thing holds true for objects.**
+
+```
+
+```
