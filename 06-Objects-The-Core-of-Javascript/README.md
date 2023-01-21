@@ -69,7 +69,7 @@ All keys are converted to strings, Except for Symbols
 
 ## 3. Accessing Object Properties
 
-### ACCESSING DATA
+### ACCESSING DATA  
 
 ```
 // This is converted
@@ -124,18 +124,62 @@ as a identifier like **let 76games = 'NBA team'**
 
 ## 4. Adding and Updating Properties
 
-UPDATING & ADDING PROPERTIES
-// Updating properties: fitBitData.workoutsThisWeek = '6 of 7'; fitBitData.totalMiles += 7.5;
+It's similar to viewing a property or accessing the data. We have the dot notation or the square brackets. The only difference is we use an equal sign to assign a value either to update that value or to give it an initial value.
 
-// Adding a new property fitBitData.heartStillBeating = true;
+```
+// Updating properties: 
+fitAppData.workoutsThisWeek = '6 of 7';
+fitAppData.totalMiles += 7.5;
 
-ARRAYS + OBJECTS
-const shoppingCart = [ { product: 'Jenga Classic', price: 6.88, quantity: 1 }, { product: 'Echo Dot', price: 29.99, quantity: 3 }, { product: 'Fire Stick', price: 39.99, quantity: 2 } ]
+// Adding a new property
+fitAppData.heartStillBeating = true;
+```
 
-const student = { firstName: 'David', lastName: 'Jones', strengths: ['Music', 'Art'], exams: { midterm: 92, final: 88 } }
+## 5. Nested Arrays & Objects
 
-Nested Arrays & Objects
-const game = { player1: { username: 'Blue', playingAs: 'X' }, player2: { username: 'Muffins', playingAs: '0' }, board : [ ['0', null, 'X'], ['X', '0', 'X'], [null, '0', 'X'] ] };
+### ARRAYS + OBJECTS
+```
+const shoppingCart = [
+  {
+    product: 'Jenga Classic',
+    price: 6.88,
+    quantity: 1
+  },
+  {
+    product: 'Echo Dot',
+    price: 29.99,
+    quantity: 3
+  },
+  {
+    product: 'Fire Stick',
+    price: 39.99,
+    quantity: 2
+  }
+]
+```
+
+```
+const student = {
+  firstName: 'Alberto',
+  lastName: 'Guzman',
+  strengths: ['Programmer', 'Futbol'],
+  exams: {
+    midterm: 92,
+    final: 88
+  }
+}
+```
+
+```
+const game = {
+  player1: { username: 'Blue', playingAs: 'X' }
+  player2: { username: 'Muffins', playingAs: '0' }
+  board : [
+    ['0', null, 'X'],
+    ['X', '0', 'X'],
+    [null, '0', 'X']
+]};
+```
 
 Objects and Reference Types
 Objects and Arrays are Reference types

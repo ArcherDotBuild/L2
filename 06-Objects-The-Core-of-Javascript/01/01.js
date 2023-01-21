@@ -32,7 +32,7 @@ console.log(data2) */
 // ******************************
 // Accessing Object Properties ******************************
 // Example 2
-
+/* 
 const numbers = {
   100: 'one hundred',
   16: 'sixteen'
@@ -80,5 +80,114 @@ console.log(palette['123 hello hi']); // undefined
 console.log(palette.helloworld) // undefined
 console.log(palette[mysteryColor]) // '#f9ca24'
 console.log(palette['bl'+'ue']); // '#30336b'
+ */
 
-// If i try to access
+// console.log('\n')
+// ******************************
+// Adding and Updating Properties ******************************
+// Example 4
+/* 
+const userReviews = {
+}
+console.log(userReviews)
+// Using brackets
+userReviews['queenBee49'] = 4.0
+console.log(userReviews)
+console.log(userReviews['queenBee49'])
+
+console.log('\n')
+// Using dot notation
+userReviews.mrSmith78 = 3.5
+console.log(userReviews['mrSmith78'])
+
+console.log(userReviews.colt); // undefined
+userReviews.colt = '5'
+console.log(userReviews.colt)
+console.log(typeof userReviews.colt) // String
+userReviews['colt'] = 5
+console.log(userReviews.colt)
+console.log(typeof userReviews.colt); // Number
+console.log(userReviews)
+
+console.log('\n')
+userReviews.queenBee49 += 2
+console.log(userReviews.queenBee49)
+
+userReviews.mrSmith78++
+console.log(userReviews.mrSmith78) */
+
+// console.log('\n')
+// ******************************
+// Nested Arrays & Objects ******************************
+// Example 5
+
+const student = {
+  firstName: 'Alberto',
+  lastName: 'Guzman',
+  strengths: ['Programmer', 'Futbol'],
+  exams: {
+    midterm: 92,
+    final: 88,
+  },
+}
+let avg = (student.exams.midterm + student.exams.final) / 2
+console.log('avg: ', avg)
+console.log(
+  'Student strength:',
+  student.strengths[0],
+  ',',
+  student.strengths[1]
+)
+
+console.log('\n')
+const tetrisGame = {
+  player1: {
+    username: 'ElfGodd',
+    playingAs: 'X',
+  },
+  player2: {
+    username: 'Josue',
+    playingAs: 'O',
+  },
+  board: [
+    ['0', null, 'X'],
+    ['X', 'O', null],
+    [null, 'O', 'X'],
+  ],
+}
+console.log(tetrisGame.player1.username)
+console.log(tetrisGame.player2.username)
+// Get length of array inside object
+// 2 ways of doing this
+console.log(tetrisGame.board.length);
+console.log(tetrisGame['board'].length)
+console.log('\n')
+for(i = 0; i < tetrisGame.board.length; i++) {
+  for (j = 0; j < tetrisGame.board.length; j++) {
+    console.log(tetrisGame.board[i][j])
+  }
+}
+
+console.log('\n')
+const shoppingCart = [
+  {
+    product: 'Jenga Classic',
+    price: 6.88,
+    quantity: 1,
+  },
+  {
+    product: 'Echo Dot',
+    price: 29.99,
+    quantity: 3,
+  },
+  {
+    product: 'Fire Stick',
+    price: 39.99,
+    quantity: 2,
+  },
+]
+
+console.log(shoppingCart)
+console.log(shoppingCart[0].product)
+console.log(shoppingCart[1].price)
+console.log(shoppingCart[2].quantity)
