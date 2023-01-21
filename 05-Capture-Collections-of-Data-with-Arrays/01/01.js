@@ -369,37 +369,31 @@ otherNums.pop()
 console.log('nums:', nums)
 console.log('otherNums:', otherNums) */
 
-
 // console.log('\n')
 // ******************************
 // Using Const with Arrays ******************************
 // Example 13
 
 // Using consts with Arrays
-let x = 34
-x += 5
-console.log(x)
-const city = 'Lisbon'
-console.log(city)
-// city = 'Londron'; // Uncaught TypeError: invalid assignment to const 'city'
+/* const city = 'Lisbon'
+city = 'Barranquilla'
+console.log(city) */
+// Uncaught TypeError: Assignment to constant variable.
 
 const foods = ['milk']
 foods.push('chocolate')
 console.log(foods)
-// ['milk', 'chocolate']
 foods.unshift('tortillas')
 console.log(foods)
-// ['tortillas', 'milk', 'chocolate']
 foods.pop()
 foods.pop()
 foods.pop()
 console.log(foods)
-// []
-// foods = []; // Uncaught TypeError: invalid assignment to const 'foods'
 
-const arrayWhatEverWeWant = [null, undefined, NaN, 'abcd', 123456789]
-console.log(arrayWhatEverWeWant)
+// foods = [] // can't change the reference
+// Even though it's already an empty array
 
+console.log('\n')
 const animalPairs = [
   ['doe', 'buck'], // 0
   ['ewe', 'ram'], // 1
@@ -410,5 +404,15 @@ console.log(animalPairs[2]) // ['peahen', 'peacock']
 console.log(animalPairs[2][0]) // 'peahen'
 console.log(animalPairs[2][1]) // 'peacock'
 console.log(animalPairs[1][1]) // 'ram'
-animalPairs[0][1] = 'stag' // 'buck' changes to 'stag'
-console.log(animalPairs[0]) // ['doe', 'buck']
+// animalPairs[0][1] = 'stag' // 'buck' changes to 'stag'
+console.log(animalPairs)
+// console.log(animalPairs[0]) // ['doe', 'stag']
+
+console.log('\n')
+const board = [
+  ['0', null, 'X'],
+  [null, 'X', '0'],
+  ['X', '0', null],
+]
+
+animalPairs.splice([0][1], 1, ['raptor', 'venom'])

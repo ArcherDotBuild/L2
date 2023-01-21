@@ -166,4 +166,33 @@ Primitive types strings, numbers, booleans, null, undefined all those work diffe
 
 ## 13. Using Const with Arrays
 
+Arrays are reference types, which means that the actual array data is not the content that is stored in the slot in memory for each variable. Instead, it is a reference, So as long as the reference doesn't change the internals, the insides of an array can change even if you're using const
+
+```
+const my Eggs = ['brown', 'white']
+myEggs.push('purple')
+myEggs[0] = 'green'
+
+myEggs = ['blue', 'pink'] // NO!!
+// TypeError: Assignment to constant variable.
+```
+
+- Error because we change the reference
+- You can change anything inside the array
+
+Because arrays are reference types, const is used all the time when we work with arrays, far more often than let, unless you have some good reason that your variable would need to point to different, entirely different arrays, most of the time you just need a variable for your array and the array might change, but you're not going to just point some new array.
+
 ## 14. Working with Nested Arrays
+
+We can store arrays inside other arrays!
+
+```
+const colors = [
+  ['red', 'crimson']
+  ['orange', 'dark orange']
+  ['yellow', 'golden rod']
+  ['green', 'olive']
+  ['blue', 'navy blue']
+  ['purple', 'orchild']
+]
+```
