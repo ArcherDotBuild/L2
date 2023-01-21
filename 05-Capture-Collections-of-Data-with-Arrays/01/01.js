@@ -379,7 +379,7 @@ console.log('otherNums:', otherNums) */
 city = 'Barranquilla'
 console.log(city) */
 // Uncaught TypeError: Assignment to constant variable.
-
+/* 
 const foods = ['milk']
 foods.push('chocolate')
 console.log(foods)
@@ -415,4 +415,4 @@ const board = [
   ['X', '0', null],
 ]
 
-animalPairs.splice([0][1], 1, ['raptor', 'venom'])
+animalPairs.splice([0][1], 1, ['raptor', 'venom']) */
