@@ -78,3 +78,28 @@ for(let i = 1; i !== 20; i+= 2) {
 - Your logic makes sense here
 - Generally try to avoid equality and non equality there
 - Prefer to use greater > than or < less than when i can
+
+## 4. For Loops & Arrays
+To loop over an array, start at 0 and continue to the last index (length-1)
+
+```
+const animals = ['lions', 'tigers', 'bears'];
+
+for(let i =0; i < animals.length; i++) {
+  console.log(i, animals[i]);
+}
+// 0 'lions'
+// 1 'tigers'
+// 2 'bears'
+```
+
+## 5. Nested For Loops
+```
+let str = 'LOL;
+for (let i = 0; i <= 4; i++) {
+  console.log("Outer:", i);  
+  for (let j = 0; j < str.length; j++) {
+    console.log(' Inner:', str[j]);
+  }
+}
+```
