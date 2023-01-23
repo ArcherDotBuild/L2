@@ -217,7 +217,7 @@ console.log(palette);
 // ******************************
 // Array Object Equality ******************************
 // Example 9
-
+/* 
 let nums = [1, 2, 3];
 let mystery = [1, 2, 3];
 
@@ -263,4 +263,4 @@ console.log(data1 === data2); // false
 let compareObject = data2;
 console.log(data1 === compareObject); // false
 let data3 = data1;
-console.log(data3 === data1); // true
+console.log(data3 === data1); // true */

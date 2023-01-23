@@ -222,7 +222,3 @@ So the next thing that it's a little trickier is trying to check if an array con
 So if i wanted to know if one array contained exactly the numbers one, two and three in that order, unfortunately there's not an easy option for us right now until we talk about loops. We don't really have a way of checking for array equality of values, what we will need to do is manually compare every element in an array to another array.
 
 **The exact same thing holds true for objects.**
-
-```
-
-```
