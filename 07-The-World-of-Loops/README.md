@@ -139,3 +139,17 @@ There's a special keyword in JavaScript called Break, which we can use inside of
 If you have multiple loops and you break in one of the nested loops, it does not stop all loops from executing. It will only stop the inner loop or the current loop the break is located in.
 
 **Break: not that common in a for loop, but it can be common in a while loop.**
+
+
+## 9. For...Of Intro
+A nice and easy way of iterating over arrays (or other iterable objects)
+
+```
+for (variable of iterable) {
+  statement
+}
+```
+## 10. Comparing For and For...Of
+
+For...Of is great a lot of the time, but if you need to care about the index then it's not going to work out for you or it won't be as easy as it would be to just generate those indices using a traditional for loop instead.
+
