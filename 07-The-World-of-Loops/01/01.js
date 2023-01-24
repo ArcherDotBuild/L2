@@ -111,7 +111,7 @@ for (let i = 1; i <= 5; i++) {
     console.log(' INNER LOOP:', j)
   }
 } */
-
+/* 
 // Example 7
 const gameBoard = [
   [4, 32, 8, 4],
@@ -122,7 +122,7 @@ const gameBoard = [
 
 let totalScore = 0
 for (let i = 0; i < gameBoard.length; i++) {
-  console.log(gameBoard[i])
+  console.log(gameBoard[i]);
   let row = gameBoard[i]
   for (j = 0; j < row.length; j++) {
     console.log(row[j])
@@ -130,3 +130,59 @@ for (let i = 0; i < gameBoard.length; i++) {
   }
 }
 console.log('gameBoard totalScore: ', totalScore)
+ */
+
+// console.log('\n')
+// ******************************
+// Intro to While Loops ******************************
+// Example 8
+/* 
+let j = 0
+while (j <= 5) {
+  console.log('j: ', j)
+  j++
+} // 0, 1, 2, 3, 4, 5
+ */
+/* 
+// Example 9
+const target = Math.floor(Math.random() * 10)
+let guess = Math.floor(Math.random() * 10)
+// while (some condition)
+// in the loop, update or attempt to make that condition false
+while (guess !== target) {
+  console.log(`Target: ${target} Guess: ${guess}`)
+  guess = Math.floor(Math.random() * 10)
+}
+console.log(`Target: ${target} Guess: ${target}`)
+console.log('CONGRATS YOU WIN!')
+ */
+
+
+// console.log('\n')
+// ******************************
+//  Break Keyword ******************************
+
+// Example 10
+// break: it's not very commonly used in a for loop
+// because why not just write this for loop to go
+// from 0 to 5 instead of 0 through 10 and
+// then stopping halfway through
+/* 
+for (let i = 0; i < 10; i++) {
+  console.log(i)
+  if (i === 5) {
+    break
+  }
+}
+ */
+
+// Example 11
+const targetWhile = Math.floor(Math.random() * 10)
+let guessWhile = Math.floor(Math.random() * 10)
+while (true) {
+  if (targetWhile === guessWhile) break
+  console.log(`Target: ${targetWhile} Guess: ${guessWhile}`)
+  guessWhile = Math.floor(Math.random() * 10)
+}
+console.log(`Target: ${targetWhile} Guess: ${targetWhile}`)
+console.log('CONGRATS YOU WIN!')

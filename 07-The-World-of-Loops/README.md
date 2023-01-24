@@ -103,3 +103,39 @@ for (let i = 0; i <= 4; i++) {
   }
 }
 ```
+## 6. Intro to While Loops
+A while loop continues to run as long as its test condition is true.
+
+The While loop is syntactically simpler and it's more flexible than a for loop in some ways.
+
+```
+// Basic syntax
+let num = 0;
+while (num < 10) {
+  console.log(num);
+  num++;
+} // 0 1 2 3 4
+```
+
+In these scenarios where we're simply iterating through numbers zero to five, i prefer a for loop, because we don't have to make the variable up top separately. And once we talk about scope, you'll understand why that is it's an advantage even if we still have to write the same declaration it to better practice to not create a variable outside of a loop whenever possible.
+
+A While loop really excels when:  
+- You're writing a loop where you don't know exactly how many times it's going to run.
+- We don't know that we're going from 0 to 10
+- We don't know we want this to run exactly 20 times
+
+## 7. More While Loops
+```
+while(!gameOver)
+while(stillAlive)
+while(livesLeft > 0)
+// So you don't know exactly how many times it will run, but at some point in this loop you will be changing livesLeft or you will be setting gameOver to be true
+```
+
+## 8. Break Keyword
+
+There's a special keyword in JavaScript called Break, which we can use inside of loops to break out of that lopp to stop its execution whenever JavaScript encounters break, that loop that it's enclosed in is done.
+
+If you have multiple loops and you break in one of the nested loops, it does not stop all loops from executing. It will only stop the inner loop or the current loop the break is located in.
+
+**Break: not that common in a for loop, but it can be common in a while loop.**
