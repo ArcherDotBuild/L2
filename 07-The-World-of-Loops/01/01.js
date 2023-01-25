@@ -157,7 +157,6 @@ console.log(`Target: ${target} Guess: ${target}`)
 console.log('CONGRATS YOU WIN!')
  */
 
-
 // console.log('\n')
 // ******************************
 // Break Keyword ******************************
@@ -250,3 +249,96 @@ const words2 = ['box', 'shake', 'tub', 'berry']
 for (let i = 0; i < words1.length; i++) {
   console.log(`${words1[i]}${words2[i]}`)
 } */
+
+// console.log('\n')
+// ******************************
+// For...Of with Objects ******************************
+// Example 15
+
+// Don't comment this object i will use it in more examples
+const movieReviews = {
+  Arrival: 9.5,
+  Alien: 9,
+  Amelie: 8,
+  'In Bruges': 9,
+  Amadeus: 10,
+  'Kill Bill': 8,
+  'Little Miss Sunshine': 8.5,
+  Coraline: 7.5,
+}
+/* 
+console.log('Object.keys: ', Object.keys(movieReviews))
+console.log('Object.values: ', Object.values(movieReviews))
+console.log('\n')
+
+for (let movie of Object.keys(movieReviews)) {
+  console.log('Object.keys: ', movie)
+}
+console.log('\n')
+for (let movie of Object.values(movieReviews)) {
+  console.log('Object.values: ', movie)
+}
+console.log('\n')
+for (let movie of Object.keys(movieReviews)) {
+  console.log(movie, movieReviews[movie])
+}
+ */
+/* 
+console.log('\n')
+// Example 17
+for(let movie of Object.keys(movieReviews)) {
+  let score = movieReviews[movie]
+  console.log(`I rated ${movie} ${score}/10`)
+} */
+/* 
+console.log('\n')
+// Example 18
+const ratings = Object.values(movieReviews)
+let total = 0
+for (let r of ratings) {
+  total += r
+}
+let avg = total / ratings.length
+console.log('Average: ', avg)
+console.log('\n')
+console.log(Object.keys(movieReviews)[1])
+console.log(Object.keys(movieReviews)[4])
+ */
+
+// console.log('\n')
+// ******************************
+// For...In Loops ******************************
+// Example 19
+
+/* const jeopardyWinnings = {
+  regularPlay: 2522700,
+  watsonChallenge: 300000,
+  tournamentOfChampions: 500000,
+  battleOfTheDecades: 100000,
+}
+
+for (let prop in jeopardyWinnings) {
+  console.log(prop)
+  console.log(jeopardyWinnings[prop])
+  console.log('\n')
+  console.log(`${prop}, Earnings: ${jeopardyWinnings[prop]}`)
+} */
+
+/* console.log('\n')
+// Example 20
+let total = 0
+for (let prop in jeopardyWinnings) {
+  total += jeopardyWinnings[prop]
+}
+console.log(`Ken Jennings Total Earnings: ${total}`)
+console.log(jeopardyWinnings['regularPlay'])
+ */
+
+/* console.log('\n')
+// Example 21
+for (let k in [88, 99, 77, 66]) {
+  console.log('index: ', k)
+}
+console.log('\n')
+console.log(jeopardyWinnings)
+ */
