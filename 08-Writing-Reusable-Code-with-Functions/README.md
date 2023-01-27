@@ -5,6 +5,7 @@
 ### JS LOOPS Repeating Code
 
 ### FUNCTIONS
+
 Reusable procedures
 
 - Functions allow us to write reusable, modular code
@@ -13,6 +14,7 @@ Reusable procedures
 Functions are like little machines, a bunch of code we put together and we wrap it up into a package. a machine that has a button to call it.
 
 ### 2 STEP PROCESS
+
 - DEFINE step 1
 - RUN step 2
 - We use them ALL THE TIME
@@ -22,12 +24,14 @@ Functions are like little machines, a bunch of code we put together and we wrap 
 `"hello".toUpperCase()`: HELLO, toUpperCase() is built in method or built in function
 
 ### DEFINE
+
 ```
 function funcName() {
   // codes goes here in the body
   // do something
 }
 ```
+
 ```
 function grumpus() {
   console.log('ugh...you again...')
@@ -37,11 +41,14 @@ function grumpus() {
 ```
 
 ### RUN
+
 ```
 funcName(): // run once
 funcName(): // run again!
 ```
+
 ## 2. Dice Roll Function
+
 ```
 function rollDie() {
   let roll = Math.floor(Math.random() * 6);
@@ -50,16 +57,18 @@ function rollDie() {
 
 rollDie()
 ```
+
 ## 3. Introducing Arguments
 
 ### ARGUMENTS
+
 Arguments is really a fancy term for **inputs to a function**, and right now our functions don't expect they don't accept any inputs.
 
 ### INPUTS
+
 Right now, our simple functions accept zero inputs They behave the same way every time.
 
-### ARGUMENTS
-We can also write functions that accept inputs, called arguments
+We can also write functions that accept inputs, called arguments.
 
 ```
 function greet(value) {
@@ -81,31 +90,85 @@ greet('Alberto')
 // Different outputs...
 "hello".indexOf('o'); // 4
 ```
-GREET TAKE 2
-function greet(person) { console.log(Hi, ${person}!); } greet('Arya'); // "Hi, Arya!" greet('Ned'); // "Hi, Ned!"
 
-return
-Built-in methods return values when we call them We can store those values:
+## 4. Functions With Multiple Args
 
-const yell = "I will end you".toUpperCase(); yell; // "I WILL END YOU"
+- the value we pass in when the function is executed **argument**
+- num is a **parameter** we define when the function is defined
 
-const idx = ['a', 'b', 'c'].indexOf('c'); idx; // 2
+```
+function square(parameter) {
+  console.log(num * num);
+}
 
-NO RETURN!
+square(argument)
+```
+
+The order of arguments is very important, the order that we define these parameters in dictates the order that they are filled in from left to right.
+
+```
+function sum(x, y) {
+  console.log(x + y);
+}
+
+sum(4, 5); // 9
+```
+
+## 5. The Return Statement
+
+### return
+
+Built-in methods **return** values when we call them.
+
+We can store those values:
+
+```
+const yell = "I will end you".toUpperCase();
+yell; // "I WILL END YOU"
+
+const idx = ['a', 'b', 'c'].indexOf('c');
+idx; // 2
+```
+
+When i run `'hello'.toUpperCase()`the console prints out HELLO and we see the text HELLO, but that's only in the console.
+
+So printing something to the console is entirely different than returning a value. When we're working in the console, they might seem similar, but there still is a significant difference
+
+The code is run toUpperCase() does return a value, but it's lost forever. We're not capturing it, but we would normally do most likely, though, we just put it in a variable
+
+So return values are extremely useful because we can capture them in variable, we could pass them to another function,
+
+### NO RETURN!
+
 Our functions print values out, but do NOT return anything
 
-function add(x, y) { console.log(x + y);; }
+```
+function add(x, y) {
+  console.log(x + y);
+}
 
-const sum = add(10, 16); sum; // undefined
+const sum = add(10, 16);
+sum; // undefined
+```
 
-FIRST RETURN!
+### FIRST RETURN!
+
 Now we can capture a return value in a variable!
 
-function add(x, y) { return x + y; // RETURN! }
+```
+function add(x, y) {
+  return x + y; // RETURN!
+}
 
-const sum = add(10, 16); sum; // 26
+const sum = add(10, 16);
+sum; // 26
 
-const answer = add(100, 200); answer; // 300
+const answer = add(100, 200);
+answer; // 300
+```
 
-RETURN
-The return statement ends function execeution AND specifies the value to a be returned by that function
+**There are some rules to know about returning**
+
+- You can only return one thing from a function  
+  "that doesn't mean you can't have multiple return statements, but when you actually return something, there needs to be one value"
+- The return statement ends function execeution & specifies the value to be returned by that function
