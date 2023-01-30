@@ -114,9 +114,77 @@ divide(5); // 5 / undefined) = NaN
 // ******************************
 // The Return Statement ******************************
 // Example 6
-
+/* 
 function add(x, y) {
   return x + y
 }
 const total = add(4, 5)
 console.log(total)
+ */
+
+// console.log('\n')
+// ******************************
+// More on Return Values ******************************
+// Example 7
+/* 
+function square(x) {
+  return x * x
+  // This code won't run because it's after the return
+  console.log('ALL DONE!');
+}
+console.log(square(4)) // 16
+
+// Example 8
+console.log('\n')
+function isPurple(color) {
+  if (color.toLowerCase() === 'purple') {
+    return true
+    console.log('YAY!'); // this code won't run
+  } else {
+    return false
+  }
+}
+console.log(isPurple('blue'))
+console.log(isPurple('purple'))
+
+console.log('\n')
+// Example 9
+// We can remove the else entirely because of the way the return statements work
+// If it's true return true, if it's not jump to return false
+function isPurple2(color) {
+  if (color.toLowerCase() === 'purple') {
+    return true
+    console.log('YAY!'); // this code won't run
+  }
+  return false
+}
+console.log(isPurple('black'))
+console.log(isPurple('purple'))
+
+console.log('\n')
+// Example 10
+function isPurple3(color) {
+  return color.toLowerCase() === 'purple'
+}
+console.log(isPurple('green'))
+console.log(isPurple('purple'))
+ */
+
+console.log('\n')
+// Example 11
+
+function containsPurple(arr) {
+  for (let color of arr) {
+    if (color === 'purple' || color === 'magenta') {
+      return true
+    }
+  }
+  return false
+}
+let resultPurple1 = containsPurple(['blue', 'pink', 'magenta'])
+console.log('containsPurple: ', resultPurple1)
+
+let resultPurple2 = containsPurple(['blue', 'pink', 'green'])
+console.log('containsPurple: ', resultPurple2)
+
+console.log('\n')

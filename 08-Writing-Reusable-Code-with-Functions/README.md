@@ -132,9 +132,9 @@ idx; // 2
 
 When i run `'hello'.toUpperCase()`the console prints out HELLO and we see the text HELLO, but that's only in the console.
 
-So printing something to the console is entirely different than returning a value. When we're working in the console, they might seem similar, but there still is a significant difference
+So printing something to the console is entirely different than returning a value. When we're working in the console, they might seem similar, but there still is a significant difference.
 
-The code is run toUpperCase() does return a value, but it's lost forever. We're not capturing it, but we would normally do most likely, though, we just put it in a variable
+The code is run toUpperCase() does return a value, but it's lost forever. We're not capturing it, but we would normally do most likely, though, we just put it in a variable.
 
 So return values are extremely useful because we can capture them in variable, we could pass them to another function,
 
@@ -167,8 +167,17 @@ const answer = add(100, 200);
 answer; // 300
 ```
 
-**There are some rules to know about returning**
+**There are some rules to know about returning**.
 
 - You can only return one thing from a function  
   "that doesn't mean you can't have multiple return statements, but when you actually return something, there needs to be one value"
 - The return statement ends function execeution & specifies the value to be returned by that function
+
+## 5. More on Return Values
+**If you have a return statement in the middle of your function, the code afterwards is not going to execute**.
+
+When we return true, it doesn't matter that we're inside of a conditional inside of a loop, inside of a function, the function is done, at least this single execution of it. WHen we called it with this array, it's done. So it's not like a return is only going to break out of one code block. It has the power to halt the entire function, even though it's in a conditional in a loop.
+
+Check the example function **containsPurple()** to test this theory concept.
+
+**You don't have to return a value from  every single function, but a lot of the time you want to**.
