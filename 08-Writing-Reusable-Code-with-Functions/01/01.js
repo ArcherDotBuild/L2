@@ -169,7 +169,7 @@ function isPurple3(color) {
 console.log(isPurple('green'))
 console.log(isPurple('purple'))
  */
-
+/* 
 console.log('\n')
 // Example 11
 
@@ -186,5 +186,4 @@ console.log('containsPurple: ', resultPurple1)
 
 let resultPurple2 = containsPurple(['blue', 'pink', 'green'])
 console.log('containsPurple: ', resultPurple2)
-
-console.log('\n')
+ */

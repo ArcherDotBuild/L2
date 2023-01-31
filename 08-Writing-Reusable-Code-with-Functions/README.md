@@ -173,7 +173,7 @@ answer; // 300
   "that doesn't mean you can't have multiple return statements, but when you actually return something, there needs to be one value"
 - The return statement ends function execeution & specifies the value to be returned by that function
 
-## 5. More on Return Values
+## 6. More on Return Values
 **If you have a return statement in the middle of your function, the code afterwards is not going to execute**.
 
 When we return true, it doesn't matter that we're inside of a conditional inside of a loop, inside of a function, the function is done, at least this single execution of it. WHen we called it with this array, it's done. So it's not like a return is only going to break out of one code block. It has the power to halt the entire function, even though it's in a conditional in a loop.
@@ -181,3 +181,18 @@ When we return true, it doesn't matter that we're inside of a conditional inside
 Check the example function **containsPurple()** to test this theory concept.
 
 **You don't have to return a value from  every single function, but a lot of the time you want to**.
+
+
+## 7. Function Challenge 1 passwordValidator
+### File: 02-challenge-01.js
+All the solutions are good, even the first one, which is a lot longer in terms of the number of lines, it's still very easy to see what's going on.
+
+A lot of people obsess especially, Students who are starting out obsessed with writing compact, super short one liner functions and really trying to do hackie cool things, and that's great. But often that comes at the expense of readability and expressiveness, just being able to understand
+
+If someone walked into this code or walked into this file and needed to understand what was going on, all of these examples solutions are pretty clear.
+
+## 8. Function Challenge 2 Average
+### File: 03-challenge-02.js
+
+## 9. Function Challenge 3 Pangrams
+### File: 04-challenge-03.js
