@@ -13,7 +13,7 @@
 // isValidPassword('hello 1', 'dogLuvr'); // false
 
 console.log('\n')
-/* Solution 1 */
+// Solution 1
 function isValidPassword(password, username) {
   if (password.length < 8) {
     return false
@@ -33,7 +33,7 @@ console.log(isValidPassword('chicken1234', 'chicken')) // false, too similar
 console.log(isValidPassword('chiken1234', 'chicken')) // true
 
 console.log('\n')
-/* Solution 2 */
+// Solution 2
 function isValidPassword(password, username) {
   if (password.length < 8) return false
   if (password.indexOf(' ') !== -1) return false
@@ -47,7 +47,7 @@ console.log(isValidPassword('chicken1234', 'chicken')) // false, too similar
 console.log(isValidPassword('chiken1234', 'chicken')) // true
 
 console.log('\n')
-/* Solution 3 */
+// Solution 3
 function isValidPassword(password, username) {
   if (
     password.length < 8 ||
@@ -64,7 +64,7 @@ console.log(isValidPassword('chicken1234', 'chicken')) // too similar
 console.log(isValidPassword('chiken1234', 'chicken')) // true
 
 console.log('\n')
-/* Solution 4 */
+// Solution 4
 function isValidPassword(password, username) {
   const tooShort = password.length < 8
   const hasSpace = password.indexOf(' ') !== -1
@@ -78,7 +78,7 @@ console.log(isValidPassword('chicken1234', 'chicken')) // too similar
 console.log(isValidPassword('chiken1234', 'chicken')) // true
 
 console.log('\n')
-/* Solution 5 */
+// Solution 5
 function isValidPassword(password, username) {
   const tooShort = password.length < 8
   const hasSpace = password.indexOf(' ') !== -1
@@ -92,12 +92,29 @@ console.log(isValidPassword('chicken1234', 'chicken')) // too similar
 console.log(isValidPassword('chiken1234', 'chicken')) // true
 
 console.log('\n')
-/* Solution 6 */
+// Solution 6
 function isValidPassword(password, username) {
   const tooShort = password.length < 8
   const hasSpace = password.indexOf(' ') !== -1
   const tooSimilar = password.indexOf(username) !== -1
   return !tooShort && !hasSpace && !tooSimilar
+}
+console.log(isValidPassword('asfg2', 'asd')) // to short
+console.log(isValidPassword('aasjasd askjd', 'asdasdasd')) // has space
+console.log(isValidPassword('chicken1234', 'chicken')) // too similar
+console.log(isValidPassword('chiken1234', 'chicken')) // true
+
+console.log('\n')
+// Solution 7
+// function isValidPassword(password: string, username: string): Boolean {
+function isValidPassword(password, username) {
+  if (
+    password.length >= 8 &&
+    !password.includes(' ') &&
+    !password.includes(username)
+  )
+    return true
+  return false
 }
 console.log(isValidPassword('asfg2', 'asd')) // to short
 console.log(isValidPassword('aasjasd askjd', 'asdasdasd')) // has space

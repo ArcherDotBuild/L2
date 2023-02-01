@@ -187,7 +187,7 @@ Check the example function **containsPurple()** to test this theory concept.
 ### File: 02-challenge-01.js
 All the solutions are good, even the first one, which is a lot longer in terms of the number of lines, it's still very easy to see what's going on.
 
-A lot of people obsess especially, Students who are starting out obsessed with writing compact, super short one liner functions and really trying to do hackie cool things, and that's great. But often that comes at the expense of readability and expressiveness, just being able to understand
+A lot of people obsess especially, Students who are starting out obsessed with writing compact, super short one liner functions and really trying to do hackie cool things, and that's great. But often that comes at the expense of readability and expressiveness, just being able to understand.
 
 If someone walked into this code or walked into this file and needed to understand what was going on, all of these examples solutions are pretty clear.
 
@@ -196,3 +196,15 @@ If someone walked into this code or walked into this file and needed to understa
 
 ## 9. Function Challenge 3 Pangrams
 ### File: 04-challenge-03.js
+
+## 10. Function Challenge 4 Get Playing Card
+### 05-challenge-04.js
+getCard() func, is going to accept no arguments, we don't pass anything
+in and it will return an object representing a playing card,  an object
+that has a value like for K for King or 2 for 2 and then a suit, clubs, diamonds,
+hearts or spades.
+
+So all you need to do is pick one of the random values 1,2,3,4,5,6,7,8,9,10,J,Q,K,A.
+So return a string here, one number and one suit and return an object that has the key of value and they key of suit.
+
+**There's no memory of what you called or what you picked last time, it's just a random card every time**.
