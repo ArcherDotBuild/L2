@@ -43,7 +43,6 @@ console.log(getCard())
 console.log(getCard())
 
 console.log('\n')
-
 function pick(arr) {
   // return random element from arr
   const idx = Math.floor(Math.random() * arr.length)
