@@ -52,56 +52,43 @@ console.log(bird) // 'mandarin duck'
 ```
 
 
-### BLOCK SCOPE
+## 2. Block Scope
 
 ```
-let radious = 8; if(radius > 0) { const PI = 3.14; let circ = 2 x PI x radius; } // PI & circ are scoped to the BLOCK console.log(radius); // 8 console.log(PI); // NOT DEFINED console.log(circ); // NOT DEFINED
+let radious = 8;
+
+if(radius > 0) {
+  const PI = 3.14;
+  let circ = 2 * PI * radius;
+}
+// PI & circ are scoped to the BLOCK
+
+console.log(radius); // 8
+console.log(PI); // NOT DEFINED
+console.log(circ); // NOT DEFINED
 ```
 
-### LEXICAL SCOPE
+We get an error: **radius is not defined**. So what does this tell us? it tells us that radius is scoped inside this conditional, It is scoped to this block of code. Blocks in JavaScript are denoted by curly brackets.
 
+Keep in mind, this is very different than an object literal, which is also curly brackets
 ```
-function outer() { let hero = "Black Panther";
+// This is an object literal
+{
+  a: 1,
+  b: 2
+}
 
-function inner() { let cryForHelp = ${hero}, please save me! console.log(cryForHelp); }
-
-inner(); }
+// This is a block of code
+if (true) {
+  let animal = 'eel'
+  console.log(animal)
+}
+// Same thing if we had a while, for loops, the code we write between the curly brackets
 ```
 
-### FUNCTION EXPRESSIONS
+**let and const** both have the same exact scope, but different than var scope.
 
-There's another syntax we can use to define functions:
+**there is no block scope for var**, if we declare a variable using var in any block like a conditional a for loop a while loop, it is not scoped to that block. We have access to it outside and that could be problematic.
 
-const square = function (num) { return num x num; } square(7); // 49
 
-FUNCTIONS ARE... OBJECTS!
-HIGH ORDER FUNCTIONS
-Functions that operate on/with other functions. They can:
-
-Accept other functions as arguments
-Return a function
-FUNCTIONS AS ARGUMENTS
-function callTwice(func) { func(); func(); }
-
-function laugh() { console.log("HAHAHAHAHAHAHAHAHAHA"); } callTwice(alught); // pass a function as an argument! // "HAHAHAHAHAHAHAHAHAHA" // "HAHAHAHAHAHAHAHAHAHA"
-
-RETURNING FUNCTIONS
-function makeBetweenFunc(min, max) { return function (val) { return val >= min && val <= max; } }
-
-const inAgeRange = makeBetweenFunc(18, 100);
-
-inAgeRange(17); // false inAgeRange(68); // true
-
-CALLBACKS FUNCTIONS
-A callback functon is a function passed into another function as an argument, which is then invoked inside the outer function
-
-HOISTING
-Variables order declaration
-
-let animal = 'tiger'; console.log(animal); // 'tiger'
-
-console.log(beast); // error let beast = 'grizzly';
-
-// Functions are hoisted at the top of the file how(); // works! function howl() { console.log('AWOOOOO); } how(); // works!
-
-// Functions expressions are not hoisted hoot(); // error let hoot = function () { console.log('HOOOO HOOOOO'); }
+**I cannot redeclared the same variable with the same name in the same scope**.
