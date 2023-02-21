@@ -24,7 +24,7 @@ Variable "visibility"
 
 ### FUNCTION SCOPE
 
-```
+```js
 function helpMe() {
 
   let msg = "I'm on fire!";
@@ -33,10 +33,10 @@ function helpMe() {
   // msg is scoped to the helpMe function
 }
 
-msg; // NOT DEFINED!
+msg; // Throws error because it is NOT DEFINED!
 ```
 
-```
+```js
 let bird = 'mandarin duck';
 
 function birdWatch() {
@@ -54,7 +54,7 @@ console.log(bird) // 'mandarin duck'
 
 ## 2. Block Scope
 
-```
+```js
 let radious = 8;
 
 if(radius > 0) {
@@ -71,7 +71,7 @@ console.log(circ); // NOT DEFINED
 We get an error: **radius is not defined**. So what does this tell us? it tells us that radius is scoped inside this conditional, It is scoped to this block of code. Blocks in JavaScript are denoted by curly brackets.
 
 Keep in mind, this is very different than an object literal, which is also curly brackets
-```
+```js
 // This is an object literal
 {
   a: 1,
