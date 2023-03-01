@@ -47,7 +47,7 @@ console.log(bird) // 'mandarin duck'
 // ******************************
 // Block Scope ******************************
 // Example 4
-
+/* 
 if (true) {
   let animal = 'eel'
   console.log('If animal true: ',animal)
@@ -97,3 +97,84 @@ function doubleArr(arr) {
   return result
 }
 console.log(doubleArr([1, 2, 3]))
+ */
+
+// ******************************
+//  Lexical Scope******************************
+// Example 9
+
+function outer() {
+  let movie = 'Amadeus'
+
+  function inner() {
+    console.log(movie.toUpperCase())
+  }
+}
+// We have a function declaration but we're never calling it
+outer() // It doesn't return anything
+
+console.log('\n')
+// Example 10
+function outer2() {
+  let movie = 'Amadeus'
+
+  function inner() {
+    console.log(movie.toUpperCase())
+  }
+  inner()
+}
+console.log(outer2()) // AMADEUS
+// I don't have access to inner() outside of outer2
+// inner();  // inner is not defined
+
+
+console.log('\n')
+// Example 11
+function outer3() {
+  let movie = 'Amadeus'
+
+  function inner() {
+    let movie = 'The Shining'
+    console.log(movie.toUpperCase())
+  }
+  inner()
+}
+// When i execute outer3(), the inner() function defines its own version of movie called 'The Shining'
+// 'The Shining', prints the nearest variable in scope
+console.log(outer3())
+
+
+console.log('\n')
+// Example 12
+function outer4() {
+  let movie = 'Amadeus'
+  console.log('outer4()')
+
+  function inner() {
+    // let movie = 'The Shining'
+    console.log('inner()')
+
+    function extraInner() {
+      // extraInner() does not have a movie defined inside
+      console.log(movie.toUpperCase())
+      console.log('extraInner()')
+    }
+    extraInner()
+  }
+  inner()
+}
+console.log(outer4())
+
+console.log('\n')
+// Example 13
+// TodoList in ReactJS
+function TodoList() {
+  let todos = []
+  let username = ''
+  function addTodo() {
+
+  }
+  function removeTodo() {
+  
+  }
+}
