@@ -100,9 +100,9 @@ console.log(doubleArr([1, 2, 3]))
  */
 
 // ******************************
-//  Lexical Scope******************************
+//  Lexical Scope ******************************
 // Example 9
-
+/*
 function outer() {
   let movie = 'Amadeus'
 
@@ -178,3 +178,40 @@ function TodoList() {
   
   }
 }
+*/
+
+// ******************************
+//  Function Expressions ******************************
+// Example 14
+console.log('\n')
+// this on it's own is not valid, we can't call this
+// We have no way of referring to this function
+// This is called an anonymous function
+// function(x, y) {
+//   return x + y
+// }
+function add(x, y) {
+  return x + y
+}
+
+// Anonymous function expression
+const sum = function (x, y) {
+  return x + y
+}
+
+// Named function expression
+const product = function multiply(x, y) {
+  return x * y
+}
+
+// They work exactly the same way, but we declared them
+// in two different format, two different syntaxes
+console.log(add(1, 99))
+console.log(sum(1, 99))
+// console.log(multiply(1, 99)) // Error: multiply is not defined
+console.log(product(1, 99))
+
+// Inspect the function
+console.dir(add)
+console.dir(sum)
+console.dir(product)

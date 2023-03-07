@@ -92,7 +92,7 @@ if (true) {
 
 **I cannot redeclared the same variable with the same name in the same scope**.
 
-### Lexical Scope
+## 3. Lexical Scope
 
 If i have a nested function like the one i have, here are the two functions i have outer and inside.
 
@@ -110,7 +110,7 @@ function outer() {
 }
 ```
 
-But it's a one way relationship, It doesn't work the other way around
+**But it's a one way relationship, It doesn't work the other way around**
 
 ```
 function outer() {
@@ -127,6 +127,25 @@ function outer() {
 
 outer() // hero is not defined
 ```
+
 The variable is successfully declared in inner, but i don't have access to it out here.
 
-So a variable declared in one function is available to nested functions within it
+So a variable declared in one function is available to nested functions within it.
+
+## 4. Function Expressions
+
+There's another syntax we can use to define functions:
+
+```
+const square = function (num) {
+  return num * num;
+}
+square(7); // 49
+```
+
+#### FUNCTIONS ARE... OBJECTS!
+In JavaScript functions are objects, which means we can put them in a variable, we can store 10 of them in an array, we can even pass them around as arguments, which is something we do all the time.
+
+**There are some differences between function expressions and normal functions how these behave**
+
+**You can add in a name for a function expression**
