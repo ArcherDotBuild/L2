@@ -149,3 +149,6 @@ In JavaScript functions are objects, which means we can put them in a variable, 
 **There are some differences between function expressions and normal functions how these behave**
 
 **You can add in a name for a function expression**
+
+## 4. Higher Order Functions
+Functions that operate on/with other functions. They can:

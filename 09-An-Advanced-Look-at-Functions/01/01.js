@@ -181,8 +181,9 @@ function TodoList() {
 */
 
 // ******************************
-//  Function Expressions ******************************
+// Function Expressions ******************************
 // Example 14
+/*
 console.log('\n')
 // this on it's own is not valid, we can't call this
 // We have no way of referring to this function
@@ -215,3 +216,53 @@ console.log(product(1, 99))
 console.dir(add)
 console.dir(sum)
 console.dir(product)
+*/
+
+// Higher Order Functions ******************************
+// Example 15
+
+console.log('\n')
+// Function statement
+function add(x, y) {
+  return x + y
+}
+
+const subtract = function (x, y) {
+  return x - y
+}
+
+function multiply(x, y) {
+  return x * y
+}
+
+const divide = function (x, y) {
+  return x / y
+}
+
+const operations = [add, subtract, multiply, divide]
+console.log(operations[0])
+console.log(operations[1])
+console.log(operations[2])
+console.log(operations[3])
+console.log('\n')
+
+console.log(operations[0](100, 4)) // 104
+console.log(operations[1](100, 4)) // 96
+console.log(operations[2](100, 4)) // 400
+console.log(operations[3](100, 4)) // 25
+
+console.log('\n')
+// We can loop functions in an array
+for (let func of operations) {
+  let result = func(30, 5)
+  console.log(result)
+}
+
+console.log('\n')
+// We can store functions in an object
+const thing = {
+  // Method: a function stored in an object
+  doSomething: multiply,
+}
+console.log(thing);
+console.log(thing.doSomething(50, 2)) // 100
