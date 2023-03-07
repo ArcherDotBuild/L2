@@ -220,7 +220,7 @@ console.dir(product)
 
 // Higher Order Functions ******************************
 // Example 15
-
+/*
 console.log('\n')
 // Function statement
 function add(x, y) {
@@ -252,6 +252,7 @@ console.log(operations[2](100, 4)) // 400
 console.log(operations[3](100, 4)) // 25
 
 console.log('\n')
+// Example 16
 // We can loop functions in an array
 for (let func of operations) {
   let result = func(30, 5)
@@ -259,6 +260,7 @@ for (let func of operations) {
 }
 
 console.log('\n')
+// Example 17
 // We can store functions in an object
 const thing = {
   // Method: a function stored in an object
@@ -266,3 +268,53 @@ const thing = {
 }
 console.log(thing);
 console.log(thing.doSomething(50, 2)) // 100
+*/
+
+// Higher Order Functions ******************************
+// Example 18
+
+console.log('\n')
+function callThreeTimes(func) {
+  func()
+  func()
+  func()
+}
+
+function cry() {
+  console.log("BOO HOO I'M SO SAD!")
+}
+cry()
+cry()
+cry()
+console.log('\n')
+callThreeTimes(cry)
+
+console.log('\n')
+function rage() {
+  console.log('I HATE EVERYTHING!')
+}
+callThreeTimes(rage)
+
+console.log('\n')
+// Example 19
+function repeatNTimes(action, num) {
+  for (let i = 0; i < num; i++) {
+    action()
+  }
+}
+
+repeatNTimes(rage, 5)
+repeatNTimes(cry, 4)
+
+console.log('\n')
+// Example 20
+function pickOne(f1, f2) {
+  let rand = Math.random()
+  console.log('Random num insinde pickOne: ', rand)
+  if (rand < 0.5) {
+    f1()
+  } else {
+    f2()
+  }
+}
+pickOne(cry, rage)

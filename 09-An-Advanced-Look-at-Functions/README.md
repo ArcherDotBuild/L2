@@ -144,11 +144,37 @@ square(7); // 49
 ```
 
 #### FUNCTIONS ARE... OBJECTS!
+
 In JavaScript functions are objects, which means we can put them in a variable, we can store 10 of them in an array, we can even pass them around as arguments, which is something we do all the time.
 
 **There are some differences between function expressions and normal functions how these behave**
 
 **You can add in a name for a function expression**
 
-## 4. Higher Order Functions
+## 5. Higher Order Functions
+
 Functions that operate on/with other functions. They can:
+
+## 6. Functions as Arguments
+**Higher Order Functions**
+
+- Accept other functions as arguments
+- Return a function
+
+Functions that either accept functions as arguments and use them or do something with them or
+a function that returns another function
+
+```
+function callTwice(func) {
+  func();
+  func();
+}
+
+function laugh() {
+  console.log("HAHAHAHAHAHAHAHAHAHA");
+}
+
+callTwice(laugh); // pass function as an argument!
+// "HAHAHAHAHAHAHAHAHAHA"
+// "HAHAHAHAHAHAHAHAHAHA"
+```
