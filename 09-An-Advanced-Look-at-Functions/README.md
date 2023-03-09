@@ -161,9 +161,7 @@ Functions that operate on/with other functions. They can:
 - Accept other functions as arguments
 - Return a function
 
-Functions that either accept functions as arguments and use them or do something with them or
-a function that returns another function
-
+Functions that either accept functions as arguments and use them or do something with them or a function that returns another function
 ```
 function callTwice(func) {
   func();
@@ -177,4 +175,19 @@ function laugh() {
 callTwice(laugh); // pass function as an argument!
 // "HAHAHAHAHAHAHAHAHAHA"
 // "HAHAHAHAHAHAHAHAHAHA"
+```
+
+## 7. Functions as Return Values
+Returning a function from within a function
+```
+function makeBetweenFunc(min, max) {
+  return function (val) {
+    return val >= min && val <= max;
+  }
+}
+
+const inAgeRange = makeBetweenFunc(18, 100);
+
+inAgeRange(17); // false
+inAgeRange(68); // true
 ```

@@ -270,9 +270,9 @@ console.log(thing);
 console.log(thing.doSomething(50, 2)) // 100
 */
 
-// Higher Order Functions ******************************
+// Functions as Arguments ******************************
 // Example 18
-
+/*
 console.log('\n')
 function callThreeTimes(func) {
   func()
@@ -318,3 +318,7 @@ function pickOne(f1, f2) {
   }
 }
 pickOne(cry, rage)
+*/
+
+// Functions as Arguments ******************************
+// Example 18
