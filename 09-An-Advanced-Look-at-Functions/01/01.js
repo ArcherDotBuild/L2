@@ -321,4 +321,66 @@ pickOne(cry, rage)
 */
 
 // Functions as Arguments ******************************
-// Example 18
+// Example 21
+console.log('\n')
+function multiplyByNo1(num) {
+  // Function expression, anonymous functiion
+  return function () {
+    console.log('HI!!')
+  }
+}
+const mystery = multiplyByNo1()
+console.log(mystery)
+console.log(mystery())
+
+console.log('\n')
+// Example 22
+function multiplyByNo2(num) {
+  return function (x) {
+    return x * num
+  }
+}
+// Stores 3 in the func multiplyByNo2(num) variable
+const triple = multiplyByNo2(3)
+console.log(triple(6)) // 18, x * num, 6 * 3
+console.log(triple(2)) // 6, x * num, 2 * 3
+console.log(triple(9)) // 27, x * num, 9 * 3
+
+console.log('\n')
+// Stores 2 in the func multiplyByNo2(num) variable
+const double = multiplyByNo2(2)
+console.log(double(5)) // 10, x * num, 5 * 2
+console.log(double(3)) // 6, x * num, 3 * 2
+
+console.log('\n')
+const halve = multiplyByNo2(0.5)
+console.log(halve(9)) // 4.5, x * num, 9 * 0.5
+
+console.log('\n')
+// Example 23
+function makeBetweenFunc2(x, y) {
+  return function (num) {
+    if (num >= x && num <= y) {
+      return true
+    }
+    return false
+  }
+}
+// Short syntax of makeBetweenFunc2
+function makeBetweenFunc(x, y) {
+  return function (num) {
+    return num >= x && num <= y
+  }
+}
+const isChild = makeBetweenFunc(0, 18)
+console.log(isChild(17)) // true
+console.log(isChild(99)) // false
+console.log('\n')
+const isInNineties = makeBetweenFunc(1990, 1999)
+console.log(isInNineties(1989)) // false
+console.log(isInNineties(1992)) // true
+
+console.log('\n')
+const isNiceWeather = makeBetweenFunc(60, 79)
+console.log(isNiceWeather(45)) // false
+console.log(isNiceWeather(76)) // true
