@@ -198,3 +198,39 @@ A callback function is a function passed into another function as an argument, w
 **tons of the really useful built-in methods in JavaScript expect you to pass in a callback**
 
 Anonymous function: Sometimes we just need a one time use function, We don't need it to be a standalone function, in which case we use anonymous func
+
+## 9. Hoisting
+Variables order declaration, variables declarations made with LET and CONS are not hoisted
+
+Order of hoisting
+1. var animal // animal = undefined
+2. console.log(animal); // undefined
+3. animal = 'tiger';
+
+```
+console.log(animal); // Error: Cannot access 'animal' before initialization
+let animal = 'tiger';
+```
+**Functions are hoisted at the top of the file**
+
+```
+function howl() {
+  console.log('AWOOOOO');
+}
+howl(); // 'AWOOOOO'
+```
+
+```
+howl(); // 'AWOOOOO'
+function howl() {
+  console.log('AWOOOOO');
+}
+```
+
+**Functions expressions are not hoisted**
+```
+hoot(); // Error
+let hoot = function() {
+  console.log('HOOOO HOOOOO');
+}
+```
