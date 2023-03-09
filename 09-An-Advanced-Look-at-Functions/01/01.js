@@ -322,6 +322,7 @@ pickOne(cry, rage)
 
 // Functions as Arguments ******************************
 // Example 21
+/*
 console.log('\n')
 function multiplyByNo1(num) {
   // Function expression, anonymous functiion
@@ -384,3 +385,15 @@ console.log('\n')
 const isNiceWeather = makeBetweenFunc(60, 79)
 console.log(isNiceWeather(45)) // false
 console.log(isNiceWeather(76)) // true
+*/
+
+// Callbacks ******************************
+// Example 24
+/*
+console.log('\n')
+// after 5 seconds run the func
+// setTimeout(func, 5000);
+setTimeout(function () {
+  console.log('setTimeout, 2000');
+}, 2000);
+*/

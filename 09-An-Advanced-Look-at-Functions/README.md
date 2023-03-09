@@ -191,3 +191,10 @@ const inAgeRange = makeBetweenFunc(18, 100);
 inAgeRange(17); // false
 inAgeRange(68); // true
 ```
+
+## 8. Callbacks
+A callback function is a function passed into another function as an argument, which is then invoked inside the outer function. So any time we pass a function to another function and it's executed in that function, we would call it a callback function
+
+**tons of the really useful built-in methods in JavaScript expect you to pass in a callback**
+
+Anonymous function: Sometimes we just need a one time use function, We don't need it to be a standalone function, in which case we use anonymous func
