@@ -125,7 +125,7 @@ console.log('titles: ', titles)
 // ******************************
 // Arrow Functions Intro ******************************
 // Example 9
-
+/*
 const square = (x) => {
   return console.log(`Square of ${x} is: `, x * x)
 }
@@ -165,3 +165,60 @@ const greet = () => {
 }
 
 greet()
+*/
+
+// ******************************
+// Arrow Functions Implicit Returns ******************************
+// Example 13
+
+console.log('\n')
+const squareNormal = (n) => {
+  console.log(`${n} * ${n}: `, n * n)
+}
+
+squareNormal(6)
+
+console.log('\n')
+const square = (n) => console.log(`${n} * ${n}: `, n * n)
+
+square(11)
+
+console.log('\n')
+// Example 14
+const nums = [1, 2, 3, 4, 5, 6, 7, 8]
+const doublesX1 = nums.map(function (n) {
+  return console.log(`doublesX1: ${n} * 2`, n * 2)
+})
+
+console.log('\n')
+const doublesX2 = nums.map((n) => {
+  return console.log(`doublesX2: ${n} * 2`, n * 2)
+})
+
+console.log('\n')
+const doublesX3 = nums.map((n) => console.log(`doublesX3: ${n} * 2`, n * 2))
+console.log('\n')
+const doublesX4 = nums.map((n) => n * 2)
+console.log('doublesX4: ', doublesX4)
+
+console.log('\n')
+// Example 15
+const parityList = nums.map(function (n) {
+  if (n % 2 === 0) return console.log(`${n} is even!.`)
+  return console.log(`${n} is odd`)
+})
+
+console.log('\n')
+const parityListArrow = nums.map((n) => {
+  if (n % 2 === 0) return console.log(`${n} is even!`)
+  return console.log(`${n} is odd`)
+})
+
+console.log('\n')
+const parityTernary = nums.map((n) =>
+  n % 2 === 0 ? console.log('isEven') : console.log('odd')
+)
+console.log('\n')
+const partityTernary1Line = nums.map((n) =>
+  n % 2 === 0 ? console.log('isEven') : console.log('odd')
+)
