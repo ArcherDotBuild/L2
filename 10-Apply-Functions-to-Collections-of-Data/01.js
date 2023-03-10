@@ -170,7 +170,7 @@ greet()
 // ******************************
 // Arrow Functions Implicit Returns ******************************
 // Example 13
-
+/*
 console.log('\n')
 const squareNormal = (n) => {
   console.log(`${n} * ${n}: `, n * n)
@@ -222,3 +222,32 @@ console.log('\n')
 const partityTernary1Line = nums.map((n) =>
   n % 2 === 0 ? console.log('isEven') : console.log('odd')
 )
+*/
+
+// ******************************
+// Array.find ******************************
+// Example 16
+
+console.log('\n')
+let movies = [
+  'The Fantastic Mr. Fox',
+  'Mr. and Mrs. Smith',
+  'Mrs. Doubtfire',
+  'Mr. Deeds',
+]
+const movie = movies.find((movie) => {
+  return movie.includes('Mrs')
+})
+
+console.log('movie: ', movie)
+
+// Makes sure Mrs comes at the very beginning of the string
+const movie2 = movies.find((m) => m.indexOf('Mrs') === 0)
+console.log('movie2: ', movie2)
+
+console.log('\n')
+const goodBook = books.find((b) => b.rating >= 4.3)
+console.log('goodBook: ', goodBook)
+
+const neilBook = books.find((b) => b.authors.includes('Neil Gaiman'))
+console.log('neilBook: ', neilBook)

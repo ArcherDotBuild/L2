@@ -97,7 +97,7 @@ const singASong = () {
 }
 ```
 
-## 4. Arrow Functions Implicit Returns
+## 5. Arrow Functions Implicit Returns
 All these functions do the same thing:
 
 ```
@@ -117,3 +117,26 @@ const isEven = num => num % 2 ===0; // one-liner implicit return
 ```
 
 There's an even more compact way of writing some arrow functions, this only works in certain scenarios, it's caled implicit return.
+
+## 6. Array.find
+
+Returns the value of the **first element** in the array that satisfies the provided testing function.
+
+It retrieves an element from an array based off of a function that we pass in. The function needs to return true or false, and each time find will call that function with one of the elements and if that function returns true, then it's done. It will return the value of that element
+
+**Array.find returns one value, one element that matches, even if there are 10 matches in a given array, it stops after it finds the very first one**
+
+```
+let movies = [
+  "The Fantastic Mr. Fox",
+  "Mr. and Mrs. Smith",
+  "Mrs. Doubtfire",
+  "Mr. Deeds" ]
+
+let movie = movies.find(movie => {
+  return movie.includes('Mrs.')
+}) // "Mr. and Mrs. Smith"
+
+let movies2 = movies.find(m => m.indexOf('Mrs') === 0);
+// "Mrs. Doubtfire"
+```
