@@ -1,32 +1,6 @@
 // Test the JS script before starting
 // alert("It's working!");
 
-// ******************************
-// forEach ******************************
-// Example 1
-
-console.log('\n ');
-const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
-
-numbers.forEach(function (element) {
-  console.log(element)
-})
-
-console.log('\n')
-// Example 2
-numbers.forEach(function (num) {
-  console.log(num * 2)
-})
-
-console.log('\n')
-// Example 3
-function printTriple(n) {
-  console.log(n * 3)
-}
-
-numbers.forEach(printTriple)
-
-// ====================
 const books = [
   {
     title: 'Good Omens',
@@ -50,6 +24,31 @@ const books = [
   },
 ]
 
+// ******************************
+// forEach ******************************
+// Example 1
+/*
+console.log('\n ');
+const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
+
+numbers.forEach(function (element) {
+  console.log(element)
+})
+
+console.log('\n')
+// Example 2
+numbers.forEach(function (num) {
+  console.log(num * 2)
+})
+
+console.log('\n')
+// Example 3
+function printTriple(n) {
+  console.log(n * 3)
+}
+
+numbers.forEach(printTriple)
+
 console.log('\n')
 // Example 4
 books.forEach(function (book) {
@@ -71,3 +70,53 @@ console.log('\n')
 numbers.forEach(function(num, index) {
   console.log(index, num)
 })
+*/
+
+// ******************************
+// Map ******************************
+// Example 5
+
+console.log('\n')
+const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
+const words = ['asap', 'byob', 'rsvp', 'diy']
+
+const doubles = numbers.map(function (num) {
+  return num * 2
+})
+console.log('numbers: ', numbers)
+console.log('doubles: ', doubles)
+
+const doubles2 = []
+for (let num of numbers) {
+  doubles2.push(num * 2)
+}
+
+console.log('forOf doubles2: ', doubles2)
+
+console.log('\n')
+// Example 6
+const numDetail = numbers.map(function (n) {
+  return {
+    value: n,
+    isEven: n % 2 === 0,
+  }
+})
+
+console.log('numDetail: ', numDetail)
+
+console.log('\n')
+// Example 7
+const abbrevs = words.map(function (word) {
+  return word.toUpperCase().split('').join('.')
+})
+
+console.log('words: ', words)
+console.log('abbrevs: ', abbrevs)
+
+console.log('\n')
+// Example 8
+const titles = books.map(function (book) {
+  return book.title
+})
+
+console.log('titles: ', titles)

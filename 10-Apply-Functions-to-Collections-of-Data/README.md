@@ -38,3 +38,28 @@ nums.forEach(function (el)) {
 ```
 
 **We can also add a second a parameter to our callback to the function if we want to use the index**
+
+## 3. Map
+
+Creates a new array with the results of calling a call back on every element in the array
+- The most used array method
+- Map is used to create a new array from an existing array
+- It can be used to simply duplicate an array
+- It can be used to extract portions of an array
+- It can be use to transform an array into a new array
+- Example: double every number in an array, or reverse every string in the original array and make a new array with those reverse strings
+
+```
+const texts = ['rofl', 'lol, 'omg', 'ttyl'];
+
+const caps = texts.map(function (t) {
+  return t.toUpperCase();
+})
+
+texts; // ["rofl", "lol", "omg", "ttyl"]
+caps; // ["ROFL", "LOL", "OMG", "TTYL"]
+```
+
+**It does not alter or update the original data**  
+
+Usually we use anonymous functions unless you have a predefined function that does exactly what you need.
