@@ -75,7 +75,7 @@ numbers.forEach(function(num, index) {
 // ******************************
 // Map ******************************
 // Example 5
-
+/*
 console.log('\n')
 const numbers = [20, 21, 22, 23, 24, 25, 26, 27]
 const words = ['asap', 'byob', 'rsvp', 'diy']
@@ -120,3 +120,48 @@ const titles = books.map(function (book) {
 })
 
 console.log('titles: ', titles)
+*/
+
+// ******************************
+// Arrow Functions Intro ******************************
+// Example 9
+
+const square = (x) => {
+  return console.log(`Square of ${x} is: `, x * x)
+}
+square(2)
+square(10)
+
+console.log('\n')
+// Example 10
+// With 1 parameter we dont need the parenthesis
+const isEven = (num) => {
+  return console.log(`Num: ${num} isEven?: `, num % 2 === 0)
+}
+isEven(99)
+isEven(100)
+
+console.log('\n')
+// Example 11
+const multiply = (x, y) => {
+  return console.log(`Multiplication ${x} * ${y} is: `, x * y)
+}
+multiply(4, 7)
+multiply(100, 7)
+
+console.log('\n')
+// Example 12
+
+// 1 parameter no needs for parens
+const helloWorld = (string) => {
+  return console.log('print: ' + string)
+}
+
+helloWorld('hello-world')
+
+// With no parameters
+const greet = () => {
+  console.log('hi!')
+}
+
+greet()

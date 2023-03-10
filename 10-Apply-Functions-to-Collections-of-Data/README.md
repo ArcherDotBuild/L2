@@ -42,6 +42,7 @@ nums.forEach(function (el)) {
 ## 3. Map
 
 Creates a new array with the results of calling a call back on every element in the array
+
 - The most used array method
 - Map is used to create a new array from an existing array
 - It can be used to simply duplicate an array
@@ -60,6 +61,38 @@ texts; // ["rofl", "lol", "omg", "ttyl"]
 caps; // ["ROFL", "LOL", "OMG", "TTYL"]
 ```
 
-**It does not alter or update the original data**  
+**It does not alter or update the original data**
 
 Usually we use anonymous functions unless you have a predefined function that does exactly what you need.
+
+## 4. Arrow Functions Intro
+
+"Syntactically compact alternative" to a regular function expression
+
+```
+const square = (x) => {
+  return x * x;
+}
+
+const sum = (x, y) => {
+  return x + y
+}
+
+// Compare the 2 syntaxes
+const sum = function(x, y) {
+  return x + y;
+}
+```
+
+Parens are optional if there's only one parameter:
+```
+const square = x => {
+  return x * x;
+}
+```
+Use empty parens for function w/ no parameters:
+```
+const singASong = () {
+  return "LA LA LA LA LA LA";
+}
+```
