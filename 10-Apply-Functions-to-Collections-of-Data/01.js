@@ -24,6 +24,69 @@ const books = [
   },
 ]
 
+const bookz = [
+  {
+    title: 'Good Omens',
+    authors: ['Terry Pratchett', 'Neil Gaiman'],
+    rating: 4.25,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'Changing My Mind',
+    authors: ['Zadie Smith'],
+    rating: 3.83,
+    genres: ['nonfiction', 'essays'],
+  },
+  {
+    title: 'Bone: The Complete Edition',
+    authors: ['Jeff Smith'],
+    rating: 4.42,
+    genres: ['fiction', 'graphic novel', 'fantasy'],
+  },
+  {
+    title: 'American Gods',
+    authors: ['Neil Gaiman'],
+    rating: 4.11,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'A Gentleman in Moscow',
+    authors: ['Amor Towles'],
+    rating: 4.36,
+    genres: ['fiction', 'historical fiction'],
+  },
+  {
+    title: 'The Name of the Wind',
+    authors: ['Patrick Rothfuss'],
+    rating: 4.54,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'The Overstory',
+    authors: ['Richard Powers'],
+    rating: 4.19,
+    genres: ['fiction', 'short stories'],
+  },
+  {
+    title: 'A Truly Horrible Book',
+    authors: ['Xavier Time'],
+    rating: 2.18,
+    genres: ['fiction', 'garbage'],
+  },
+  {
+    title: 'The Way of Kings',
+    authors: ['Brandon Sanderson'],
+    rating: 4.65,
+    genres: ['fantasy', 'epic'],
+  },
+  {
+    title: 'Lord of the flies',
+    authors: ['William Golding'],
+    rating: 3.67,
+    genres: ['fiction'],
+  },
+]
+
 // ******************************
 // forEach ******************************
 // Example 1
@@ -256,7 +319,7 @@ console.log('neilBook: ', neilBook)
 // ******************************
 // Filter ******************************
 // Example 17
-
+/*
 console.log('\n')
 const nums = [34, 35, 67, 54, 109, 102, 32, 9]
 
@@ -266,69 +329,6 @@ const evens = nums.filter((n) => n % 2 === 0)
 console.log('evens: ', evens)
 const bigNums = nums.filter((n) => n > 50)
 console.log('bigNums: ', bigNums)
-
-const bookz = [
-  {
-    title: 'Good Omens',
-    authors: ['Terry Pratchett', 'Neil Gaiman'],
-    rating: 4.25,
-    genres: ['fiction', 'fantasy'],
-  },
-  {
-    title: 'Changing My Mind',
-    authors: ['Zadie Smith'],
-    rating: 3.83,
-    genres: ['nonfiction', 'essays'],
-  },
-  {
-    title: 'Bone: The Complete Edition',
-    authors: ['Jeff Smith'],
-    rating: 4.42,
-    genres: ['fiction', 'graphic novel', 'fantasy'],
-  },
-  {
-    title: 'American Gods',
-    authors: ['Neil Gaiman'],
-    rating: 4.11,
-    genres: ['fiction', 'fantasy'],
-  },
-  {
-    title: 'A Gentleman in Moscow',
-    authors: ['Amor Towles'],
-    rating: 4.36,
-    genres: ['fiction', 'historical fiction'],
-  },
-  {
-    title: 'The Name of the Wind',
-    authors: ['Patrick Rothfuss'],
-    rating: 4.54,
-    genres: ['fiction', 'fantasy'],
-  },
-  {
-    title: 'The Overstory',
-    authors: ['Richard Powers'],
-    rating: 4.19,
-    genres: ['fiction', 'short stories'],
-  },
-  {
-    title: 'A Truly Horrible Book',
-    authors: ['Xavier Time'],
-    rating: 2.18,
-    genres: ['fiction', 'garbage'],
-  },
-  {
-    title: 'The Way of Kings',
-    authors: ['Brandon Sanderson'],
-    rating: 4.65,
-    genres: ['fantasy', 'epic'],
-  },
-  {
-    title: 'Lord of the flies',
-    authors: ['William Golding'],
-    rating: 3.67,
-    genres: ['fiction'],
-  },
-]
 
 console.log(bookz)
 
@@ -356,3 +356,44 @@ const results = bookz.filter((book) => {
 })
 console.log('results: ', results)
 */
+
+// ******************************
+// Some & Every ******************************
+// Example 20
+
+console.log('\n')
+const words = ['dog', 'dig', 'log', 'bag', 'wag']
+console.log('Array words: ', words)
+
+// returns only Boolean true or false
+// returns true if every single element is length === 3
+const all3Letters = words.every((word) => word.length === 3)
+console.log('all3Letters: ', all3Letters)
+
+console.log('\n')
+// Example 21
+const allEndInG = words.every((word) => {
+  const last = word.length - 1
+  return word[last] === 'g'
+})
+
+console.log('allEndInG: ', allEndInG)
+
+console.log('\n')
+// Example 22
+const someStartWithD = words.some((word) => word[0] === 'd')
+console.log('someStartWithD: ', someStartWithD)
+
+console.log('\n')
+const allStartWithD = words.every((word) => {
+  word[0] == 'd'
+})
+console.log('allStartWithD: ', allStartWithD)
+
+console.log('\n')
+const allGoodBooks = bookz.every((book) => book.rating > 3.5)
+console.log('allGoodBooks: ', allGoodBooks)
+
+console.log('\n')
+const any2Authors = bookz.some((book) => book.authors.length === 2)
+console.log('any2Authors: ', any2Authors)

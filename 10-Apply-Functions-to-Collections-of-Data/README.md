@@ -85,12 +85,15 @@ const sum = function(x, y) {
 ```
 
 Parens are optional if there's only one parameter:
+
 ```
 const square = x => {
   return x * x;
 }
 ```
+
 Use empty parens for function w/ no parameters:
+
 ```
 const singASong = () {
   return "LA LA LA LA LA LA";
@@ -98,6 +101,7 @@ const singASong = () {
 ```
 
 ## 5. Arrow Functions Implicit Returns
+
 All these functions do the same thing:
 
 ```
@@ -146,6 +150,7 @@ let movies2 = movies.find(m => m.indexOf('Mrs') === 0);
 Creates a new array with all elements that pass the test implemented by the provided function
 
 Filter allows us to filter out subsets of an array. Basically, we pass in a function which returns true or false, a test function. And if an element passes that function, it will be added into the returned or the result array.
+
 ```
 const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
 const odds = nums.filter(n => {
@@ -160,4 +165,46 @@ const smallNums = nums.filter(n => n < 5);
 
 **Remember, you're not actually updating or mutating the original array**, but it gives you a return value that you can save and then work with. You pass in a test function that you write, it returns true or false.
 
-If it's true for a given element, then that element is added to the filtered result array. 
+If it's true for a given element, then that element is added to the filtered result array.
+
+## 8. Some & Every
+
+Both of these methods are boolean methods, they return true or false.
+
+### EVERY
+
+tests whether **all** elements in the array pass the provided function. It returns a Boolean value.
+
+```
+const words = ['dog', 'dig', 'log', 'bag', 'wag'];
+
+words.every(word => {
+  return word.length === 3;
+}) // true
+
+words.every(word => word[0] === 'd'); // false
+
+words.every(w => {
+  let last_letter = w[w.length - 1];
+  return last_letter === 'g'
+}) // true
+```
+
+### SOME
+
+Similar to every, but returns true if ANY of the array elements pass the test function. It only cares if any of those elements pass the test.
+
+```
+const words = ['dog', 'jello', 'log', 'cupcake', 'bag', 'wag'];
+
+// Are there any words longer than 4 characters?
+words.some(word => {
+  return word.length > 4;
+}) // true
+
+// Do any words start with 'Z'?
+words.some(word => word[0] === 'Z'); // false
+
+// Do any words contain 'cake?
+words.some(w => w.includes('cake)) // true
+```
