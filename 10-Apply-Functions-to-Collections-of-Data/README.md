@@ -140,3 +140,24 @@ let movie = movies.find(movie => {
 let movies2 = movies.find(m => m.indexOf('Mrs') === 0);
 // "Mrs. Doubtfire"
 ```
+
+## 7. Filter
+
+Creates a new array with all elements that pass the test implemented by the provided function
+
+Filter allows us to filter out subsets of an array. Basically, we pass in a function which returns true or false, a test function. And if an element passes that function, it will be added into the returned or the result array.
+```
+const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+const odds = nums.filter(n => {
+  return n % 2 === 1; // our callback returns true or false
+  // if it returns true, n is added to the filtered array
+})
+// [9, 7, 5, 3, 1]
+
+const smallNums = nums.filter(n => n < 5);
+// [4, 3, 2, 1]
+```
+
+**Remember, you're not actually updating or mutating the original array**, but it gives you a return value that you can save and then work with. You pass in a test function that you write, it returns true or false.
+
+If it's true for a given element, then that element is added to the filtered result array. 

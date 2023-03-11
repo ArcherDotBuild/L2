@@ -227,7 +227,7 @@ const partityTernary1Line = nums.map((n) =>
 // ******************************
 // Array.find ******************************
 // Example 16
-
+/*
 console.log('\n')
 let movies = [
   'The Fantastic Mr. Fox',
@@ -251,3 +251,108 @@ console.log('goodBook: ', goodBook)
 
 const neilBook = books.find((b) => b.authors.includes('Neil Gaiman'))
 console.log('neilBook: ', neilBook)
+*/
+
+// ******************************
+// Filter ******************************
+// Example 17
+
+console.log('\n')
+const nums = [34, 35, 67, 54, 109, 102, 32, 9]
+
+const odds = nums.filter((n) => n % 2 === 1)
+console.log('odds: ', odds)
+const evens = nums.filter((n) => n % 2 === 0)
+console.log('evens: ', evens)
+const bigNums = nums.filter((n) => n > 50)
+console.log('bigNums: ', bigNums)
+
+const bookz = [
+  {
+    title: 'Good Omens',
+    authors: ['Terry Pratchett', 'Neil Gaiman'],
+    rating: 4.25,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'Changing My Mind',
+    authors: ['Zadie Smith'],
+    rating: 3.83,
+    genres: ['nonfiction', 'essays'],
+  },
+  {
+    title: 'Bone: The Complete Edition',
+    authors: ['Jeff Smith'],
+    rating: 4.42,
+    genres: ['fiction', 'graphic novel', 'fantasy'],
+  },
+  {
+    title: 'American Gods',
+    authors: ['Neil Gaiman'],
+    rating: 4.11,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'A Gentleman in Moscow',
+    authors: ['Amor Towles'],
+    rating: 4.36,
+    genres: ['fiction', 'historical fiction'],
+  },
+  {
+    title: 'The Name of the Wind',
+    authors: ['Patrick Rothfuss'],
+    rating: 4.54,
+    genres: ['fiction', 'fantasy'],
+  },
+  {
+    title: 'The Overstory',
+    authors: ['Richard Powers'],
+    rating: 4.19,
+    genres: ['fiction', 'short stories'],
+  },
+  {
+    title: 'A Truly Horrible Book',
+    authors: ['Xavier Time'],
+    rating: 2.18,
+    genres: ['fiction', 'garbage'],
+  },
+  {
+    title: 'The Way of Kings',
+    authors: ['Brandon Sanderson'],
+    rating: 4.65,
+    genres: ['fantasy', 'epic'],
+  },
+  {
+    title: 'Lord of the flies',
+    authors: ['William Golding'],
+    rating: 3.67,
+    genres: ['fiction'],
+  },
+]
+
+console.log(bookz)
+
+console.log('\n')
+// Example 18
+const goodBooks = bookz.filter((b) => b.rating > 4.3)
+console.log('goodBooks: ', goodBooks)
+
+console.log('\n')
+const fantasyBooks = bookz.filter((book) => book.genres.includes('fantasy'))
+console.log('fantasyBooks: ', fantasyBooks)
+
+console.log('\n')
+const shortForm = bookz.filter(
+  (book) =>
+    book.genres.includes('short stories') || book.genres.includes('essays')
+)
+console.log('shortForm: ', shortForm)
+
+console.log('\n')
+// Example 19
+const query = 'The'
+const results = bookz.filter((book) => {
+  return book.title.toLowerCase().includes(query.toLowerCase())
+})
+console.log('results: ', results)
+*/
