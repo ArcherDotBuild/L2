@@ -230,11 +230,42 @@ So if i wanted to just have two clear different results where i was not sorting 
 
 Executes a reducer function on each element of the array, **resulting in a single value**.
 
-It takes an array of values and ir reduces them down to a single value 
+It takes an array of values and ir reduces them down to a single value
 
 ```
 // Reduce format
 [3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
 })
+```
+
+## 11. Reduce Pt2
+
+```
+let grades = [89, 96, 58, 77, 62, 93, 81, 99, 73]
+
+const  = grades.reduce((max, currVal) => {
+  if (currVal > max) return currVal;
+  return max;
+})
+
+topScore; // 99
+
+// A shorter option w/ Math.max & implicit return
+const topScore2 = grades.reduce((max, currVal) => (
+  Math.max(max, currVal)
+))
+```
+
+### INITIAL VALUE
+
+```
+[4, 5, 6, 7, 8].reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}); // return 30
+
+[4, 5, 6, 7, 8] .reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+}, 100); // <-- initial starting value (100) after the callback
+// 130
 ```

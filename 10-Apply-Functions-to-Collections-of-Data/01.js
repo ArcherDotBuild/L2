@@ -455,8 +455,39 @@ console.log(bookz);
 // Example 25
 
 // .reduce((accumulator, currentValue))
-const nums = [3, 4, 5, 6, 7];
+const nums = [3, 4, 5, 6, 7]
 const product = nums.reduce((total, currentVal) => {
   return total * currentVal
 })
-console.log("product: ", product);
+console.log('product: ', product)
+
+console.log('\n')
+// Example 26
+let grades = [89, 96, 58, 77, 62, 93, 81, 99, 73]
+console.log('grades: ', grades)
+
+console.log('\n')
+const topScore = grades.reduce((max, currentVal) => {
+  if (currentVal > max) return currentVal
+  return max
+})
+console.log('topScore: ', topScore) // 99
+
+// A shorter option w/ Math.max & implicit return
+const topScore2 = grades.reduce((max, currentVal) => Math.max(max, currentVal))
+console.log('topScore2: ', topScore2)
+
+console.log('\n')
+const minScore = grades.reduce((min, currentVal) => {
+  return Math.min(min, currentVal)
+})
+console.log('minScore: ', minScore)
+
+console.log('\n')
+// Example 27
+const sum = [10, 20, 30, 40, 50].reduce((sum, currVal) => sum + currVal)
+console.log('sum: ', sum)
+
+console.log('\n')
+const sumInitialValue = [10, 20, 30, 40, 50].reduce((sum, currVal) => sum + currVal, 1000) // starts at 1000
+console.log('sumInitialValue: ', sumInitialValue)
