@@ -453,7 +453,7 @@ console.log(bookz);
 // ******************************
 // Reduce Intro ******************************
 // Example 25
-
+/*
 // .reduce((accumulator, currentValue))
 const nums = [3, 4, 5, 6, 7]
 const product = nums.reduce((total, currentVal) => {
@@ -491,3 +491,41 @@ console.log('sum: ', sum)
 console.log('\n')
 const sumInitialValue = [10, 20, 30, 40, 50].reduce((sum, currVal) => sum + currVal, 1000) // starts at 1000
 console.log('sumInitialValue: ', sumInitialValue)
+*/
+
+// ******************************
+// Even More Reduce ******************************
+// Example 28
+
+console.log('\n')
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y']
+console.log('votes: ', votes)
+
+console.log('\n')
+const resultsTally = votes.reduce((tally, val) => {
+  if (tally[val]) {
+    tally[val]++
+  } else {
+    tally[val] = 1
+  }
+  return tally
+}, {})
+console.log('resultsTally: ', resultsTally)
+
+console.log('\n')
+// Example 29
+const resultsTally2 = votes.reduce((tally, val) => {
+  tally[val] = (tally[val] || 0) + 1
+  return tally
+}, {})
+console.log('resultsTally2: ', resultsTally2)
+
+console.log('\n')
+// Example 30
+const groupedByRatings = bookz.reduce((groupedBooks, book) => {
+  const key = Math.floor(book.rating)
+  if (!groupedBooks[key]) groupedBooks[key] = []
+  groupedBooks[key].push(book)
+  return groupedBooks
+}, {})
+console.log(groupedByRatings)
