@@ -208,3 +208,20 @@ words.some(word => word[0] === 'Z'); // false
 // Do any words contain 'cake?
 words.some(w => w.includes('cake)) // true
 ```
+
+## 9. Revisiting Sort
+
+arr.sort(compareFunc(a, b))
+
+- If compareFunc(a, b) returns less than 0
+  - Sort a before b
+- If compareFunc(a, b) returns 0
+  - Leave a and b unchanged with respect to each other
+- If compareFunc(a, b) returns greater than 0
+  - Sort b before a
+
+**sort mutates the original array**
+
+So if i wanted to just have two clear different results where i was not sorting the same array, i could either declare two variables prices with the same data
+
+**Or i could use a method to copy the data into a new array. Someting like Slice**

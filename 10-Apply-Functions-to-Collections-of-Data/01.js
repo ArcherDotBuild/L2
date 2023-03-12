@@ -360,7 +360,7 @@ console.log('results: ', results)
 // ******************************
 // Some & Every ******************************
 // Example 20
-
+/*
 console.log('\n')
 const words = ['dog', 'dig', 'log', 'bag', 'wag']
 console.log('Array words: ', words)
@@ -397,3 +397,53 @@ console.log('allGoodBooks: ', allGoodBooks)
 console.log('\n')
 const any2Authors = bookz.some((book) => book.authors.length === 2)
 console.log('any2Authors: ', any2Authors)
+*/
+
+// ******************************
+// Revisiting Sort ******************************
+// Example 23
+
+console.log('\n')
+const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500]
+console.log('prices: ', prices)
+console.log('\n')
+console.log('prices.sort(): ', prices.sort())
+
+console.log('\n')
+const ascSort = prices.sort((a, b) => a - b)
+console.log('ascSort: ', ascSort)
+
+console.log('\n')
+const descSort = prices.sort((a, b) => b - a)
+console.log('descSort: ', descSort)
+
+// Sort is one of the few array methods, at least one
+// of the few callback array methods that actually
+// mutates the original array
+
+// We're just making another reference to the same array
+
+// 3 variables pointing to the exact same array in memory
+console.log('ascSort: ', ascSort)
+console.log('prices array: ', prices)
+
+console.log('\n')
+const pricesSlice = [400.5, 3000, 99.99, 35.99, 12.0, 9500]
+console.log('pricesSlice: ', pricesSlice)
+const ascSlice = pricesSlice.slice().sort((a, b) => a - b)
+console.log('ascSlice: ', ascSlice)
+const dscSlice = pricesSlice.slice().sort((a, b) => b - a)
+console.log('dscSlice: ', dscSlice);
+const badSort = pricesSlice.slice().sort()
+console.log('badSort: ', badSort)
+
+console.log('\n')
+// console.log(bookz);
+console.log('\n');
+// We can't do (a - b) or (b - a), because a and b are both objects in bookz
+// ascending order
+// bookz.sort((a, b) => a.rating - b.rating)
+// console.log(bookz);
+// descending order
+bookz.sort((a, b) => b.rating - a.rating)
+console.log(bookz);
