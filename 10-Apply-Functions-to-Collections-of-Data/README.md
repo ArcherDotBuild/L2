@@ -222,6 +222,19 @@ arr.sort(compareFunc(a, b))
 
 **sort mutates the original array**
 
-So if i wanted to just have two clear different results where i was not sorting the same array, i could either declare two variables prices with the same data
+So if i wanted to just have two clear different results where i was not sorting the same array, i could either declare two variables prices with the same data.
 
 **Or i could use a method to copy the data into a new array. Someting like Slice**
+
+## 10. Reduce Intro
+
+Executes a reducer function on each element of the array, **resulting in a single value**.
+
+It takes an array of values and ir reduces them down to a single value 
+
+```
+// Reduce format
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+})
+```

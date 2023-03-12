@@ -402,7 +402,7 @@ console.log('any2Authors: ', any2Authors)
 // ******************************
 // Revisiting Sort ******************************
 // Example 23
-
+/*
 console.log('\n')
 const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500]
 console.log('prices: ', prices)
@@ -428,6 +428,7 @@ console.log('ascSort: ', ascSort)
 console.log('prices array: ', prices)
 
 console.log('\n')
+// Example 24
 const pricesSlice = [400.5, 3000, 99.99, 35.99, 12.0, 9500]
 console.log('pricesSlice: ', pricesSlice)
 const ascSlice = pricesSlice.slice().sort((a, b) => a - b)
@@ -447,3 +448,15 @@ console.log('\n');
 // descending order
 bookz.sort((a, b) => b.rating - a.rating)
 console.log(bookz);
+*/
+
+// ******************************
+// Reduce Intro ******************************
+// Example 25
+
+// .reduce((accumulator, currentValue))
+const nums = [3, 4, 5, 6, 7];
+const product = nums.reduce((total, currentVal) => {
+  return total * currentVal
+})
+console.log("product: ", product);
