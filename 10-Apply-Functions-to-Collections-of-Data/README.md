@@ -275,7 +275,10 @@ const topScore2 = grades.reduce((max, currVal) => (
 TALLYING
 
 ```
-const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y']; const tally = votes.reduce((tally, vote) => { tally[vote] = (tally[vote] || 0) + 1; return tally; }, {}); // INITIAL VALUE: {}
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y']; const tally = votes.reduce((tally, vote) => {
+  tally[vote] = (tally[vote] || 0) + 1;
+  return tally;
+}, {}); // INITIAL VALUE: {}
 
 tally; // { y: 7, n: 6}
 ```
