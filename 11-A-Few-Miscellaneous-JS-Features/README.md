@@ -30,7 +30,7 @@ New JS features like:
 
 ## 2. Default Parameters
 
-Default parameters most be placed at the end of the parameters, at the beginning they won't work
+Default parameters most be placed at the end of the parameters, at the beginning they won't work.
 
 The Old Way:
 
@@ -73,3 +73,21 @@ const greet = (person, greeting = 'hi', punctuation = '!') => {
 greet('anya') // hi, anya !
 greet('anya', '?') // ?, anya !
 ```
+## 3. Spread for Function Calls
+
+Spread syntax allows an iterable such as an array to be **expanded** in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+
+```
+const num = [9, 3, 2, 8];
+Math.max(nums); // NaN
+// Use spread!
+Math.max(...nums); // 67
+// Same as calling:
+// Math.max(9, 3, 2, 8)
+```
+
+Expands an iterable (array, string, etc.) into a list of arguments.
+
+Spread allows us to break this up into five separate arguments `const nums = [45, 23, 34, 7, 5]`
+
+Whatever you're spreading when you spread it into a function call, that iterable is iterated over. Each element is passed as a standalone separate argument.
