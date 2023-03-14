@@ -73,6 +73,7 @@ const greet = (person, greeting = 'hi', punctuation = '!') => {
 greet('anya') // hi, anya !
 greet('anya', '?') // ?, anya !
 ```
+
 ## 3. Spread for Function Calls
 
 Spread syntax allows an iterable such as an array to be **expanded** in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
@@ -91,3 +92,33 @@ Expands an iterable (array, string, etc.) into a list of arguments.
 Spread allows us to break this up into five separate arguments `const nums = [45, 23, 34, 7, 5]`
 
 Whatever you're spreading when you spread it into a function call, that iterable is iterated over. Each element is passed as a standalone separate argument.
+
+## 4. Spread in Array Literals
+
+Create a new array using an existing array Spreads the elements from one array into a new array.
+
+```
+const nums1 = [1, 2, 3];
+const nums2 = [4, 5, 6];
+
+[ ...nums1 ...nums2 ];
+// [1, 2, 3, 4, 5, 6]
+
+[ 'a', 'b', ...nums2 ];
+// ['a', 'b', 4, 5, 6]
+
+[ ...nums1, ...num2, 7, 8, 9];
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+It takes an iterable and it spreads it out. It takes the individual pieces and in the case of an array, it copies them over into a new destination array. So we can use it to combine arrays to make a copy of an array. There is a whole bunch of situations where you may end up using spread.
+
+**One of the most common use cases for spread is actually just to make a copy of an array**
+
+```
+const nums = [1, 2, 3];
+const copy = nums
+copy === nums // true
+// They are referencing the same reference, they're pointing to the same reference
+
+```

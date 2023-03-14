@@ -76,7 +76,7 @@ blah(1, 3)
 // ******************************
 // Spread for Function Calls ******************************
 // Example 9
- 
+/*
 console.log(Math.max(3, 4, 5, 6, 7,12 ,19, 99, 3));
 console.log(Math.min(3, 4, 5, 6, 7,12 ,19, 99, 3));
 
@@ -109,3 +109,52 @@ console.log('\n');
 console.log(giveMeFour(...('GOAT')));
 console.log('\n')
 console.log('colors: ', colors)
+*/
+
+// ******************************
+// Spread for Function Calls ******************************
+// Example 12
+
+console.log('\n')
+const cephalopods = ['dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish']
+
+const gastropods = ['giant african snail', 'banana slug', 'variable neon slug']
+
+const cnidaria = ['fire coral', 'moon jelly']
+
+const mollusca = [...cephalopods, ...gastropods]
+console.log('mollusca: ', mollusca)
+
+// The order does matters
+const mollusca2 = [...gastropods, ...cephalopods]
+console.log('mollusca2: ', mollusca2)
+
+console.log('\n')
+console.log('mollusca + garden slug', ['garden slug', gastropods])
+
+console.log('mollusca + garden slug', [
+  'garden slug',
+  ...gastropods,
+  ...cephalopods,
+])
+
+console.log('\n')
+const inverts = [...cnidaria, ...gastropods, ...cephalopods]
+console.log('inverts: ', inverts)
+
+console.log('\n')
+console.log(cephalopods.concat(gastropods))
+
+console.log('\n')
+// Spread clones, a new Array in memory, with a new unique reference
+const cephCopy = [...cephalopods]
+console.log('cephCopy: ', cephCopy)
+// false, They are not the same
+console.log('cephCopy === cephalopods: ', cephCopy === cephalopods)
+
+console.log('\n')
+console.log('abcdefg'.split(''))
+console.log([...'abc', ...['abcdegf']])
+console.log([...'abcdefg'])
+console.log([...'abc', ...'def', ...'HELLO!!'])
+console.log([...'abc', ...'def', 'HELLO!!'])
