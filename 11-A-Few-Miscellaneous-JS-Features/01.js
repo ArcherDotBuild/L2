@@ -112,9 +112,9 @@ console.log('colors: ', colors)
 */
 
 // ******************************
-// Spread for Function Calls ******************************
+// Spread in Array Literals ******************************
 // Example 12
-
+/*
 console.log('\n')
 const cephalopods = ['dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish']
 
@@ -152,9 +152,103 @@ console.log('cephCopy: ', cephCopy)
 // false, They are not the same
 console.log('cephCopy === cephalopods: ', cephCopy === cephalopods)
 
+// Example 13
 console.log('\n')
 console.log('abcdefg'.split(''))
 console.log([...'abc', ...['abcdegf']])
 console.log([...'abcdefg'])
 console.log([...'abc', ...'def', ...'HELLO!!'])
 console.log([...'abc', ...'def', 'HELLO!!'])
+*/
+
+// ******************************
+// Spread in Object Literals ******************************
+// Example 14
+
+console.log('\n')
+const feline = { legs: 4, family: 'Felidae' }
+const canine = { family: 'Caninae', furry: true, legs: 4 }
+
+const dog = {
+  ...canine,
+  isPet: true,
+  adorable: true,
+}
+console.log('dog: ', dog)
+
+console.log('\n')
+const houseCat = {
+  ...feline,
+  isGrumpy: true,
+  personality: 'unpredictable',
+}
+console.log('houseCat: ', houseCat)
+
+console.log('\n')
+const catDog = {
+  ...canine,
+  ...feline,
+}
+console.log('catDog: ', catDog)
+
+// Example 15
+console.log('\n')
+const tripod = {
+  ...canine,
+  legs: 3,
+}
+console.log('tripod: ', tripod)
+
+console.log('\n')
+// Orders does matter
+const tripod2 = {
+  legs: 3,
+  ...canine,
+}
+console.log('tripod2: ', tripod2)
+
+// Example 16
+console.log('\n')
+// Creating an Object from catDog that was created from 2 other objects
+const catDogClone = {
+  ...catDog,
+}
+console.log('catDogClone: ', catDogClone)
+// Not the same reference
+console.log('catDogClone === catDog: ', catDogClone === catDog)
+
+// Example 17
+console.log('\n')
+// This is the only context where you can spread an object
+// when you're into another object
+
+// const arrayObjectSpread = [...dog]; // Error object is not iterable
+// console.log(arrayObjectSpread) // dog is not iterable
+
+// console.log(Math.max(...dog)); // Error is not iterable
+
+// We get key value pairs based in index order
+// we can spread an array into an object
+console.log({ ...[4, 5, 6] })
+// we can spread a string into an object
+console.log({ ...'abcde' })
+
+// Example 18
+console.log('\n')
+// We can create array literals that also contain objects literals
+const random = [
+  ...'hello',
+  {
+    ...catDog,
+  },
+]
+console.log('random: ', random)
+
+console.log('\n')
+const random2 = [
+  [...'hello'],
+  {
+    ...catDog,
+  },
+]
+console.log('random2: ', random2)

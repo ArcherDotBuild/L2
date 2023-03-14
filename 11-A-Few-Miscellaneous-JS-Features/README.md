@@ -89,7 +89,7 @@ Math.max(...nums); // 67
 
 Expands an iterable (array, string, etc.) into a list of arguments.
 
-Spread allows us to break this up into five separate arguments `const nums = [45, 23, 34, 7, 5]`
+Spread allows us to break this up into five separate arguments `const nums = [45, 23, 34, 7, 5]`.
 
 Whatever you're spreading when you spread it into a function call, that iterable is iterated over. Each element is passed as a standalone separate argument.
 
@@ -120,5 +120,26 @@ const nums = [1, 2, 3];
 const copy = nums
 copy === nums // true
 // They are referencing the same reference, they're pointing to the same reference
+```
+
+## 5. Spread in Object Literals
+Copies properties from one object into another object literal.
 
 ```
+const feline = { legs: 4, family: 'Felidae' };
+const canine = { family: 'Caninae', furry: true };
+
+const dog = { ...canine, isPet: true };
+// { family: "Caninae", furry: true, isPet: true }
+
+const lion = { ...feline, genus: 'Panthera' };
+// { legs: 4, family: 'Felidae', genus: 'Panthera' }
+
+const catDog = { ...feline, ...canine };
+// { legs: 4, family: 'Caninae', furry: true }
+```
+
+We know what happens in an object where we try and have two properties with the same key, they just overwrite each other.
+
+We can also use spread to create a clone of an object so that we don't have the exact same reference. But just like with arrays, this is only one level deep. It wil not clone nested objects or nested arrays.
+
