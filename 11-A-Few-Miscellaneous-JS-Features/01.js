@@ -404,7 +404,7 @@ console.log('others: ', others)
 
 // ******************************
 // Destructuring Objects ******************************
-
+/*
 const runner = {
   first: 'Eliud',
   last: 'Kipchoge',
@@ -438,3 +438,50 @@ const { first: firstRest, last: lastRest, ...others } = runner
 console.log('firstRest: ', firstRest)
 console.log('lastRest: ', lastRest)
 console.log('others: ', others)
+*/
+
+// ******************************
+// Nested Destructuring ******************************
+
+const results = [
+  {
+    first: 'Eliud',
+    last: 'Kipchoge',
+    country: 'Kenya',
+  },
+  {
+    first: 'Feyisa',
+    last: 'Lilesa',
+    country: 'Ethiopia',
+  },
+  {
+    first: 'Galen',
+    last: 'Rupp',
+    country: 'United States',
+  },
+]
+
+console.log('results Object: ', results)
+
+// Example 36
+console.log('\n')
+// Skip the first element or object
+// Selecting the second element or object
+const [, {country}] = results
+console.log('country: ', country)
+const countryTest = results[0].country
+console.log('countryTest1: ', countryTest)
+console.log('countryTest2: ', results[1].country)
+
+// Example 37
+console.log('\n')
+const [{ first: goldWinner }, { country: runner2Country }] = results
+console.log('goldWinner: ', goldWinner)
+console.log('runner2Country: ', runner2Country)
+
+// Example 38
+console.log('\n')
+const [, , bronzeRunner] = results
+console.log(bronzeRunner.first)
+const { country: bronzeCountry } = bronzeRunner
+console.log('bronzeCountry: ', bronzeCountry)

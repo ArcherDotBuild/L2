@@ -270,3 +270,7 @@ In object destructuring, we make the variables based on the name of the property
 If it finds a property based on that name, it will take the value and stored in a variable. If the value is not in the object it will print undefined. It's still made the variable, it's just set to undefined.
 
 The variable names must be existing key names in the object, but we can give them new names if we wanted to.
+
+
+## 10. Nested Destructuring
+
