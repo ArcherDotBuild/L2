@@ -217,6 +217,34 @@ sumAll(1, 2); // 3
 sumAll(1, 2, 3, 4, 5); // 15
 ```
 
-We add 3 dots ... and then we decide on a name that will be the name of they array that contains all the arguments
+We add 3 dots ... and then we decide on a name that will be the name of they array that contains all the arguments.
 
-We can use it to collect the remaining arguments, not just every argument, instead it collects the remaining arguments that have not been matched with a parameter
+We can use it to collect the remaining arguments, not just every argument, instead it collects the remaining arguments that have not been matched with a parameter.
+
+## 8. Destructuring Arrays
+
+### DESTRUCTURING
+
+A short, clean syntax to 'unpack':
+
+- Values from arrays
+- Properties from objects
+
+Into distinct variables.
+
+### ARRAY Destructuring
+
+```
+const raceResults = [ 'Eliud Kipchoge', 'Feyisa Lelisa', 'Galen Rupp'];
+
+const [ gold, silver, bronze ] = raceResults;
+gold; // "Eliud Kipchoge"
+silver; // "Feyisa Lelisa"
+bronze; // "Galen Rupp"
+
+const [ fastest, ...everyoneElse ] = raceResults;
+fastest; // "Eliud Kipchoge"
+everyoneElse; // ["Feyisa Lelisa", "Galen Rupp"]
+```
+
+When we destructure an array, we can unpack specific values out of that array intoa new variables.

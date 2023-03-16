@@ -309,7 +309,7 @@ console.log('\n')
 // ******************************
 // Rest Parameters (new) ******************************
 // Example 24
-
+/*
 console.log('\n')
 function sum(...sum) {
   console.log('sum: ', sum)
@@ -347,3 +347,56 @@ const multiply = (...mul) =>
     return total * currVal
   })
 console.log('multiply: ', multiply(2, 3, 4))
+*/
+
+// ******************************
+// Destructuring Arrays ******************************
+
+const raceResults = [
+  'Eliud Kipchoge',
+  'Feyisa Lelisa',
+  'Galen Rupp',
+  'Ghirmay Ghebreslassie',
+  'Alphonce Simbu',
+  'Jared Ward',
+]
+
+// Example 28
+console.log('\n')
+// Pre Destructuring
+const gold = raceResults[0]
+const silver = raceResults[1]
+const bronze = raceResults[2]
+console.log('gold: ', gold)
+console.log('silver: ', silver)
+console.log('bronze: ', bronze)
+
+// Example 29
+console.log('\n')
+// Positions matters
+const [gold2, silver2, bronze2] = raceResults
+console.log('gold2: ', gold2)
+console.log('silver2: ', silver2)
+console.log('bronze2: ', bronze2)
+
+// Example 30
+console.log('\n')
+// Choosing the frist runner
+const [first] = raceResults
+console.log('first runner: ', first);
+
+// Example 31
+console.log('\n')
+// Skip index
+// Choosing Fourth runner
+const [, , , fourth] = raceResults
+console.log('fourth runner: ', fourth)
+
+// Example 32
+console.log('\n')
+const [winner, ...others] = raceResults
+console.log('winner: ', winner)
+console.log('others: ', others)
+
+// Not capturing Lelisa
+// const [winner, , ...others] = raceResults
