@@ -164,7 +164,7 @@ console.log([...'abc', ...'def', 'HELLO!!'])
 // ******************************
 // Spread in Object Literals ******************************
 // Example 14
-
+/*
 console.log('\n')
 const feline = { legs: 4, family: 'Felidae' }
 const canine = { family: 'Caninae', furry: true, legs: 4 }
@@ -252,3 +252,55 @@ const random2 = [
   },
 ]
 console.log('random2: ', random2)
+*/
+
+// ******************************
+// The Arguments Object (not new) ******************************
+// Example 19
+
+console.log('\n')
+function sum() {
+  console.log(arguments)
+}
+sum(1, 2, 3)
+sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+// Example 20
+console.log('\n')
+// function sum2() {
+//   // Error: arguments.reduce is not a function
+//   return arguments.reduce((total, currVal) => {
+//     return total + currVal
+//   })
+// }
+// sum2(1, 2, 3);
+
+
+// Example 21
+console.log('\n')
+function sum3() {
+  const argsArr = [...arguments]
+  return argsArr.reduce((total, currVal) => {
+    return total + currVal
+  })
+}
+console.log('sum3: ', sum3(1, 2, 3, 4, 5))
+
+// Example 22
+console.log('\n')
+function fullName(first, last) {
+  // Arguments includes everything
+  console.log(arguments)
+  console.log(first)
+  console.log(last)
+}
+console.log(fullName('tom', 'jones', 'III', 'order of the phoenix'))
+
+// Example 23
+console.log('\n')
+// argument doesn't work with => arrow functions
+// Error: arguments is not defined
+// const argumentsArrowFunction = () => {
+//   console.log(arguments);
+// }
+// console.log(argumentsArrowFunction());

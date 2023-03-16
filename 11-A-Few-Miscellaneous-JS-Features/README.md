@@ -123,6 +123,7 @@ copy === nums // true
 ```
 
 ## 5. Spread in Object Literals
+
 Copies properties from one object into another object literal.
 
 ```
@@ -142,4 +143,61 @@ const catDog = { ...feline, ...canine };
 We know what happens in an object where we try and have two properties with the same key, they just overwrite each other.
 
 We can also use spread to create a clone of an object so that we don't have the exact same reference. But just like with arrays, this is only one level deep. It wil not clone nested objects or nested arrays.
+
+## 6. The Arguments Object (not new)
+
+### REST
+
+**It looks like spread, but it's not!**, we use the exact same ...three dot syntax, dot, dot, dot. But rest behaves very differently. It's almost like the opposite of spread.
+
+What is does is instead of spreading data out into aguments or into a new object or an array, it actually collects things down into a single array.
+
+It's used when we want to make functions that accept an unlimited number of arguments or a variable number of arguments
+
+### THE ARGUMENTS OBJECT
+
+- Available inside every function
+- It's an array-like object
+  - Has a length property
+  - Does not have array methods like push/pop
+- Contains all the arguments passed to the function
+- Not available inside of arrow functions!
+
+**This is the old way**
+```
+function sumAll() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+sumAll(8, 4, 3, 2); // 17
+sumAll(2, 3); // 5
+```
+
+```
+function sum() {
+  // Error: arguments.reduce is not a function
+  return arguments.reduce((total, currVal) => {
+    return total + currVal
+  })
+}
+sum(1, 2, 3);
+```
+
+Arguments is not actually an array. It's an array like object. It looks like an array because we can access arguments of zero or we can loop over it, but it does not have array methods
+
+If i wanted to make this work using the arguments object, what i could do is turn it into and array.
+
+One way of doing that we just saw is spread, dot, dot, dot arguments.
+
+**Arguments Object don't work in Arrow Functions**
+
+- It's not a real array
+- You have to turn it into an array if you want array methods
+- There is no functionality provided for collecting remaining arguments
+- Arguments contains every argument passed in, even if we captured the first two in parameter names
+- The arguments object does not exist at all in arrow functions
 
