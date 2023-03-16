@@ -442,7 +442,7 @@ console.log('others: ', others)
 
 // ******************************
 // Nested Destructuring ******************************
-
+/*
 const results = [
   {
     first: 'Eliud',
@@ -485,3 +485,78 @@ const [, , bronzeRunner] = results
 console.log(bronzeRunner.first)
 const { country: bronzeCountry } = bronzeRunner
 console.log('bronzeCountry: ', bronzeCountry)
+*/
+
+// ******************************
+// Destructuring Parameters ******************************
+/*
+const runner = {
+  first: 'Eliud',
+  last: 'Kipchoge',
+  country: 'Kenya',
+  title: 'Elder of the Order of the Golden Heart of Kenya',
+}
+
+console.log('runner again: ', runner)
+
+// Example 39
+console.log('\n')
+function print(person) {
+  const { first, last, title } = person
+  console.log(`${first} ${last} ${title}`)
+}
+
+print(runner)
+
+// Example 40
+console.log('\n')
+function print2({ first, last, title }) {
+  console.log(`${first} ${last} ${title}`)
+}
+
+print2(runner)
+
+// Example 41
+console.log('\n')
+const response = ['HTTP/1.1', '200 OK', 'application/json']
+console.log('response: ', response)
+
+// Example 42
+console.log('\n')
+const [, parseResponse] = response
+console.log('parseResponse - Status: ', parseResponse)
+
+// Example 43
+console.log('\n')
+function desResponse([protocol, status, contentType]) {
+  console.log(`desResponse Status: ${status}`)
+}
+
+desResponse(response)
+
+function desResponse2([, status]) {
+  console.log(`desResponse2 Status: ${status}`)
+}
+
+desResponse2(response)
+
+// Example 44
+console.log('\n')
+function restResponse(...response) {
+  console.log(response);
+  const [, , res] = response[0]
+  console.log('restResponse: ', res)
+}
+
+restResponse(response)
+
+// Example 45
+console.log('\n')
+function restResponse2([...response]) {
+  console.log(response);
+  const [, , res] = response
+  console.log('restResponse2: ', res)
+}
+
+restResponse2(response)
+*/

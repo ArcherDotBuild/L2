@@ -274,3 +274,19 @@ The variable names must be existing key names in the object, but we can give the
 
 ## 10. Nested Destructuring
 
+## 11. Destructuring Parameters
+
+There is one more place you'll often see destructuring used, which is inside of a function definition, where the parameters are listed. What this will do is extract or unpack values from the arguments passed in.
+```
+const fullName = ({first, last}) => {
+  return `${first} ${last}`
+}
+
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+}
+
+fullName(runner); // "Eliud Kipchoge"
+```
