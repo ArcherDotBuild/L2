@@ -351,7 +351,7 @@ console.log('multiply: ', multiply(2, 3, 4))
 
 // ******************************
 // Destructuring Arrays ******************************
-
+/*
 const raceResults = [
   'Eliud Kipchoge',
   'Feyisa Lelisa',
@@ -400,3 +400,41 @@ console.log('others: ', others)
 
 // Not capturing Lelisa
 // const [winner, , ...others] = raceResults
+*/
+
+// ******************************
+// Destructuring Objects ******************************
+
+const runner = {
+  first: 'Eliud',
+  last: 'Kipchoge',
+  country: 'Kenya',
+  title: 'Elder of the Order of the Golden Heart of Kenya',
+}
+console.log('runner: ', runner)
+
+// Example 33
+console.log('\n')
+// Order doesn't matter at all
+const { first, title, time } = runner
+// No Error with time, the variable was created and set to undefined
+console.log('first: ', first, 'title: ', title, 'time: ', time)
+console.log('time: ', time)
+
+// Example 34
+console.log('\n')
+const { country: nation, title: honorific } = runner
+// Makes variables named nation & honorific based on the value inside country & title
+console.log('country: ', nation, 'title: ', honorific)
+
+// title and country are not variables
+// We just use those keys to access data from runner in a super nice short syntax
+// console.log(title) // title is not defined
+// console.log(country); // country is not defined
+
+// Example 35
+console.log('\n')
+const { first: firstRest, last: lastRest, ...others } = runner
+console.log('firstRest: ', firstRest)
+console.log('lastRest: ', lastRest)
+console.log('others: ', others)

@@ -223,8 +223,6 @@ We can use it to collect the remaining arguments, not just every argument, inste
 
 ## 8. Destructuring Arrays
 
-### DESTRUCTURING
-
 A short, clean syntax to 'unpack':
 
 - Values from arrays
@@ -247,4 +245,28 @@ fastest; // "Eliud Kipchoge"
 everyoneElse; // ["Feyisa Lelisa", "Galen Rupp"]
 ```
 
-When we destructure an array, we can unpack specific values out of that array intoa new variables.
+When we destructure an array, we can unpack specific values out of that array into a new variables.
+
+In array destructuring we unpack based on position the index.
+
+## 9. Destructuring Objects
+
+```
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+  title: "Elder of the Order of the Golden Heart of Kenya"
+}
+const {first, last, country} = runner;
+
+first; // "Eliud"
+last; // "Kipchoge"
+country; // "Kenya"
+```
+
+In object destructuring, we make the variables based on the name of the property.
+
+If it finds a property based on that name, it will take the value and stored in a variable. If the value is not in the object it will print undefined. It's still made the variable, it's just set to undefined.
+
+The variable names must be existing key names in the object, but we can give them new names if we wanted to.
