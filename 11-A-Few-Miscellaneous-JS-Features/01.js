@@ -257,7 +257,7 @@ console.log('random2: ', random2)
 // ******************************
 // The Arguments Object (not new) ******************************
 // Example 19
-
+/*
 console.log('\n')
 function sum() {
   console.log(arguments)
@@ -304,3 +304,46 @@ console.log('\n')
 //   console.log(arguments);
 // }
 // console.log(argumentsArrowFunction());
+*/
+
+// ******************************
+// Rest Parameters (new) ******************************
+// Example 24
+
+console.log('\n')
+function sum(...sum) {
+  console.log('sum: ', sum)
+}
+
+sum(1, 2, 3)
+sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+// Example 25
+console.log('\n')
+function sumReduce(...nums) {
+  return nums.reduce((total, currentValue) => {
+    return total + currentValue
+  })
+}
+
+console.log('sumReduce: ', sumReduce(1, 2, 3))
+console.log('sumReduce: ', sumReduce(10, 20, 30, 40, 50))
+
+// Example 26
+console.log('\n')
+// Order does matter
+// Rest parameter must be the last formal parameter
+function fullName(first, last, ...titles) {
+  console.log('first: ', first)
+  console.log('last: ', last)
+  console.log('titles: ', titles)
+}
+fullName('tom', 'jones', 'III', 'order of the phoenix')
+
+// Example 27
+console.log('\n')
+const multiply = (...mul) =>
+  mul.reduce((total, currVal) => {
+    return total * currVal
+  })
+console.log('multiply: ', multiply(2, 3, 4))

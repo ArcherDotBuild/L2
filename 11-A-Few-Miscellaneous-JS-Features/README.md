@@ -152,7 +152,7 @@ We can also use spread to create a clone of an object so that we don't have the 
 
 What is does is instead of spreading data out into aguments or into a new object or an array, it actually collects things down into a single array.
 
-It's used when we want to make functions that accept an unlimited number of arguments or a variable number of arguments
+It's used when we want to make functions that accept an unlimited number of arguments or a variable number of arguments.
 
 ### THE ARGUMENTS OBJECT
 
@@ -164,6 +164,7 @@ It's used when we want to make functions that accept an unlimited number of argu
 - Not available inside of arrow functions!
 
 **This is the old way**
+
 ```
 function sumAll() {
   let total = 0;
@@ -187,7 +188,7 @@ function sum() {
 sum(1, 2, 3);
 ```
 
-Arguments is not actually an array. It's an array like object. It looks like an array because we can access arguments of zero or we can loop over it, but it does not have array methods
+Arguments is not actually an array. It's an array like object. It looks like an array because we can access arguments of zero or we can loop over it, but it does not have array methods.
 
 If i wanted to make this work using the arguments object, what i could do is turn it into and array.
 
@@ -201,3 +202,21 @@ One way of doing that we just saw is spread, dot, dot, dot arguments.
 - Arguments contains every argument passed in, even if we captured the first two in parameter names
 - The arguments object does not exist at all in arrow functions
 
+## 7. Rest Parameters (new)
+
+Collects all remaining arguments into an actual array
+
+```
+function sumAll(...nums) {
+  let total = 0;
+  for (let n of nums) total += n;
+  return total;
+}
+
+sumAll(1, 2); // 3
+sumAll(1, 2, 3, 4, 5); // 15
+```
+
+We add 3 dots ... and then we decide on a name that will be the name of they array that contains all the arguments
+
+We can use it to collect the remaining arguments, not just every argument, instead it collects the remaining arguments that have not been matched with a parameter
