@@ -16,3 +16,27 @@ Objects Pt 2
 - Use computed properties
 - Understand prototypes
 - Explain how the %$@# this works
+
+## 2. Computed Properties
+Computed Properties are just an improvement for the object literal syntax where we can add a property with a dynamic key
+
+
+**We can use a variable as a key name in an object literal property!**
+
+```
+const user = 'Jools';
+
+const userRoles = {
+  [user]: 'Admin'
+}
+
+userRoles: // {Jools: "Admin"}
+```
+
+```
+// From this syntax
+// copy[key] = value;
+
+// To this syntax
+// [key]: value;
+```
