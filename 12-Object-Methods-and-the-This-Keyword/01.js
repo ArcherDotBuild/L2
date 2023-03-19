@@ -149,7 +149,7 @@ console.log('math2: ', math2)
 // ******************************
 // Method Shorthand Syntax ******************************
 // Example 11
-
+/*
 console.log('\n')
 const auth = {
   username: 'ElfGodd',
@@ -162,3 +162,24 @@ const auth = {
 }
 
 console.log('auth: ', auth)
+*/
+
+// ******************************
+// Intro to Keyword THIS ******************************
+// Example 12
+
+// THIS here refers to the Window Object in the browser
+function sayHi() {
+  console.log('HI')
+  // (this) is an object and it refers to the current execution scope
+  console.log('sayHi() this: ', this)
+}
+
+sayHi()
+
+console.log('\n')
+const greet = function() {
+  console.log('greet() this: ', this)
+}
+
+greet()

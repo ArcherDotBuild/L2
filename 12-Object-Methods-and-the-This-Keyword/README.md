@@ -83,3 +83,28 @@ const math = {
 
 math.add(50, 60); // 110
 ```
+
+## 5. Intro to Keyword THIS
+
+The keyword **this** can be major point of confusion and misery and hardship and general suffering in the life of a new JS developer.
+
+The keyword **this** is pretty useful it comes up a lot once you get to DOM manipulation, when we do things like add events, click events, keyboard events will sometimes reference they keyword **this**.
+
+**this** is a keyword, think of it as a reference to the current execution scope. it's going to give you an object back. So depending on the scope and depending on the rules of how this works, which is the confusing part, that object changes, it could be a reference to to the global scope, which is what we're going to see right now.
+
+```
+function sayHi() {
+  console.log('HI')
+  console.log('this: ', this)
+}
+
+sayHi()
+```
+
+Now we see an object called the **window**, the **window** is the global scope in the browser.
+
+When we define **sayHi()** like this, it is added as a property, it is a method on the window object. The **window** is the global scope of our browser
+
+Example if we call `alert('ALERT HERE!')`, we get our alert on the browser. It's a built in function and we call it like this, but it's a property on the **window**. So i could also call it like this `window.alert('ALERT HERE!')`.
+
+Variables declared with **var** are added to the window global scope, let and const are not added to the window global scope.
