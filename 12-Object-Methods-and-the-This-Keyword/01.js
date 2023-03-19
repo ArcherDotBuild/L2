@@ -38,7 +38,7 @@ console.log('getStatsShortSyntax: ', getStatsShortSyntax(reviews))
 // ******************************
 // Computed Properties ******************************
 // Example 3
-
+/*
 console.log('\n')
 const role = 'host'
 const person = 'Jools Holland'
@@ -89,7 +89,7 @@ function addProp(object, key, value) {
 const res = addProp(teamComputed, 'happy', ':)')
 console.log('addProp res: ', res)
 
-// Example 6
+// Example 7
 // Using computed properties
 console.log('\n')
 const addPropComputed = (object, key, value) => {
@@ -101,7 +101,7 @@ const addPropComputed = (object, key, value) => {
 const resComputed = addPropComputed(teamComputed, 'sad', ':(')
 console.log('resComputed: ', resComputed)
 
-// Example 7
+// Example 8
 const resComputed2 = addPropComputed(
   { [role]: 'ElfGodd' },
   'sports',
@@ -109,3 +109,36 @@ const resComputed2 = addPropComputed(
 )
 
 console.log('resComputed2: ', resComputed2)
+*/
+
+// ******************************
+// Adding Methods to Objects ******************************
+// Example 9
+
+const add = function (x, y) {
+  return x + y
+}
+
+const math = {
+  add,
+}
+console.log('math: ', math)
+console.log('math.add(2, 5): ', math.add(2, 5))
+console.log('add(2, 5): ', add(2, 5))
+
+// Example 10
+console.log('\n')
+const math2 = {
+  numbers2: [1, 2, 3, 4, 5],
+
+  add2: function (x, y) {
+    return x + y
+  },
+  multiply2: function (x, y) {
+    return x * y
+  },
+}
+console.log('math2.add2: ', math2.add2(10, 26))
+console.log('math2.multiply2: ', math2.multiply2(3700, 1000))
+console.log('math2.numbers2: ', math2.numbers2)
+console.log('math2: ', math2)

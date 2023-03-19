@@ -8,9 +8,10 @@ Objects Pt 2
 
 ### The Secret Life of OBJECTS
 
-- We've seen the basics of object literals, but there is so much more to talk about with OBJECTS!
+- We've seen the basics of object literals, but there is so much more to talk about with OBJECTS!.
 
 ### GOALS
+
 - Add methods to objects
 - Use new object shorthand syntax
 - Use computed properties
@@ -18,8 +19,8 @@ Objects Pt 2
 - Explain how the %$@# this works
 
 ## 2. Computed Properties
-Computed Properties are just an improvement for the object literal syntax where we can add a property with a dynamic key
 
+Computed Properties are just an improvement for the object literal syntax where we can add a property with a dynamic key.
 
 **We can use a variable as a key name in an object literal property!**
 
@@ -40,3 +41,27 @@ userRoles: // {Jools: "Admin"}
 // To this syntax
 // [key]: value;
 ```
+
+## 3. Adding Methods to Objects
+
+### METHODS
+
+We can add functions as properties on objects.
+
+We call them methods!
+
+```
+const math = {
+  multiply: function(x, y) {
+    return X * Y;
+  },
+  divide : function (x, y) {
+    return x / y;
+  },
+  square : function(x) {
+    return X * X;
+  }
+};
+```
+
+We can also store functions in objects. The first simplest reason, why we would do this is just to group functions together, to group functionality into some sort of cohesive unit.
