@@ -114,7 +114,7 @@ console.log('resComputed2: ', resComputed2)
 // ******************************
 // Adding Methods to Objects ******************************
 // Example 9
-
+/*
 const add = function (x, y) {
   return x + y
 }
@@ -122,6 +122,7 @@ const add = function (x, y) {
 const math = {
   add,
 }
+
 console.log('math: ', math)
 console.log('math.add(2, 5): ', math.add(2, 5))
 console.log('add(2, 5): ', add(2, 5))
@@ -138,7 +139,26 @@ const math2 = {
     return x * y
   },
 }
+
 console.log('math2.add2: ', math2.add2(10, 26))
 console.log('math2.multiply2: ', math2.multiply2(3700, 1000))
 console.log('math2.numbers2: ', math2.numbers2)
 console.log('math2: ', math2)
+*/
+
+// ******************************
+// Method Shorthand Syntax ******************************
+// Example 11
+
+console.log('\n')
+const auth = {
+  username: 'ElfGodd',
+  login() {
+    console.log('LOGGED YOU IN!')
+  },
+  logout() {
+    console.log('GOODBYE')
+  },
+}
+
+console.log('auth: ', auth)

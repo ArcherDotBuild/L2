@@ -53,15 +53,33 @@ We call them methods!
 ```
 const math = {
   multiply: function(x, y) {
-    return X * Y;
+    return x * y;
   },
   divide : function (x, y) {
     return x / y;
   },
   square : function(x) {
-    return X * X;
+    return x * x;
   }
 };
 ```
 
 We can also store functions in objects. The first simplest reason, why we would do this is just to group functions together, to group functionality into some sort of cohesive unit.
+
+##  4. Method Shorthand Syntax
+
+We do this so often that there's a new shorthand way of adding methods.
+
+```
+const math = {
+  blah: 'Hi!',
+  add(x, y) {
+    return x + y;
+  },
+  multiply(x, y) {
+    return x * y;
+  }
+}
+
+math.add(50, 60); // 110
+```
