@@ -108,3 +108,24 @@ When we define **sayHi()** like this, it is added as a property, it is a method 
 Example if we call `alert('ALERT HERE!')`, we get our alert on the browser. It's a built in function and we call it like this, but it's a property on the **window**. So i could also call it like this `window.alert('ALERT HERE!')`.
 
 Variables declared with **var** are added to the window global scope, let and const are not added to the window global scope.
+
+## 6. Using THIS in Methods
+```
+const personThis = {
+  first: 'Alberto',
+  last: 'Guzman',
+  nickName: 'ElfGodd',
+  fullName() {
+    console.log('this: ', this)
+    console.log(`FullName: ${this.first} ${this.last} AKA ${this.nickName}`)
+  },
+}
+
+console.log('personThis: ', personThis)
+personThis.fullName()
+```
+**THIS** allows us to reference these properties or other methods so we can have a method that is aware of the other contents in its object
+
+With **THIS** we have the ability to write an object or a method that is aware of the object it lives in, which means we can use objects not just to store different methods because they're related or similar like we had add, subtract, multiply and divide.
+
+But now we have a way of also interacting with properties, with other values or even other methods. So our object can now be a little self-contained world where we can have variables, we can have these properties.

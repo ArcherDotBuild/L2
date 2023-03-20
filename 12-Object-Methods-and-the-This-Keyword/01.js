@@ -167,7 +167,7 @@ console.log('auth: ', auth)
 // ******************************
 // Intro to Keyword THIS ******************************
 // Example 12
-
+/*
 // THIS here refers to the Window Object in the browser
 function sayHi() {
   console.log('HI')
@@ -183,3 +183,77 @@ const greet = function() {
 }
 
 greet()
+*/
+
+// ******************************
+// Using THIS in Methods******************************
+// Example 13
+console.log('\n')
+// THIS inside of a Method, the object THIS is inside of a method
+// The value of THIS is the personThis object itself
+const personThis = {
+  first: 'Alberto',
+  last: 'Guzman',
+  nickName: 'ElfGodd',
+  fullName() {
+    console.log('this: ', this)
+    console.log(`FullName: ${this.first} ${this.last} AKA ${this.nickName}`)
+  },
+}
+
+console.log('personThis: ', personThis)
+
+console.log('\n')
+personThis.fullName()
+
+// Example 14
+console.log('\n')
+// Destructuring properties props from 'this'
+const personThisDestructuring = {
+  first: 'Alberto',
+  last: 'Guzman',
+  nickName: 'ElfGodd',
+  fullName() {
+    const { first, last, nickName } = this
+    console.log(`${first} ${last} AKA ${nickName}`)
+  },
+}
+
+personThisDestructuring.fullName()
+
+// Example 15
+console.log('\n')
+// Changing nickName in personThisDestructuring
+personThisDestructuring.nickName = 'Duende'
+console.log(
+  'personThisDestructuring.nickName NEW: ',
+  personThisDestructuring.nickName
+)
+
+personThisDestructuring.fullName()
+
+// Example 16
+console.log('\n')
+const personThis2 = {
+  first: 'Alberto',
+  last: 'Guzman',
+  nickName: 'ElfGodd',
+  fullName() {
+    const { first, last, nickName } = this
+    return `${first} ${last} AKA ${nickName}`
+  },
+  printBio() {
+    console.log('THIS in printBio(): ', this)
+    // fullName() // Won 't work. ReferenceError:
+
+    // We have to use This to reference the object
+    const fullName = this.fullName()
+    console.log(`${fullName} is a person!`)
+  },
+  laugh: () => {
+    console.log('THIS in laugh() ArrowFunction: ', this)
+    console.log(`${this.nickName} says HAHAHAHA`)
+  },
+}
+
+personThis2.printBio()
