@@ -186,8 +186,9 @@ greet()
 */
 
 // ******************************
-// Using THIS in Methods******************************
+// Using THIS in Methods ******************************
 // Example 13
+/*
 console.log('\n')
 // THIS inside of a Method, the object THIS is inside of a method
 // The value of THIS is the personThis object itself
@@ -249,6 +250,29 @@ const personThis2 = {
     // We have to use This to reference the object
     const fullName = this.fullName()
     console.log(`${fullName} is a person!`)
+  }
+}
+
+personThis2.printBio()
+*/
+
+// ******************************
+// THIS Invocation Context ******************************
+// Example 17
+
+const personThis = {
+  first: 'Alberto',
+  last: 'Guzman',
+  nickName: 'ElfGodd',
+  fullName() {
+    console.log('this fullName(): ', this)
+    const { first, last, nickName } = this
+    return `${first} ${last} AKA ${nickName}`
+  },
+  printBio() {
+    console.log('this printBio(): ', this)
+    const fullName = this.fullName()
+    console.log(`${fullName} is a person!`)
   },
   laugh: () => {
     console.log('THIS in laugh() ArrowFunction: ', this)
@@ -256,4 +280,15 @@ const personThis2 = {
   },
 }
 
-personThis2.printBio()
+const printBio = personThis.printBio()
+
+console.log('\n')
+console.log('printBio: ', printBio)
+
+console.log('\n')
+console.log(personThis.printBio());
+
+console.log('\n')
+
+
+// printBio() // Error: printBio is not a function

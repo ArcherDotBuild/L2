@@ -103,7 +103,7 @@ sayHi()
 
 Now we see an object called the **window**, the **window** is the global scope in the browser.
 
-When we define **sayHi()** like this, it is added as a property, it is a method on the window object. The **window** is the global scope of our browser
+When we define **sayHi()** like this, it is added as a property, it is a method on the window object. The **window** is the global scope of our browser.
 
 Example if we call `alert('ALERT HERE!')`, we get our alert on the browser. It's a built in function and we call it like this, but it's a property on the **window**. So i could also call it like this `window.alert('ALERT HERE!')`.
 
@@ -122,10 +122,22 @@ const personThis = {
 }
 
 console.log('personThis: ', personThis)
-personThis.fullName()
+personThis.fullName() // Alberto Guzman AKA ElfGodd
+
+
+personThis.last = 'Duende';
+person.fullName(); // // Alberto Guzman AKA Duende
 ```
-**THIS** allows us to reference these properties or other methods so we can have a method that is aware of the other contents in its object
+**THIS** allows us to reference these properties or other methods so we can have a method that is aware of the other contents in its object.
 
 With **THIS** we have the ability to write an object or a method that is aware of the object it lives in, which means we can use objects not just to store different methods because they're related or similar like we had add, subtract, multiply and divide.
 
 But now we have a way of also interacting with properties, with other values or even other methods. So our object can now be a little self-contained world where we can have variables, we can have these properties.
+
+## 7. THIS Invocation Context
+
+The value of **this** depends on the **invocation context** of the function it is used in.
+
+The value will change depending on how the function is actually executed, not just where you write it.
+
+**Arrow functions** do not get their own version of this.
