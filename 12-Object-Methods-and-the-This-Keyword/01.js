@@ -259,7 +259,7 @@ personThis2.printBio()
 // ******************************
 // THIS Invocation Context ******************************
 // Example 17
-
+/*
 const personThis = {
   first: 'Alberto',
   last: 'Guzman',
@@ -289,6 +289,93 @@ console.log('\n')
 console.log(personThis.printBio());
 
 console.log('\n')
-
-
 // printBio() // Error: printBio is not a function
+*/
+
+// ******************************
+// Annoyomatic Demo ******************************
+// Example 18
+
+const annoyerTest = {
+  phrases: [
+    'literally',
+    'cray cray',
+    "I can't even",
+    'Totes!',
+    'YOLO',
+    "Can't Stop, Won't Stop",
+  ],
+
+  pickPhrase() {
+    // const phrases = this.phrases
+    const { phrases } = this
+
+    const idx = Math.floor(Math.random() * phrases.length)
+    return phrases[idx]
+  },
+  start() {
+    // THIS here is set to the Object annoyer
+    // console.log('this.pickPhrase: ', this.pickPhrase)
+
+    // If we want to save the this data to use it inside the setInterval
+    const that = this
+
+    // setInterval(() => {
+    setInterval(function () {
+      // console.log(this.pickPhrase())
+      // THIS here is set to the Window Object
+      // setInterval is part of the DOM API so
+      // Error this.pickPhrase is not a function
+      // Remember, this changes depending on how it is called
+
+      console.log(that.pickPhrase())
+      // console.log('setInterval annoyerTest.pickPhrase(): ', this.pickPhrase())
+      console.log('setInterval annoyerTest.pickPhrase(): ', that.pickPhrase())
+    }, 3000)
+  },
+}
+// Pick a Random Phrase each time
+console.log('annoyerTest.pickPhrase(): ', annoyerTest.pickPhrase())
+// annoyerTest.start()
+
+console.log('\n')
+const annoyer = {
+  phrases: [
+    'literally',
+    'cray cray',
+    "I can't even",
+    'Totes!',
+    'YOLO',
+    "Can't Stop, Won't Stop",
+  ],
+
+  pickPhrase() {
+    // const phrases = this.phrases
+    const { phrases } = this
+
+    const idx = Math.floor(Math.random() * phrases.length)
+    return phrases[idx]
+  },
+  // Run this to start the setInterval
+  start() {
+    // I have no access to id in stop() func this way
+    // timerId = setInterval(() => {
+
+    this.timerId = setInterval(() => {
+      console.log(this.pickPhrase())
+    }, 3000)
+  },
+  // Run this to stop the setInterval
+  stop() {
+    clearInterval(this.timerId)
+    console.log('PHEW THANK HEAVENS THAT IS OVER!')
+  },
+}
+
+console.log('annoyer: ', annoyer)
+
+// Pick a Random Phrase each time
+console.log('annoyer.pickPhrase(): ', annoyer.pickPhrase())
+
+// annoyer.start();
+// annoyer.stop();

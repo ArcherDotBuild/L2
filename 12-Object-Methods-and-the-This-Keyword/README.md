@@ -141,3 +141,13 @@ The value of **this** depends on the **invocation context** of the function it i
 The value will change depending on how the function is actually executed, not just where you write it.
 
 **Arrow functions** do not get their own version of this.
+
+## 8. Annoyomatic Demo
+
+Sometimes arrow functions are better to use because you don't want a new **this**, but the other side of that coin is that they suck as regular methods on an object because you don't get access to the this referencing the object, your this references the window object.
+
+setInterval will return a id, save the return value from setInterval
+
+Notes: 📘
+- setInterval is in the Window Object
+- Syntaxy: setInterval(function, 3000)
