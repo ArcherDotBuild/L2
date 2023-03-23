@@ -181,3 +181,5 @@ function shuffle(arr) {
 }
 console.log("shuffle: ", shuffle(['a', 'b', 'c', 'd', 'e', 'f']));
 ```
+
+## 10. Creating A Deck Factory

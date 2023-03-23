@@ -383,7 +383,7 @@ console.log('annoyer.pickPhrase(): ', annoyer.pickPhrase())
 */
 
 // ******************************
-// Annoyomatic Demo ******************************
+// Putting It All Together Deck Of Cards ******************************
 // Example 20
 /*
 function makeDeck() {
@@ -588,4 +588,81 @@ drawn from the deck, we need to pass in a second array called drawnCards
 need to pass in the number of cards to draw, the deck to draw from and the
 array to put the drawn cards in that pile of cards that have already been
 drawn
+*/
+
+// ******************************
+// Creating A Deck Factory ******************************
+// Example 23
+
+const makeDeck = () => {
+  return {
+    deck: [],
+    drawnCards: [],
+    suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+    values: '2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A',
+    initializeDeck() {
+      // Destructuring suits, values and deck2 from myDeck2 Object
+      const { suits, values, deck } = this
+
+      for (let value of values.split(',')) {
+        for (let suit of suits) {
+          deck.push({ value, suit })
+        }
+      }
+      // return deck2;
+    },
+    drawCard() {
+      const card = this.deck.pop()
+      this.drawnCards.push(card)
+      return card
+    },
+    drawMultiple(numCards) {
+      const cards = []
+      for (let i = 0; i < numCards; i++) {
+        cards.push(this.drawCard())
+      }
+      return cards
+    },
+    // This is an algorithm called the Fisher Yates Shuffle
+    shuffle() {
+      const { deck } = this
+      // loop over array backwards
+      for (let i = deck.length - 1; i > 0; i--) {
+        // Pick random index before current element
+        let j = Math.floor(Math.random() * (i + 1))
+        // swap
+        ;[deck[i], deck[j]] = [deck[j], deck[i]]
+      }
+    },
+  }
+}
+
+const myDeck = makeDeck()
+myDeck.initializeDeck()
+myDeck.shuffle()
+
+console.log('\n')
+console.log('myDeck: ', myDeck)
+const h1 = myDeck.drawMultiple(2)
+const h2 = myDeck.drawMultiple(2)
+const h3 = myDeck.drawMultiple(5)
+
+console.log('\n')
+console.log('myDeck.drawnCards: ', myDeck.drawnCards)
+console.log('myDeck: ', myDeck)
+
+const deck2 = makeDeck()
+deck2.initializeDeck()
+
+console.log('\n')
+console.log('deck2: ', deck2)
+console.log('\n')
+console.log('deck2.drawnCards: ', deck2.drawnCards)
+
+/*
+- We have totally separete decks, they are separate objects because we made
+a function to return an object
+- We're returning a new deck each time, with these methods drawCard, drawMultiple,
+shuffle, initializeDeck, separete deck array, separate drawnCards array and
+we return that every time we call makeDeck
 */
