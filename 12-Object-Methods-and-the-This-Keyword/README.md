@@ -66,7 +66,7 @@ const math = {
 
 We can also store functions in objects. The first simplest reason, why we would do this is just to group functions together, to group functionality into some sort of cohesive unit.
 
-##  4. Method Shorthand Syntax
+## 4. Method Shorthand Syntax
 
 We do this so often that there's a new shorthand way of adding methods.
 
@@ -110,6 +110,7 @@ Example if we call `alert('ALERT HERE!')`, we get our alert on the browser. It's
 Variables declared with **var** are added to the window global scope, let and const are not added to the window global scope.
 
 ## 6. Using THIS in Methods
+
 ```
 const personThis = {
   first: 'Alberto',
@@ -128,11 +129,12 @@ personThis.fullName() // Alberto Guzman AKA ElfGodd
 personThis.last = 'Duende';
 person.fullName(); // // Alberto Guzman AKA Duende
 ```
+
 **THIS** allows us to reference these properties or other methods so we can have a method that is aware of the other contents in its object.
 
 With **THIS** we have the ability to write an object or a method that is aware of the object it lives in, which means we can use objects not just to store different methods because they're related or similar like we had add, subtract, multiply and divide.
 
-But now we have a way of also interacting with properties, with other values or even other methods. So our object can now be a little self-contained world where we can have variables, we can have these properties.
+But now we have a way of also interacting with properties, with other values or even other methods. So our object can now be a litle self-contained world where we can have variables, we can have these properties.
 
 ## 7. THIS Invocation Context
 
@@ -146,8 +148,36 @@ The value will change depending on how the function is actually executed, not ju
 
 Sometimes arrow functions are better to use because you don't want a new **this**, but the other side of that coin is that they suck as regular methods on an object because you don't get access to the this referencing the object, your this references the window object.
 
-setInterval will return a id, save the return value from setInterval
+setInterval will return a id, save the return value from setInterval.
 
 Notes: 📘
+
 - setInterval is in the Window Object
 - Syntaxy: setInterval(function, 3000)
+
+## 9. Putting It All Together Deck Of Cards
+
+Ideas to improve the Deck of Cards to add different features, different functionality for my deck
+
+- What if i wanted to be able to draw a single card at a time?
+- Or maybe i want to have a discard pile? once we draw a card, we could put it in the discard pile so our deck would be shrinking, but then we would have the discard pile that was keeping all of the previously drawn cards
+- Or i could implement a shuffle so that we could shuffle the deck
+- Or what if i wanted to refill the deck, start over from scratch
+- We could make a draw method that could take an argument like draw five, draw two, draw one
+
+**THERE'S SO MANY DIFFERENT THINGS WE COULD DO**
+
+```
+// This is an algorithm called the Fisher Yates Shuffle
+function shuffle(arr) {
+  // loop over array backwards
+  for (let i = arr.length - 1; i > 0; i--) {
+    // Pick random index before current element
+    let j = Math.floor(Math.random() * (i + 1));
+    //
+    [ arr[i], arr[j] ]  = [ arr[j], arr[i] ];
+    console.log(arr);
+  }
+}
+console.log("shuffle: ", shuffle(['a', 'b', 'c', 'd', 'e', 'f']));
+```

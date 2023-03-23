@@ -295,7 +295,7 @@ console.log('\n')
 // ******************************
 // Annoyomatic Demo ******************************
 // Example 18
-
+/*
 const annoyerTest = {
   phrases: [
     'literally',
@@ -338,6 +338,7 @@ const annoyerTest = {
 console.log('annoyerTest.pickPhrase(): ', annoyerTest.pickPhrase())
 // annoyerTest.start()
 
+// Example 19
 console.log('\n')
 const annoyer = {
   phrases: [
@@ -379,3 +380,212 @@ console.log('annoyer.pickPhrase(): ', annoyer.pickPhrase())
 
 // annoyer.start();
 // annoyer.stop();
+*/
+
+// ******************************
+// Annoyomatic Demo ******************************
+// Example 20
+/*
+function makeDeck() {
+  const deck = []
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs']
+  const values = '2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A'
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      // deck.push({value: value, suit: suit})
+      // Shorthand sintax
+      deck.push({ value, suit })
+    }
+  }
+  return deck
+}
+
+console.log('\n')
+console.log('makeDeck(): ', makeDeck())
+
+// Remember .pop  returns the value and it also changes the original array
+function drawCard(deck) {
+  return deck.pop()
+}
+
+// Making a copy of makeDeck to myDeck
+const myDeck = makeDeck()
+const card1 = drawCard(myDeck)
+const card2 = drawCard(myDeck)
+
+console.log('\n')
+console.log('card1: ', card1)
+
+console.log('\n')
+console.log('card2: ', card2)
+
+console.log('\n')
+console.log('makeDeck: ', makeDeck()) // 52 cards
+
+console.log('\n')
+console.log('myDeck: ', myDeck) // 50 cards
+
+/*
+I can use an object to store the deck and on that object i can have
+a method called drawCard and another one called shuffle and we have
+access to the deck because of the keyword THIS
+*/
+
+/*
+// Example 21
+console.log('\n')
+console.log('\n')
+console.log('########## DECK2 ##########')
+const myDeck2 = {
+  deck2: [],
+  drawnCards: [],
+  suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+  values: '2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A',
+  initializeDeck() {
+    // Destructuring suits, values and deck2 from myDeck2 Object
+    const { suits, values, deck2 } = this
+
+    for (let value of values.split(',')) {
+      for (let suit of suits) {
+        deck2.push({ value, suit })
+      }
+    }
+    // return deck2;
+  },
+  drawCard() {
+    const card = this.deck2.pop()
+    this.drawnCards.push(card)
+    return card
+  },
+  drawMultiple(numCards) {
+    const cards = []
+    for (let i = 0; i < numCards; i++) {
+      cards.push(this.drawCard())
+    }
+    return cards
+  },
+  // This is an algorithm called the Fisher Yates Shuffle
+  shuffle() { 
+    const { deck2 } = this
+    // loop over array backwards
+    for (let i = deck2.length - 1; i > 0; i--) {
+      // Pick random index before current element
+      let j = Math.floor(Math.random() * (i + 1))
+      // swap
+      ;[deck2[i], deck2[j]] = [deck2[j], deck2[i]]
+    }
+  },
+}
+
+console.log('\n')
+console.log('myDeck2: ', myDeck2)
+
+console.log('\n')
+// This initializes the function inside myDeck2
+console.log('myDeck2.initializeDeck: ', myDeck2.initializeDeck())
+console.log('myDeck2.shuffle: ', myDeck2.shuffle())
+console.log('myDeck2.deck2', myDeck2.deck2)
+
+const myDeck2Card1 = myDeck2.drawCard()
+const myDeck2Card2 = myDeck2.drawCard()
+const myDeck2Card3 = myDeck2.drawCard()
+
+console.log('\n')
+console.log('myDeck2Card1: ', myDeck2Card1)
+console.log('\n')
+console.log('myDeck2Card2: ', myDeck2Card2)
+console.log('\n')
+console.log('myDeck2Card3: ', myDeck2Card3)
+
+console.log('\n')
+console.log('myDeck2: ', myDeck2)
+console.log('\n')
+console.log('myDeck2.drawnCards: ', myDeck2.drawnCards)
+
+console.log('\n')
+const myDeckMultiple1 = myDeck2.drawMultiple(8)
+console.log('myDeckMultiple1: ', myDeckMultiple1)
+
+console.log('\n')
+console.log('myDeck2: ', myDeck2)
+
+console.log('\n')
+console.log('myDeck2.deck2: ', myDeck2.deck2)
+console.log('myDeck2.drawnCards: ', myDeck2.drawnCards)
+
+console.log('\n')
+// Doing same thing with the Object version
+const h1 = myDeck2.drawMultiple(2)
+const h2 = myDeck2.drawMultiple(2)
+const h3 = myDeck2.drawMultiple(5)
+console.log('h1: ', h1)
+console.log('h2: ', h2)
+console.log('h3: ', h3)
+
+console.log('\n')
+console.log('myDeck2.deck2: ', myDeck2.deck2)
+console.log('myDeck2.drawnCards: ', myDeck2.drawnCards)
+*/
+
+/*
+// Example 22
+console.log('\n')
+console.log('########## DECK3 ##########')
+function initializeDeckX() {
+  const deck = []
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs']
+  const values = '2,3,4,5,6,7,8,9,10,J,Q,K,A'
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      deck.push({ value, suit })
+    }
+  }
+  return deck
+}
+
+function drawCardX(deck, drawnCards) {
+  const card = deck.pop()
+  drawnCards.push(card)
+  return card
+}
+
+function drawMultipleX(numCards, deck, drawnCards) {
+  const cards = []
+  for (let i = 0; i < numCards; i++) {
+    cards.push(drawCardX(deck, drawnCards))
+  }
+  return cards
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+}
+
+// Doing same thing with the Functions version
+const firstDeck = initializeDeckX()
+const drawnCards = []
+shuffle(firstDeck)
+const hand1 = drawMultipleX(2, firstDeck, drawnCards)
+const hand2 = drawMultipleX(2, firstDeck, drawnCards)
+const pokerHand = drawMultipleX(5, firstDeck, drawnCards)
+
+console.log('firstDeck: ', firstDeck)
+console.log('hand1: ', hand1)
+console.log('hand2: ', hand2)
+console.log('pokerHand: ', pokerHand)
+console.log('drawnCards: ', drawnCards)
+*/
+
+/*
+- initializeDeckX creates the deck of cards in order
+- drawCard(deck, drawnCards), we need to pass in the deck and if we
+want to keep track of the drawn cards, the cards that have already been
+drawn from the deck, we need to pass in a second array called drawnCards
+- drawMultiple(numCards, deck, drawnCards), if i want to draw multiple, i
+need to pass in the number of cards to draw, the deck to draw from and the
+array to put the drawn cards in that pile of cards that have already been
+drawn
+*/
