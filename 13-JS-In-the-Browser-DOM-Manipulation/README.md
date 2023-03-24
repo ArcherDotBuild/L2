@@ -58,3 +58,6 @@ The Document object is our entry point in the world of the DOM It contains repre
 - getElementById
 - getElementsByTagName
 - getElementsByClassName
+
+
+## 4. Another Fun DOM Example
