@@ -51,9 +51,6 @@ Objects that have a bunch of different properties like:
 - CSS styles
 - Methods
 
-### DOCUMENT
-The Document object is our entry point in the world of the DOM It contains representations of all the content on a page, plus tons of useful methods and properties
-
 ### SELECTING
 - getElementById
 - getElementsByTagName
@@ -61,3 +58,20 @@ The Document object is our entry point in the world of the DOM It contains repre
 
 
 ## 4. Another Fun DOM Example
+
+## 5. The Document Object
+
+### DOCUMENT
+The Document object is our entry point in the world of the **DOM**. It contains representations of all the content on a page, plus tons of useful methods and properties.
+
+When we work with the **DOM**, is an object called **document**. So **document** is an object you have in every single browser window that you ever open. you can type `console.dir(document)` in the console.
+
+This object represents the entire page, this entire document https://developer.mozilla.org/en-US/docs/Web/API/Document  
+
+There's all of these different methods and properties available and they're all container within the **document object**. So the **document** is the entry point that we use to access the DOM, to manipulate things, to just view the content in the **DOM**, but also to add events add functionality, it's all located inside of this one object.
+
+```
+// Run in the browser console
+document.images
+document.all
+```
