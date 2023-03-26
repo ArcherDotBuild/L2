@@ -1,7 +1,7 @@
 // ******************************
-// getElementById ******************************
+// getElementsByTagName ******************************
 // Example 1
-/// Selecting the bear photo
+// Selecting the bear photo
 
 const bearImg = document.getElementById('bear-photo')
 // This looks like HTML but it's not

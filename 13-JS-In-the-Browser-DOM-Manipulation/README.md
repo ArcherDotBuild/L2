@@ -103,3 +103,14 @@ there is a match for that ID, we get that element back as an object the DOM repr
 If we pass in an invalid ID or something that's not on the page, we get nothing, so no error, we just get null because there isn't an element with that ID.
 
 There are different categories of elements on the page and some of them have their own type, like in HTML paragraph element and HTML image element, these are different patterns for these objects.
+
+## 7. getElementsByTagName
+
+Select by a type of element, i want all the images or paragraphs or the h1's on a page.
+
+getElementsByTagName we will get more than one element or potentially we could and that means that the elements returned are going to be stored in a list, we're not going to get a single element back like we got from getElementById.
+
+The elements returned by getElementsByTagName looks like an array it is not an array.
+
+### What is HTMLCollection?
+It is an array like object that is not an array, it's a type in the DOM and a type of collection, but we can do some array things
