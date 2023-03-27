@@ -85,7 +85,7 @@ Typically, we select an element or multiple elements and then do something with 
 - Select a form and add two new buttons to it
 - Select a button and add events to it
 
-So when we want to add some events and interactivity, we still start by selecting and there's a bunch of different ways to select using the document
+So when we want to add some events and interactivity, we still start by selecting and there's a bunch of different ways to select using the document.
 
 ### SELECTING
 
@@ -113,4 +113,11 @@ getElementsByTagName we will get more than one element or potentially we could a
 The elements returned by getElementsByTagName looks like an array it is not an array.
 
 ### What is HTMLCollection?
-It is an array like object that is not an array, it's a type in the DOM and a type of collection, but we can do some array things
+
+It is an array like object that is not an array, it's a type in the DOM and a type of collection, but we can do some array things.
+
+## 8. getElementsByClassName
+
+If we want to select based on CSS classes, we have a special method to do just that **getElementsByClassName**, **Elements** it's plural, this tells us that we'll get a collection back, we'll get multiple elements or we could get one element, but it will be in a collection just like **getElementsByTagName**.
+
+If i try and select based on of an ID, it's not going to work.
