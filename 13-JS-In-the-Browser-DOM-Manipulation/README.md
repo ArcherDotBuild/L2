@@ -26,13 +26,13 @@ to go follow a tutorial online.
 
 We can write JavaScript that can:
 
-- Figure out how many h1's <h1></h1> are on a page
-- How many input's <input></input> are in a form <form></form>
-- Get the value from a form <form></form>
-- If a user is typing into the form <form></form>
-- Change the value of a <form></form>
-- Change images <img></img>, make them bigger
-- Change CSS styles <style></style> of anything
+- Figure out how many h1's `<h1></h1> `are on a page
+- How many input's `<input></input>` are in a form `<form></form>`
+- Get the value from a form `<form></form>`
+- If a user is typing into the form `<form></form>`
+- Change the value of a `<form></form>`
+- Change images `<img></img>`, make them bigger
+- Change CSS styles `<style></style> `of anything
 - Add animations
 - Listen for: clicks, drag's, hovers or any sort of event that a user could trigger
   and then have some behavior that happens in response
@@ -68,7 +68,7 @@ This object represents the entire page, this entire document https://developer.m
 
 There's all of these different methods and properties available and they're all container within the **document object**. So the **document** is the entry point that we use to access the DOM, to manipulate things, to just view the content in the **DOM**, but also to add events add functionality, it's all located inside of this one object.
 
-```
+```javascript
 // Run in the browser console
 document.images
 document.all
@@ -121,3 +121,34 @@ It is an array like object that is not an array, it's a type in the DOM and a ty
 If we want to select based on CSS classes, we have a special method to do just that **getElementsByClassName**, **Elements** it's plural, this tells us that we'll get a collection back, we'll get multiple elements or we could get one element, but it will be in a collection just like **getElementsByTagName**.
 
 If i try and select based on of an ID, it's not going to work.
+
+## 9. querySelector & querySelectorAll
+
+### querySelector
+
+- A newer, all-in-one method to select **a single element**
+- Pass in a CSS selector
+
+```javascript
+// Finds first h1 element:
+document.querySelector('h1');
+
+// Finds first element with ID of red:
+document.querySelector('#red');
+
+// Finds first element with class of
+document.querySelector('.big');
+```
+
+**querySelector** it's like the swiss army knife of DOM selectors, it can select everything that we used. It can replicate the functionality of all of the selectors here.
+
+We can select by an ID or a tag name or a class name or many other criteria.
+
+**This only returns a single element at most**.
+
+### querySelectorAll
+Same idea, but returns **a collection** of matching elements
+
+**querySelectorAll** which does the same thing except it returns a collection
+
+A **NodeList** is returned with **querySelectorAll** and is another array like object
