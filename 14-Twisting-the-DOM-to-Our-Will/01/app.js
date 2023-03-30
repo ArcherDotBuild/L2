@@ -33,7 +33,7 @@ console.log('\n')
 // This will delete all the content in the UL
 // ul.innerText = 'I AM A BIG UL!'
 
-// Example 5
+// Example 6
 console.log('\n')
 const pIdMain = document.querySelector('#main')
 console.log(pIdMain.innerText)
