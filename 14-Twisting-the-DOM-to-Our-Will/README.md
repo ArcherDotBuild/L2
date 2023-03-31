@@ -50,3 +50,9 @@ There is a difference between **innerHTML** and **innerText** when you are setti
 This are properties that we can directly access on individual elements
 
 - value: Gets the value of the input element
+
+## 4. Getting & Setting Attributes
+
+Two methods, not properties these methods allow us to  access or change the value of attributes on elements.
+
+There are other attributes that don't have shortcut property like example: placeholder.value does have. So we have these methods **getAttribute() and setAttribute()**
