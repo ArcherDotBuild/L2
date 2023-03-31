@@ -44,3 +44,9 @@ innerHTML is going to return or retrieve not only the text inside of an element,
 **innerHTML, innerText and textContent they all return strings**. So no objects are involved here except for the object that we're actually selecting.
 
 There is a difference between **innerHTML** and **innerText** when you are setting them. When we retrieve them, we've already seen the difference in **innerText** does not give you the tags, **innerHTML** does. When you set them it seems like you could use either.
+
+## 3. value, src, href, and more
+
+This are properties that we can directly access on individual elements
+
+- value: Gets the value of the input element
