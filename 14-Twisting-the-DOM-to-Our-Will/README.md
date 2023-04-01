@@ -56,3 +56,16 @@ This are properties that we can directly access on individual elements
 Two methods, not properties these methods allow us to  access or change the value of attributes on elements.
 
 There are other attributes that don't have shortcut property like example: placeholder.value does have. So we have these methods **getAttribute() and setAttribute()**
+
+## 5. Finding Parent Children Siblings
+
+- parentElement
+- children
+- nextSibling
+- previousSibling
+
+They allow you to access other elements based on of the current element that you're working with
+
+We can use **parentElement** `firstLi.parentElement` to work **backwards** back up the tree, find out a parent from a given element
+
+**children** `ul.children` this is another array like object and it contains the children elements of the ul
