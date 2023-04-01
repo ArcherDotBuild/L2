@@ -69,3 +69,7 @@ They allow you to access other elements based on of the current element that you
 We can use **parentElement** `firstLi.parentElement` to work **backwards** back up the tree, find out a parent from a given element
 
 **children** `ul.children` this is another array like object and it contains the children elements of the ul
+
+## 6. Changing Multiple Elements
+
+
