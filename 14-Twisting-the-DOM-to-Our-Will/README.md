@@ -108,3 +108,18 @@ const background-color: blue;
 **All of the styles properties in JavaScript are camelCase**
 
 We are not changing our style sheet, it's just inserting an inline style declaration into the individual element already.
+
+## 8. getComputedStyle
+
+Different way of accessing style values, so not to set a value, but to retrieve what the current value is for color or background color or display, position, width all these different properties, we might want to access on an element we couldn't really do using the style property.
+
+```javascript
+const li = document.querySelector('li')
+console.log(getComputedStyle(li))
+```
+
+You can see that this **object** that we got from **getComputedStyle**, is actually going to contain all of the properties in CSS for a given element, all the possible properties and all of their current values.
+
+**getComputedStyle** is a great way to figure out what's actually going on on your page.
+
+You can have a whole bunch of styles being applie to one element, but to know what is actually winning, what is actually showing up in the DOM and taking effect, you can use computed **getComputedStyle**.
