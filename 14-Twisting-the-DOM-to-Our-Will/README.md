@@ -72,4 +72,39 @@ We can use **parentElement** `firstLi.parentElement` to work **backwards** back 
 
 ## 6. Changing Multiple Elements
 
+## 7. Altering Styles
 
+Changing styles using JavaScript so we could select one element or 20 elements and pontentially change their color, their background color, their font size, we could hide them.
+
+**Every element that we select has a style property**
+
+```javascript
+const h1 = document.querySelector('h1')
+
+console.log(h1.style)
+
+// Nothing is here
+console.log(h1.style.color);
+```
+
+This is the first really important thing to understand about style property. We can use this style property to change colors or styles. We can change any of those properties and they will be affected on the page.
+
+**But if we're trying to use the style property to read existing properties, to read existing styles. It won't work unless those styles are defined inline, which is not really a good idea. We normally don't add inline styles**
+
+```css
+/* CSS syntax */
+background-color: blue;
+```
+
+```javascript
+// JavaScript syntax
+backgroundColor: blue;
+p.style.backgroundColor: blue;
+
+// SyntaxError
+const background-color: blue;
+```
+
+**All of the styles properties in JavaScript are camelCase**
+
+We are not changing our style sheet, it's just inserting an inline style declaration into the individual element already.
