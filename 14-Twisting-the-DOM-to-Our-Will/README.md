@@ -123,3 +123,29 @@ You can see that this **object** that we got from **getComputedStyle**, is actua
 **getComputedStyle** is a great way to figure out what's actually going on on your page.
 
 You can have a whole bunch of styles being applie to one element, but to know what is actually winning, what is actually showing up in the DOM and taking effect, you can use computed **getComputedStyle**.
+
+
+## 9. Manipulating Classes
+ 
+Better way to add multiple styles at once
+
+**classList** is an object representation it's called a DOM token list. it kind of looks like an array, but it's not. And it contains the classes that we have on this element.
+
+It also provides methods so that we can do things
+- add
+- contains
+- entries
+- forEach
+- item
+- keys
+- length
+- remove
+- replace
+- supports
+- toString
+- toggle
+- value
+- values
+- and many more stuff
+
+**Perhaps the most useful part is the ability to toggle a class, it returns true or false**
