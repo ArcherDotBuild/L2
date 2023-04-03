@@ -53,7 +53,7 @@ This are properties that we can directly access on individual elements
 
 ## 4. Getting & Setting Attributes
 
-Two methods, not properties these methods allow us to  access or change the value of attributes on elements.
+Two methods, not properties these methods allow us to access or change the value of attributes on elements.
 
 There are other attributes that don't have shortcut property like example: placeholder.value does have. So we have these methods **getAttribute() and setAttribute()**
 
@@ -84,7 +84,7 @@ const h1 = document.querySelector('h1')
 console.log(h1.style)
 
 // Nothing is here
-console.log(h1.style.color);
+console.log(h1.style.color)
 ```
 
 This is the first really important thing to understand about style property. We can use this style property to change colors or styles. We can change any of those properties and they will be affected on the page.
@@ -124,14 +124,14 @@ You can see that this **object** that we got from **getComputedStyle**, is actua
 
 You can have a whole bunch of styles being applie to one element, but to know what is actually winning, what is actually showing up in the DOM and taking effect, you can use computed **getComputedStyle**.
 
-
 ## 9. Manipulating Classes
- 
+
 Better way to add multiple styles at once
 
 **classList** is an object representation it's called a DOM token list. it kind of looks like an array, but it's not. And it contains the classes that we have on this element.
 
 It also provides methods so that we can do things
+
 - add
 - contains
 - entries
@@ -149,3 +149,17 @@ It also provides methods so that we can do things
 - and many more stuff
 
 **Perhaps the most useful part is the ability to toggle a class, it returns true or false**
+
+## 10. Creating Elements
+
+We'll see how we can create elements from scratch and insert them or add them to the DOM, wo we could create an image, give it a source and put in on inside of a dive or whatever
+
+We could create 100 links with different URLs and insert them into the DOM
+
+#### appendChild()
+**appendChild** is a method that we call on a parent element that we want to append an element into
+
+- append()
+- prepend()
+- removeChild()
+- remove()
