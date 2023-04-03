@@ -159,7 +159,14 @@ We could create 100 links with different URLs and insert them into the DOM
 #### appendChild()
 **appendChild** is a method that we call on a parent element that we want to append an element into
 
+**appendChild** will append the element at the end of the last child of an element
+
+## 11. Append, Prepend, & insertBefore
+
+- insertBefore()
 - append()
 - prepend()
-- removeChild()
-- remove()
+
+A few other methods we can use to add new elements to the DOM
+
+With **appendChild()** you cannot insert multiple elements
