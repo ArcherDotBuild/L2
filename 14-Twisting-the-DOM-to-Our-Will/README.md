@@ -170,3 +170,17 @@ We could create 100 links with different URLs and insert them into the DOM
 A few other methods we can use to add new elements to the DOM
 
 With **appendChild()** you cannot insert multiple elements
+
+## 12. removeChild & remove
+
+- remove()
+- removeChild()
+
+To use **removeChild()**, we need to find the parent of what we're trying to remove and find the item that we want to remove
+
+To use **removeChild()** returns the removed element so i can save it
+
+**remove()**, works differently, it does not need the parent node, all we need to do is select the target and then call remove() on that node on the actual item we want to remove
+
+
+
