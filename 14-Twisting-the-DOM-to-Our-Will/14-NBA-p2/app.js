@@ -1,5 +1,5 @@
 // ******************************
-// NBA Scores Chart Pt1 ******************************
+// NBA Scores Chart Pt2 ******************************
 // Example 1
 console.log('\n')
 
@@ -90,17 +90,29 @@ const warriorsGames = [
   },
 ]
 
-const ulParent = document.createElement('ul')
-for (let game of warriorsGames) {
-  // Destructuring
-  const { homeTeam, awayTeam } = game
+// **************************
 
-  console.log(`${awayTeam.team} @ ${homeTeam.team}`)
-  console.log(`${awayTeam.points}-${homeTeam.points}`)
-  // console.log('\n')
+const makeChart = (games, targetTeam) => {
+  const ulParent = document.createElement('ul')
 
-  const gameLi = document.createElement('li')
+  for (let game of games) {
+    const gameLi = document.createElement('li')
+    gameLi.innerHTML = getScoreLine(game)
 
+    gameLi.classList.add(isWinner(game, targetTeam) ? 'win' : 'loss')
+
+    ulParent.appendChild(gameLi)
+  }
+  return ulParent
+}
+
+const isWinner = ({homeTeam, awayTeam}, targetTeam) => {
+    const target = homeTeam.team === targetTeam ? homeTeam : awayTeam
+    return target.isWinner
+}
+
+// Destructuring homeTeam and awayTeam from the game variable inside the for loop
+const getScoreLine = ({homeTeam, awayTeam}) => {
   const { team: hTeam, points: hPoints } = homeTeam
   const { team: aTeam, points: aPoints } = awayTeam
 
@@ -113,14 +125,12 @@ for (let game of warriorsGames) {
     scoreLine = `${aPoints}-<b>${hPoints}</b>`
   }
 
-  const warriors = hTeam === 'Golden State' ? homeTeam : awayTeam
-  console.log(warriors)
-
-  // const className = warriors.isWinner ? 'win' : 'loss'
-  gameLi.classList.add(warriors.isWinner ? 'win' : 'loss')
-
-  gameLi.innerHTML = `${teamNames} ${scoreLine}`
-
-  ulParent.appendChild(gameLi)
-  document.body.append(ulParent)
+  return `${teamNames} ${scoreLine}`
 }
+
+const gsSection = document.querySelector('#gs')
+const hrSection = document.querySelector('#hr')
+const gsChart = makeChart(warriorsGames, 'Golden State')
+const hrChart = makeChart(warriorsGames, 'Houston')
+gsSection.appendChild(gsChart)
+hrSection.appendChild(hrChart)
