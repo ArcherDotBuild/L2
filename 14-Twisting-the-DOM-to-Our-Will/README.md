@@ -182,5 +182,6 @@ To use **removeChild()** returns the removed element so i can save it
 
 **remove()**, works differently, it does not need the parent node, all we need to do is select the target and then call remove() on that node on the actual item we want to remove
 
+## 13. NBA Scores Chart Pt1
 
 
