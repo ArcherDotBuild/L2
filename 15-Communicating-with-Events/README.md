@@ -6,9 +6,9 @@
 
 #### Responding to user inputs and actions!
 
-Events allow us to run that code to create a new element or to remove an element or to change color when a specific interaction happens from a user
+Events allow us to run that code to create a new element or to remove an element or to change color when a specific interaction happens from a user.
 
-This is a small sampling of some of the events that we can work with in our browser
+This is a small sampling of some of the events that we can work with in our browser.
 
 ### A SMALL TASTE
 
@@ -57,4 +57,30 @@ Bad practice with inline events handlers:
 - Understand where everything is comming from
 - You don't want to put all that JavaScript directly into your elements
 
-So instead, there's another way of doing this where we select an element first in JavaScript and then we can add onclick or mouseover
+So instead, there's another way of doing this where we select an element first in JavaScript and then we can add onclick or mouseover.
+
+## 3. addEventListener
+Specify the event type and a callback to run
+
+```
+const button = document.querySelector('h1)
+
+button.addEventListener('click', function() {
+  alert('You clicked me!!')
+})
+```
+
+**addEventListener** is great because for one thing, it's one method and it will attach any type of event listener, you want a click a double click, a drag, a mouse over, any of them, a print, a before print.
+
+And also it will attach as many as we want to a give element. 
+
+**addEventListener**:
+- 1st argument the event
+- 2nd argument the (callback) function to execute when this event occurs
+
+We are not setting the onclick property of the element, you can check in the app.js file `console.log(btn.onclick); // null`.
+
+We are attaching an **eventListener**, which we can have multiple of for a given event on a given element, so i could attach as many as i want. It's probably uncommon to do that.
+
+You can do also do arrow functions, but there are situations where you wouldn't want to use an arrow function. It has to do with the keyword **THIS** .
+ 
