@@ -83,4 +83,8 @@ We are not setting the onclick property of the element, you can check in the app
 We are attaching an **eventListener**, which we can have multiple of for a given event on a given element, so i could attach as many as i want. It's probably uncommon to do that.
 
 You can do also do arrow functions, but there are situations where you wouldn't want to use an arrow function. It has to do with the keyword **THIS** .
- 
+
+## 4. The Impossible Button Demo
+
+How do we get access to the size of the screen?  
+`window.screen`
