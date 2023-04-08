@@ -34,7 +34,7 @@ const colors = [
 //   })
 // }
 
-// Using THIS keywordq
+// Using THIS keyword
 const changeColor = function () {
   const h1 = document.querySelector('h1')
   h1.style.color = this.style.backgroundColor
@@ -53,6 +53,6 @@ for (let color of colors) {
 }
 
 const h2 = document.querySelector('h2')
-h2.addEventListener('mouseover', function() {
-  console.log(h2.innerText);
+h2.addEventListener('mouseover', function () {
+  console.log(h2.innerText)
 })

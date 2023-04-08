@@ -91,3 +91,11 @@ How do we get access to the size of the screen?
 
 ## 5. Events on Multiple Elements
 
+## 6. The Event Object
+
+When a function is called, example: changeColor function, we're never executing changeColor ourself. It's being called for us and it's actually passed a value, it's pass an event object.
+
+And this event object sometimes is extremely useful to have access to in our callback in our event handler. So we have access to it, it's automatically passed every single time.
+
+We need to add in a parameter `changeColor(event)`, usually you'll see **e** or **event** **or** evt.
+
