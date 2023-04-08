@@ -88,3 +88,6 @@ You can do also do arrow functions, but there are situations where you wouldn't 
 
 How do we get access to the size of the screen?  
 `window.screen`
+
+## 5. Events on Multiple Elements
+
