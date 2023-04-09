@@ -107,3 +107,5 @@ We need to add in a parameter `changeColor(event)`, usually you'll see **e** or 
 - **keydown** runs for any of the potential keys i could press, whether they actually change the input or not
 - **keyup** only occurs when the release actually happens
 - **keypress** for something to be considered a keypress, there needs to be a character showing up in this input or a change like space
+
+## 8. Coin Game Demo
