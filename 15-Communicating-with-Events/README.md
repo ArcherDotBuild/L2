@@ -109,3 +109,33 @@ We need to add in a parameter `changeColor(event)`, usually you'll see **e** or 
 - **keypress** for something to be considered a keypress, there needs to be a character showing up in this input or a change like space
 
 ## 8. Coin Game Demo
+
+## 9. Form Events & PreventDefault
+
+A form is made to take data that we get from an input and submit it or send it somewhere.
+
+Traditionally, we would submit our data to some URL like /signup => this would be an endpoint on our own server. The data would be sent to /signup and then on our server side we would do something, create a new user in the database and then respond with a new page that would load and so you would end up going to a completely new page
+
+So what we'll do with JavaScript is take the form when it's submitted, will say stop, don't actually send the request, don't take us anywhere else, i just want to capture that event, i want to trigger some JavaScript code, when the user submits the form, then we can extract the information we want and do something with it.
+
+Whether it's simply to display it back to the user, whatever we're doing here or maybe we'll send the data to a database somewhere to a server, but we won't actually refresh the page.
+
+We'll do it using JavaScript on the same page we're currently on and we could maintain a single page application.
+
+```javascript
+const form = document.querySelector('#signup-form')
+form.addEventListener('submit', function(e) {
+  console.log('submit form')
+  e.preventDefault()
+})
+
+<form id="signup-form" action="'no" method="GET"></form>
+```
+
+**e.preventDefault()** prevent the default behavior and the default behavior in this case with a form when it's submitted, is to continue sending on your data, sending a request to whatever URL we specified in our case /no with a GET request
+
+Our form has not actually submitted, the submit event has run but we haven't actually submitted data anywhere and this leaves us free to now extract data adn send it to an API using AJAX, using client side request
+
+The point is we have the flexibility to do something with the data and we can still capture the submit event
+
+By adding just one submit event listener, there's just one event we're waiting for to extract our data.
