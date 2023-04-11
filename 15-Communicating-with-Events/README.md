@@ -132,10 +132,18 @@ form.addEventListener('submit', function(e) {
 <form id="signup-form" action="'no" method="GET"></form>
 ```
 
-**e.preventDefault()** prevent the default behavior and the default behavior in this case with a form when it's submitted, is to continue sending on your data, sending a request to whatever URL we specified in our case /no with a GET request
+**e.preventDefault()** prevent the default behavior and the default behavior in this case with a form when it's submitted, is to continue sending on your data, sending a request to whatever URL we specified in our case /no with a GET request.
 
-Our form has not actually submitted, the submit event has run but we haven't actually submitted data anywhere and this leaves us free to now extract data adn send it to an API using AJAX, using client side request
+Our form has not actually submitted, the submit event has run but we haven't actually submitted data anywhere and this leaves us free to now extract data adn send it to an API using AJAX, using client side request.
 
-The point is we have the flexibility to do something with the data and we can still capture the submit event
+The point is we have the flexibility to do something with the data and we can still capture the submit event.
 
 By adding just one submit event listener, there's just one event we're waiting for to extract our data.
+
+## 10. Input & Change Events
+
+Two very similar events that are pretty useful, they're called input and change on input on change are the respective properties.
+
+We can actually listen to changes across all types of inputs or different form controls using a single event type.
+
+So instead of waiting for a user to hit submit, like we did in the lesson, where we grab the data from each input after they submit the form, we could instead just keep in sync and know exactly what is happening in each input.
