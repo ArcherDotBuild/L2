@@ -97,3 +97,11 @@ The Call Stack continues like this
 - 1: It's popoff the stack
 
 - DONE // true
+
+## 2. Call Stack Debugging with Dev Tools
+
+Dev tools debugging file app.js
+1. Run the app.js file on the server with the browser
+2. Mark a breakpoint here: makeRant('I hate mayonnaise', document.body)
+3. Hit the down arrow each time to watch the Call Stack in action
+
