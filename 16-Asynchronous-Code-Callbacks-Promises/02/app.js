@@ -28,7 +28,7 @@ const makeRant = (phrase, el) => {
   el.appendChild(h1)
 }
 
-console.log('BEFORE  the breakpoint');
+console.log('BEFORE  the breakpoint')
 
 makeRant('I hate mayonnaise', document.body)
 // makeRant('If you have to cough, please cover your mouth', document.body)

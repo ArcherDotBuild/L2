@@ -105,3 +105,20 @@ Dev tools debugging file app.js
 2. Mark a breakpoint here: makeRant('I hate mayonnaise', document.body)
 3. Hit the down arrow each time to watch the Call Stack in action
 
+## 3. The Await Keyword
+- We can only use the await keyword inside of functions declared with async
+- await will pause the execution of the function, waiting for a promise to be resolved
+
+```javascript
+async function hello() {
+  return 'Hey guy!';
+}
+hello();
+// Promise {<resolved>: "Hey guy!"}
+async function uhOh() {
+  throw new Error('oh no!');
+}
+uhOh();
+// Promise {<rejected>: Error: oh no!}
+```
+
