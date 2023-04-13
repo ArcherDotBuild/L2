@@ -105,20 +105,31 @@ Dev tools debugging file app.js
 2. Mark a breakpoint here: makeRant('I hate mayonnaise', document.body)
 3. Hit the down arrow each time to watch the Call Stack in action
 
-## 3. The Await Keyword
-- We can only use the await keyword inside of functions declared with async
-- await will pause the execution of the function, waiting for a promise to be resolved
+## 3. JS is Single Threaded
 
-```javascript
-async function hello() {
-  return 'Hey guy!';
-}
-hello();
-// Promise {<resolved>: "Hey guy!"}
-async function uhOh() {
-  throw new Error('oh no!');
-}
-uhOh();
-// Promise {<rejected>: Error: oh no!}
-```
+**JavaScript is a single threaded language**
 
+#### WHAT DOES THAT MEAN?
+At any given point in time, that single JS thread is running at most one line of JS code. 
+
+All that it really means is that at any given point in our script, whatever script is being executed, JavaScript is running one thing at a time. It's not multitasking, It does one thing.
+
+What happen if we do things that aren't immediate, we don't want to just have a user sit there waiting and have no other code running.
+
+**Example:** of someting that we do via JavaScript all the time. We send a request from the browser, JavaScript code asking for, data from a movie API that takes time. It goes sends a request to a server, that server may or may not be online, we may have a valid endpoint, we may not.
+
+But even if everything goes great, it still takes time. The server will respond to your request if we're looking for movies that match the query. It will search through its database, find the revelant information, and then send a response back.
+
+### THIS TAKES TIME 
+
+It can be very slow
+
+### IS OUR APP GOING TO GRIND TO A HALT?
+So what happens to our application? Does it just stop and nothing else happens like what we had over here, where this `alert('Hi there!')` potentially takes a long time for a user to finish? .
+
+Is this what happens when we make a request, when we are fetching data from an API, when we're trying to save data to an API, any time we do some sort of single page app functionality, which usually involves communicating with an API, communicating with a database or a server that takes time.
+
+Is our app just going to sit there doing nothing and as a user, just going to sit there waiting for something to happen? the answer is no.
+
+#### How does that work and why not?
+JavaScript has a couple of tricks up its sleeve, or rather, the browser has some tricks up its sleeve to get around this single threadedness of JavaScript.
