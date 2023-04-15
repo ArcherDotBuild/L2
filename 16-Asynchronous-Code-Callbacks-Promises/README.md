@@ -205,3 +205,7 @@ JavaScript is not setting a timer or keeping track of how many seconds have gone
 - Once the browser finishes those tasks, they return and are pushed onto the stack as a callback
 
 JavaScript single thread isn't blocked by the **setTimeout** because it's passed off to the browser. Then that callback function in the case of **setTimeout**, when it's time when 3 seconds has elapsed, the browser is going to take that function, `console.log('I print after 3 seconds')` and put it on the call stack.
+
+## 5. Welcome to Callback Hell
+
+**Callbacks** are not perfect, they can get messy very quickly, which is what i want to show you here.
