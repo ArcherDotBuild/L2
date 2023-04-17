@@ -206,6 +206,105 @@ JavaScript is not setting a timer or keeping track of how many seconds have gone
 
 JavaScript single thread isn't blocked by the **setTimeout** because it's passed off to the browser. Then that callback function in the case of **setTimeout**, when it's time when 3 seconds has elapsed, the browser is going to take that function, `console.log('I print after 3 seconds')` and put it on the call stack.
 
-## 5. Welcome to Callback Hell
+## 6. Introducing Promises
 
-**Callbacks** are not perfect, they can get messy very quickly, which is what i want to show you here.
+#### Callback Hell
+
+```javascript
+fs.readdir(source, function (err, files) {
+  if (err) {
+    console.log('Error finding files: ' + err)
+  } else {
+    files.forEach(function (filename, fileIndex) {
+      console.log(filename)
+      gm(source + filename).size(function (err, values) {
+        if (err) {
+          console.log('Error identifying file size: ' + err)
+        } else {
+          console.log(filename + ' : ' + values)
+          aspect = values.width / values.height
+          widths.forEach(
+            function (width, widthIndex) {
+              height = Math.round(width / aspect)
+              console.log(
+                'resizing ' + filename + 'to ' + height + 'x' + height
+              )
+              this.resize(width, height).write(
+                dest + 'w' + width + '_' + filename,
+                function (err) {
+                  if (err) console.log('Error writing file: ' + err)
+                }
+              )
+            }.bind(this)
+          )
+        }
+      })
+    })
+  }
+})
+```
+
+### ENTER PROMISES
+
+A **Promise** is an object representing the eventual completion or failure of an asynchronous operation.
+
+Promises allow us to write asynchronous code that is much easier to read and understand.
+
+It's usually shorter, but even if it's not actually shorter in terms of the number of characters, it's much flatter, often it's not so nested.
+
+```javascript
+moveXPromise(btn, 100, 1000)
+  .then(() => moveXPromise(btn, 100, 1000))
+  .then(() => moveXPromise(btn, 200, 1000))
+  .then(() => moveXPromise(btn, 300, 1000))
+  .then(() => moveXPromise(btn, 50, 1000))
+  .then(() => moveXPromise(btn, 50, 1000))
+  .catch((position) => {
+    alert('CANNOT MOVE FURTHER')
+  })
+```
+
+#### PROMISES A pattern for writing async code
+
+When we work with promises, there's really two different things you need to understand.
+
+1. The first is how you create your promise, how you could create a function that returns a promise
+2. The second is how you consume or interact with promises
+
+We consume promises all the time, even if we're not writing the promises ourself, we might be making a request from a library or using a library like Axios, which a lot of its functions return promises.
+
+A promise is just an object, It's a JavaScript object which represents the completion or failure of some eventual process, something that can take time.
+
+So a promise is a way of promising a value that you may not have at the moment. It's just a guarantee or a supposed guarantee of an eventual value.
+
+Promises are objects that represent an eventual either failure or success of some tasks that takes time.
+
+You make a request using **AXIOS**, that returns a promise because that value if you're making an HTTP request, it could take time and that value may never come back. It might be a failure or it might be successful and you might get some data back from an API, but it takes time.
+
+So the object that is returned in the meantime is a promise. And what we do is we attach callbacks to that object, but we don't pass in two callbacks or a single callback to a function and nest a whole bunch of things.
+
+Promises are objects that we can attach callbacks to instead
+
+- [ ] RESOLVE
+- [ ] REJECT
+
+#### A promise is a returned object to which you attach callbacks instead of passing callbacks into a function
+
+- When we create a Promise, we pass in a function
+- And this function has two parameters
+- This two parameters are functions
+
+```javascript
+const willgetYouADog = new Promise((resolve, reject) => {})
+console.log(willgetYouADog)
+```
+
+- This Promise is pending `[[PromiseState]]:"pending"`
+- It has not been resolved or rejected
+- It has not been fulfilled or it has not been broken
+
+So if we don't reject or resolve a promise, its value or its status will be pending
+
+So the pending state of a promise is frequently what you will see initially when a promise is first returned
+
+If we're making 
