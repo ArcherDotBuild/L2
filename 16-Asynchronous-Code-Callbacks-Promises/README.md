@@ -303,8 +303,24 @@ console.log(willgetYouADog)
 - It has not been resolved or rejected
 - It has not been fulfilled or it has not been broken
 
-So if we don't reject or resolve a promise, its value or its status will be pending
+So if we don't reject or resolve a promise, its value or its status will be pending.
 
-So the pending state of a promise is frequently what you will see initially when a promise is first returned
+So the pending state of a promise is frequently what you will see initially when a promise is first returned.
 
-If we're making 
+If we're making a request and that takes 10 seconds, which would be horrendously slow during those 10 seconds we don't have a response. We don't know if it's a failure or success, if the response went to the right URL, if the server was up, if your internet was working, **so it would be pending**.
+
+When you call **resolve()**, it resolves the promise, it fulfulls it and the status is set to resolved.
+
+If instead **reject()**, the status of that promise is rejected.
+
+#### How we actually interact with the promise?
+
+How do i run code if this promise was rejected VS  run code, if this promise was resolved?
+
+### .THEN
+
+So every promise has a **.then** method, `willgetYouADog.then()` this **.then** method will run if our promise is resolved.
+
+Pass in a callback function to the **.then**. This code will run when this promise is resolved and we'll `console.log('resolved)`
+
+So we have another method we can use with every single promise **.catch()**, and we could just chain it on. This code will run when this promise is rejected and we'll `console.log('rejected)`
