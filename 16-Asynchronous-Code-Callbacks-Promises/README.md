@@ -324,3 +324,28 @@ So every promise has a **.then** method, `willgetYouADog.then()` this **.then** 
 Pass in a callback function to the **.then**. This code will run when this promise is resolved and we'll `console.log('resolved)`
 
 So we have another method we can use with every single promise **.catch()**, and we could just chain it on. This code will run when this promise is rejected and we'll `console.log('rejected)`
+
+## 7. Returning Promises from Functions
+
+So our current promise will get you a dog promise is either resolved or rejected immediately. There's nothing that takes time in this promise, there's no real reason to use a promise, 
+
+```javascript
+const willgetYouADog = new Promise((resolve, reject) => {
+  const rand = Math.random()
+  if (rand < 0.5) {
+    resolve()
+  } else {
+    reject()
+  }
+})
+willgetYouADog.then(() => {
+  console.log('YAY WE GOT A DOG!!!!')
+})
+willgetYouADog.catch(() => {
+  console.log(':( NO DOG')
+})
+```
+
+Now let's introduce some delay so it takes longer
+
+So another thing that we frequently do is return a promise from a function instead of just making one
