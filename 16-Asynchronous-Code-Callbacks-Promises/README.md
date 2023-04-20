@@ -321,13 +321,13 @@ How do i run code if this promise was rejected VS  run code, if this promise was
 
 So every promise has a **.then** method, `willgetYouADog.then()` this **.then** method will run if our promise is resolved.
 
-Pass in a callback function to the **.then**. This code will run when this promise is resolved and we'll `console.log('resolved)`
+Pass in a callback function to the **.then**. This code will run when this promise is resolved and we'll `console.log('resolved)`.
 
-So we have another method we can use with every single promise **.catch()**, and we could just chain it on. This code will run when this promise is rejected and we'll `console.log('rejected)`
+So we have another method we can use with every single promise **.catch()**, and we could just chain it on. This code will run when this promise is rejected and we'll `console.log('rejected)`.
 
 ## 7. Returning Promises from Functions
 
-So our current promise will get you a dog promise is either resolved or rejected immediately. There's nothing that takes time in this promise, there's no real reason to use a promise, 
+So our current promise will get you a dog promise is either resolved or rejected immediately. There's nothing that takes time in this promise, there's no real reason to use a promise. 
 
 ```javascript
 const willgetYouADog = new Promise((resolve, reject) => {
@@ -346,6 +346,14 @@ willgetYouADog.catch(() => {
 })
 ```
 
-Now let's introduce some delay so it takes longer
+Now let's introduce some delay so it takes longer.
 
-So another thing that we frequently do is return a promise from a function instead of just making one
+So another thing that we frequently do is return a promise from a function instead of just making one.
+
+## 8. Resolving Rejecting with Values
+
+The next thing to know about promises is that when you reject or resolve a promise, you can reject or resolve it with a value and you'll have access to that value in your callback that you pass into **.then** or **.catch**, which is really useful because most of the time we're not just waiting on some resolve or reject.
+
+It happens arbitrarily, like a random resolver or reject. We want to know why was something rejected, for example, in the case of a HTTP request? Why did this fail? And if it didn't fail, if it was resolved, what is the data that we got back?.
+
+That's the point of making a request, at least most of the time as you're trying to get some information.
