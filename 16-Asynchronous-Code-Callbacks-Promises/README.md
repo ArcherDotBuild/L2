@@ -357,3 +357,7 @@ The next thing to know about promises is that when you reject or resolve a promi
 It happens arbitrarily, like a random resolver or reject. We want to know why was something rejected, for example, in the case of a HTTP request? Why did this fail? And if it didn't fail, if it was resolved, what is the data that we got back?.
 
 That's the point of making a request, at least most of the time as you're trying to get some information.
+
+## 9. The Delights of Promise Chaining
+
+The last really critical part of promises is understanding, **promise chaining** 
