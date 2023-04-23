@@ -206,6 +206,8 @@ JavaScript is not setting a timer or keeping track of how many seconds have gone
 
 JavaScript single thread isn't blocked by the **setTimeout** because it's passed off to the browser. Then that callback function in the case of **setTimeout**, when it's time when 3 seconds has elapsed, the browser is going to take that function, `console.log('I print after 3 seconds')` and put it on the call stack.
 
+## 5. Welcome to Callback Hell
+
 ## 6. Introducing Promises
 
 #### Callback Hell
@@ -360,4 +362,6 @@ That's the point of making a request, at least most of the time as you're trying
 
 ## 9. The Delights of Promise Chaining
 
-The last really critical part of promises is understanding, **promise chaining** 
+The last really critical part of promises is understanding, **promise chaining**
+
+## 10. Refactoring with Promises
