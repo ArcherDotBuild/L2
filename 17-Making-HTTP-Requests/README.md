@@ -46,9 +46,11 @@ But rather than just plain text, it's turned into this **JSON** notation. It's a
 - Search for **spread** in the search bar, hit enter
 - Check the network activity
 
-This network activity represents different kinds of requests that have been sent
+This network activity represents different kinds of requests that have been sent.
 
 If we go to XHR tab, is going to show us the requests that have been sent. This is one `query.php?search=spread` and some information was sent back, this is the data that was sent back by the server.
 
-But the point is, this is not HTML that's being sent. It's not JavaScript itself. It looks like JavaScript but it's actually called **JSON**
+But the point is, this is not HTML that's being sent. It's not JavaScript itself. It looks like JavaScript but it's actually called **JSON**. It's simply a way of sharing data between a server and another server, a server and a browser that we can then use in JavaScript.
+
+It's really easy to take JSON and turn it into JavaScript and do something with it.
 
