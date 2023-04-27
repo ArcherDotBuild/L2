@@ -110,3 +110,22 @@ Every key in JSON must be a string with quotes. We also can use arrays, We can h
 - SWAPI API a Star Wars API that we can play around with `https://swapi.co`.
 
 - JSON Formatter & validator `https://jsonformatter.curiousconcept.com`.
+
+create an international phonetic alphabet with examples
+
+## 2. XMLHttpRequest
+
+- The "original" way of sending requests via JS.
+- Does not support promises, so...lots of callbacks!
+- WTF is going on with the weird capitalization?
+- Clunky syntax that i find difficult to remember!
+
+Making our first request using XMLHttpRequest through JavaScript. So these are objects in the browser we can create that have different methods and we can use them to fetch data from an API to send data somewhere.
+
+So we end up with a lot of callbacks, if we have nested requests, things where we want to make one request, get information back and then make a second request.
+
+This was the only way of making a request **XMLHttpRequest**
+
+```javascript
+const myReq = new XMLHttpRequest()
+```
