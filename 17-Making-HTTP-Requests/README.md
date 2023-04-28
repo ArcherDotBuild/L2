@@ -113,7 +113,7 @@ Every key in JSON must be a string with quotes. We also can use arrays, We can h
 
 create an international phonetic alphabet with examples
 
-## 2. XMLHttpRequest
+## 3. XMLHttpRequest
 
 - The "original" way of sending requests via JS.
 - Does not support promises, so...lots of callbacks!
@@ -128,4 +128,15 @@ This was the only way of making a request **XMLHttpRequest**
 
 ```javascript
 const myReq = new XMLHttpRequest()
+
+myReq.onload = function () {
+  const data = JSON.parse(this.responseText)
+  console.log(data)
+}
+myReq.onerror = function (err) {
+  console.log('ERROR!', err)
+}
+myReq.open('get', 'https://icanhazdadjoke..com/', true)
+myReq.setRequestHeader('Accept', 'application/json')
+myReq.send()
 ```
