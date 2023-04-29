@@ -140,3 +140,5 @@ myReq.open('get', 'https://icanhazdadjoke..com/', true)
 myReq.setRequestHeader('Accept', 'application/json')
 myReq.send()
 ```
+
+## 4. XMLHttpRequests Chaining Requests
