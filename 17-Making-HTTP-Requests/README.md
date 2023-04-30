@@ -142,3 +142,30 @@ myReq.send()
 ```
 
 ## 4. XMLHttpRequests Chaining Requests
+
+## 5. A Better Way Fetch
+
+#### Fetch
+
+- The newer way of making requests via JS
+- Supports promises!
+
+```javascript
+fetch('https://icanhazdadjoke.com/23/2', {
+  headers: { Accept: 'application/json' },
+})
+  .then((res) => {
+    if (res.status !== 200) {
+      console.log('Problem!', res.status)
+      return
+    }
+    res.json().then((data) => {
+      console.log(data)
+    })
+  })
+  .catch(function (err) {
+    console.log('Fetch Error', err)
+  })
+```
+
+#### Fetch API MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
