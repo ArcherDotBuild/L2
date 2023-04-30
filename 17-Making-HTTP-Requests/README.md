@@ -169,3 +169,5 @@ fetch('https://icanhazdadjoke.com/23/2', {
 ```
 
 #### Fetch API MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+## 6. Chaining Fetch Requests
