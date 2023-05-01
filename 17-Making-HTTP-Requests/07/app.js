@@ -4,32 +4,46 @@
 
 console.log('Refactoring Fetch Chains')
 
-// Throwing error to the .catch
-fetch('https://swapi.dev/api/planets/')
-  .then((response) => {
-    if (!response.ok) throw new Error(`Status Code Error: ${response.status}`)
+const checkStatusAndParse = (response) => {
+  if (!response.ok) throw new Error(`Status Code Error: ${response.status}`)
 
-    return response.json()
-  })
-  .then((data) => {
-    // console.log(data);
-    // console.log(data.results[0].films[0])
+  return response.json()
+}
 
-    console.log('FETCHED ALL PLANETS (first 10)')
-    const filmURL = data.results[0].films[0]
-    return fetch(filmURL)
-  })
-  .then((response) => {
-    if (!response.ok) throw new Error(`Status Code Error ${response.status}`)
+const printPlanets = (data) => {
+  console.log('Loaded 10 more planets')
+  for (let planet of data.results) {
+    console.log(planet.name)
+  }
 
-    return response.json()
-  })
-  .then((data) => {
-    console.log('FETCHED FIRST FILM, based off of first planet')
-    // console.log(data);
-    console.log(data.title)
-  })
+  // Long way
+  // const p = new Promise((resolve, reject) =>{
+  //   resolve(data)
+  // })
+  // return p
+
+  // Easier way
+  return Promise.resolve(data.next)
+}
+
+// const fetchNextPlanets = (url) => {
+//   return fetch(url)
+// }
+const fetchNextPlanets = (url = 'https://swapi.dev/api/planets/') => {
+  return fetch(url)
+}
+
+// fetch('https://swapi.dev/api/planets/')
+fetchNextPlanets()
+  .then(checkStatusAndParse)
+  .then(printPlanets)
+  .then(fetchNextPlanets)
+  .then(checkStatusAndParse)
+  .then(printPlanets)
+  .then(fetchNextPlanets)
+  .then(checkStatusAndParse)
+  .then(printPlanets)
   .catch((err) => {
-    console.log('SOMETHING WHEN WRONG WIT FETCH!')
+    console.log('SOMETHING WENT WRONG WITH FETCH!')
     console.log(err)
   })
