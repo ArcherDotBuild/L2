@@ -171,3 +171,36 @@ fetch('https://icanhazdadjoke.com/23/2', {
 #### Fetch API MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
 ## 6. Chaining Fetch Requests
+
+## 7. Refactoring Fetch Chains
+
+## 8. An Even Better Way Axios
+
+#### AXIOS
+A LIBRARY FOR MAKING HTTP REQUESTS
+
+Next up, we have a third option for making requests via JavaScript.  This is not a built in option, it's not native JavaScript like Fetch or XHR.
+
+It is a external library called **Axios** it's one of many a whole bunch of different HTTP libraries that you could use. **Axios** is just the most popular.
+
+#### https://github.com/axios/axios
+
+So all that it does is it simplifies the process of making requests. It uses fetch behind the scenes so it doesn't give us anything we can't already do.
+
+It just simplifies things through a bunch of methods and objects that it creates that we can interact with. It is promise based just like fetch.
+
+You can use it both in the client on the browser side of things, but also on the server side using NodeJS
+
+#### Run in the Chrome browser
+```javascript
+// 1. const res = axios.get('https://swapi.dev/api/planets/')
+// 2. res
+// 3. Open Promise, then PromiseResult, then Open Data
+```
+
+I get a promise back, save it to a variable **res**. So just like **Fetch** we get a promise back when we make a request using **Axios**. Let's take a look at the value that it's been resolved with.
+
+Inside we have a data property and it's already been parsed for us. We don't have to parsed it ourselves. That's one of the main advantages of using a tool like Axios, is that unlike Fetch, we don't have to do the **JSON parsing** on our own.
+
+
+
