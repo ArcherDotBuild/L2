@@ -205,4 +205,4 @@ I get a promise back, save it to a variable **res**. So just like **Fetch** we g
 Inside we have a data property and it's already been parsed for us. We don't have to parsed it ourselves. That's one of the main advantages of using a tool like Axios, is that unlike Fetch, we don't have to do the **JSON parsing** on our own.
 
 ## 9. Sequential Axios Requests
-Let's see how we can use **Axios** to make multiple chain requests.
+Let's see how we can use **Axios** to make multiple chain requests,
