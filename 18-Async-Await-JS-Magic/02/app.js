@@ -4,8 +4,6 @@
 
 console.log('The Async Keyword')
 
-//   const data = axios.get('https://swapi.dev/api/planets/')
-
 // Run the functions in the Browser console
 // function greet() {
 //   return 'HELLO!!!'
@@ -37,20 +35,22 @@ raise an exeption. So if we throw an exception, we throw an error,
 that promise will be rejected
 */
 async function add(x, y) {
-  if(typeof x !== 'number' || typeof y !== 'number') {
+  if (typeof x !== 'number' || typeof y !== 'number') {
     throw ' X and Y must be numbers!'
   }
   return x + y
 }
 add(3, 2)
 add(3, 'a')
-add('e', 'r').then((val) => {
-  console.log('PROMISE RESOLVED WITH: ', val);
-}).catch((err) => {
-  console.log('PROMISE REJECTED WITH: ', err)
-})
+add('e', 'r')
+  .then((val) => {
+    console.log('PROMISE RESOLVED WITH: ', val)
+  })
+  .catch((err) => {
+    console.log('PROMISE REJECTED WITH: ', err)
+  })
 
-console.log('\n');
+console.log('\n')
 add(2, 3)
   .then((val) => {
     console.log('PROMISE RESOLVED WITH: ', val)

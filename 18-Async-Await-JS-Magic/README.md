@@ -42,3 +42,20 @@ So even though i never write a new promise, i don't explicitly say, hey, return 
 raise an exeption. So if we throw an exception, we throw an error,
 that promise will be rejected
 
+## 3. The Await Keyword
+
+- We can only use the await keyword inside of functions declared wit async
+- await will pause the execution of the function, waiting for a promise to be resolved
+
+We put the **await** keyword inside of an async function and it iwll pause the execution of the function while it waits for a promise to be resolved so it will await something without having to use the **.then**, we can run code after an asynchrounous operation without having to nest things with callbacks.
+
+**You can only use await keyword inside of an async function**
+
+```javascript
+async function getPlanets() {
+  const res = await axios.get('https://swapi.dev/api/planets/')
+  console.log(res.data)
+}
+
+getPlanets()
+```
