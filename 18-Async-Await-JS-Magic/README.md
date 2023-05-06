@@ -88,3 +88,4 @@ async function getPlanets() {
 
 getPlanets()
 ```
+## 5. Multiple Awaits
