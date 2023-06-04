@@ -137,9 +137,9 @@ async function get3Pokemon() {
   const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1')
   const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2')
   const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3')
-  
+
   // Pending promise
-  console.log(prom1);
+  console.log(prom1)
 
   const poke1 = await prom1
   const poke2 = await prom2
@@ -147,7 +147,7 @@ async function get3Pokemon() {
 
   // Resolved promise
   console.log(prom1)
-  
+
   console.log(poke1.data)
   console.log(poke2.data)
   console.log(poke3.data)
@@ -156,4 +156,24 @@ async function get3Pokemon() {
 get3Pokemon()
 ```
 
-These were sent in parallel, which is a big distinction. If you do not care, that one request must be finished before the next is done. 
+These were sent in parallel, which is a big distinction. If you do not care, that one request must be finished before the next is done.
+
+## 7. Refactoring with Promise.all
+
+So if i don't want to have to type all the stuff we typed in the last chapter. What we can do is use a promise helper method called **Promise.all**, this method accepts an array of promises. So i could just pass those into Promise.all and then await that.
+
+```javascript
+// Parallel Requests
+async function get3Pokemon() {
+  const prom1 = axios.get('https://pokeapi.co/api/v2/pokemon/1')
+  const prom2 = axios.get('https://pokeapi.co/api/v2/pokemon/2')
+  const prom3 = axios.get('https://pokeapi.co/api/v2/pokemon/3')
+
+  const results = await Promise.all([prom1, prom2, prom3])
+  console.log(results)
+}
+
+get3Pokemon()
+```
+
+This code will only run when all of these promises have been resolved.
