@@ -21,3 +21,5 @@ Prototypes are lik e a template object. They are objects, they contain typically
 Basic object oriented concepts in JavaScript. Things like factory functions, constructor functions, the new class keywords, constructores in a class, the new keyword, there's super, inheritance.
 
 But it all has to do with this one central idea, which is organizing our code, designing and structuring our applications by breaking things up into distinct patterns of objects.
+
+## 3. Factory Functions
