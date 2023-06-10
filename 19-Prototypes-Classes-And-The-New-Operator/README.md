@@ -4,7 +4,7 @@
 
 https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
 
-**__proto__**, So rather than having a separate method on every single array called push, there is one prototype and each array has a reference to that prototype with this special property **__proto__**. And we actually can see this in other types of objects in JavaScript.
+\***\*proto\*\***, So rather than having a separate method on every single array called push, there is one prototype and each array has a reference to that prototype with this special property \***\*proto\*\***. And we actually can see this in other types of objects in JavaScript.
 
 ```javascript
 console.log(Array.prototype)
@@ -25,18 +25,18 @@ But it all has to do with this one central idea, which is organizing our code, d
 ## 3. Factory Functions
 
 ```javascript
-function makeColor(r,g,b) {
+function makeColor(r, g, b) {
   const color = {}
   color.r = r
   color.g = g
   color.b = b
-  color.rgb = function() {
-    const {r, g, b} = this
+  color.rgb = function () {
+    const { r, g, b } = this
     return `rgb(${r}, ${g}, ${b})`
   }
   color.hex = function () {
-    const  {r, g, b} = this
-     return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+    const { r, g, b } = this
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
   }
   return color
 }
@@ -54,8 +54,46 @@ function Color(r, g, b) {
   this.r = r
   this.g = g
   this.b = b
-  console.log(this);
+  console.log(this)
 }
 
-const color1 = new Color(255,0,0)
+const color1 = new Color(255, 0, 0)
+```
+
+## 5. JS Classes - Syntactical Sugar
+
+```javascript
+class Color {
+  // A constructor is a function that will execute immediately
+  // whenever a new color is created
+  constructor(r, g, b, name) {
+    console.log('INSIDE CONSTRUCTOR!')
+    console.log(r, g, b)
+
+    this.r = r
+    this.b = b
+    this.g = g
+    this.name = name
+  }
+
+  greet() {
+    return `HELLO FROM ${this.name}`
+  }
+  innerRGB() {
+    const { r, g, b } = this
+    return `${r}, ${g}, ${b}`
+  }
+  rgb() {
+    return `rgb(${this.innerRGB()})`
+  }
+  rgba(a = 1.0) {
+    return `rgba(${this.innerRGB()}, ${a})`
+  }
+  hex() {
+    const { r, g, b } = this
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  }
+}
+
+const red = new Color(255, 67, 89, 'tomato')
 ```

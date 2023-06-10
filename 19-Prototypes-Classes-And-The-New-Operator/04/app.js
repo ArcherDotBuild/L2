@@ -58,7 +58,7 @@ Color.prototype.hex = function () {
   return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
 }
 
-Color.protoype.rgba = function (a = 1.0) {
+Color.prototype.rgba = function (a = 1.0) {
   const { r, g, b } = this
   return `rgba(${r}, ${g}, ${b}, ${a})`
 }
