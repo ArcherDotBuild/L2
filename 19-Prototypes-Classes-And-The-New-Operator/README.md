@@ -100,3 +100,38 @@ const red = new Color(255, 67, 89, 'tomato')
 
 ## 6. A Bit More Practice with Classes
 
+## 7. Extends, Super, and Subclasses
+
+Keyword extend and keyword super, they both have to do with subclassing, essentially inheritance. This is a way of sharing functionality between classes.
+
+```javascript
+// Parent class
+class Pet {
+  constructor(name, age) {
+    console.log('IN PET CONSTRUCTOR!')
+    this.name = name
+    this.age = age
+  }
+  eat() {
+    return `${this.name} is eating!`
+  }
+}
+
+class Cat extends Pet {
+  constructor(name, age, livesLeft = 9) {
+    console.log('IN CAT CONSTRUCTOR!')
+    // Super is going to reference the class that we are extending from
+    // Is going to call Pet constructor
+    super(name, age)
+  }
+  meow() {
+    return 'MEOWWWW!!'
+  }
+}
+
+class Dog extends Pet {
+  bark() {
+    return 'WOOOF!'
+  }
+}
+```
