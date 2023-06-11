@@ -97,3 +97,6 @@ class Color {
 
 const red = new Color(255, 67, 89, 'tomato')
 ```
+
+## 6. A Bit More Practice with Classes
+
