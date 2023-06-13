@@ -8,17 +8,20 @@ class Timer {
     this.pauseButton = pauseButton
 
     // start(){}, Calling the constructor anytime the user clicks on the start button
-    this.startButton,addEventListener('click', this.start)
+    this.startButton.addEventListener('click', this.start)
   }  
 
   start() {
-    console.log('Time to start the timer!');
+    // console.log('Time to start the timer!');
+    console.log(this);
   }
 }
 
 const durationInput = document.querySelector('#duration')
-const startButton = document.querySelector('#pause')
+const startButton = document.querySelector('#start')
 const pauseButton= document.querySelector('#pause')
 
 // Create our instance of the timer and pass in those three elements
 const timer = new Timer(durationInput, startButton, pauseButton)
+
+timer.start()  
