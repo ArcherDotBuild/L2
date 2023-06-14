@@ -41,28 +41,67 @@ R// 'this' is equal to the first argument of 'bind', 'call' or 'apply
 **bind, call and apply** are built-in functions that belong to all functions inside of JavaScript that we create
 
 ```javascript
-const printThis = function() {
+const printThis = function () {
   console.log(this)
 }
 
-printThis.call({ color: 'red'})
-printThis.apply({ color: 'red'})
+printThis.call({ color: 'red' })
+printThis.apply({ color: 'red' })
 ```
 
 #### All other cases
+
 'this' is equal to whatever is to the left of the '.' in the method call
 
 ```javascript
 const colors = {
   printColor() {
     console.log(this)
-  }
+  },
 }
 
 const randomObject = {
-  a: 1
+  a: 1,
 }
 
 randomObject.printColor = colors.printColor
 randomObject.printColor()
+```
+
+## 3. 10 Starting and Pausing the Timer
+
+```javascript
+class Timer {
+  constructor(durationInput, startButton, pauseButton) {
+    this.durationInput = durationInput
+    this.startButton = startButton
+    this.pauseButton = pauseButton
+
+    // start(){}, Calling the constructor anytime the user clicks on the start button
+    this.startButton.addEventListener('click', this.start)
+    this.pauseButton.addEventListener('click', this.pause)
+  }
+
+  // start() {
+  //   // console.log('Time to start the timer!');
+  //   console.log(this);
+  // }
+  start = () => {
+    // This runs on tick immediately
+    this.tick()
+    // const timer = setInterval(this.tick, 1000)
+    this.interval = setInterval(this.tick, 1000)
+    console.log(timer)
+    // function that is built into the browser
+    // clearInterval(timer)
+  }
+
+  pause = () => {
+    clearInterval(this.interval)
+  }
+
+  tick = () => {
+    console.log('tick')
+  }
+}
 ```
