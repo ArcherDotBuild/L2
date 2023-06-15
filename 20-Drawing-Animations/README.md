@@ -105,3 +105,5 @@ class Timer {
   }
 }
 ```
+
+## 4. 12 DOM-Centric Approach
