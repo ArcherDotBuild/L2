@@ -32,8 +32,15 @@ class Timer {
 
   tick = () => {
     console.log('tick')
-    const timeRemaining = parseFloat(this.durationInput.value)
-    this.durationInput.value = timeRemaining - 1
+    this.timeRemaining = this.timeRemaining - 1
+  }
+
+  get timeRemaining() {
+    return parseFloat(this.durationInput.value)
+  }
+
+  set timeRemaining(time) {
+    this.durationInput.value = time
   }
 }
 
@@ -44,3 +51,11 @@ const pauseButton = document.querySelector('#pause')
 // Create our instance of the timer and pass in those three elements
 const timer = new Timer(durationInput, startButton, pauseButton)
 // timer.start()
+
+
+// version 1
+// tick = () => {
+//   console.log('tick')
+//   const timeRemaining = parseFloat(this.durationInput.value)
+//   this.durationInput.value = timeRemaining - 1
+// }

@@ -103,7 +103,21 @@ class Timer {
   tick = () => {
     console.log('tick')
   }
+
 }
 ```
 
 ## 4. 12 DOM-Centric Approach
+
+
+## 5. 13 Getters and Setters
+
+```javascript
+  getTime() {
+    return parseFloat(this.durationInput.value)
+  }
+
+  setTime() {
+    return this.durationInput = time
+  }
+```
