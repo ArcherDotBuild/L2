@@ -103,12 +103,10 @@ class Timer {
   tick = () => {
     console.log('tick')
   }
-
 }
 ```
 
 ## 4. 12 DOM-Centric Approach
-
 
 ## 5. 13 Getters and Setters
 
@@ -136,4 +134,46 @@ class Timer {
     this.durationInput.value = time
   }
 ```
+
 ## 6. 14 Stopping the Timer
+
+```javascript
+tick = () => {
+  console.log('tick')
+  if (this.timeRemaining <= 0) {
+    this.pause()
+  } else {
+    this.timeRemaining = this.timeRemaining - 1
+  }
+}
+```
+
+## 7. 15 Notifying the Outside World
+
+```javascript
+// The fourth argument is going to be totally optional so we can use our timer with or without fourth argument
+const timer = new Timer(durationInput, startButton, pauseButton, {
+  onStart() {
+    console.log('Timer started')
+  },
+  onTick() {},
+  onComplete() {},
+})
+```
+
+```javascript
+class Timer {
+  constructor(durationInput, startButton, pauseButton, callbacks) {
+    this.durationInput = durationInput
+    this.startButton = startButton
+    this.pauseButton = pauseButton
+
+    // Callbacks are optional (logic for that)
+    if (callbacks) {
+      this.onStart = callbacks.onStart
+    }
+
+    this.startButton.addEventListener('click', this.start)
+    this.pauseButton.addEventListener('click', this.pause)
+  }
+```

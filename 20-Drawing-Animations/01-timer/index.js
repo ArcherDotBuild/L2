@@ -2,10 +2,15 @@
 // What on Earth are Prototypes ******************************
 
 class Timer {
-  constructor(durationInput, startButton, pauseButton) {
+  constructor(durationInput, startButton, pauseButton, callbacks) {
     this.durationInput = durationInput
     this.startButton = startButton
     this.pauseButton = pauseButton
+
+    // Callbacks are optional (logic for that)
+    if (callbacks) {
+      this.onStart = callbacks.onStart
+    }
 
     // start(){}, Calling the constructor anytime the user clicks on the start button
     this.startButton.addEventListener('click', this.start)
@@ -17,6 +22,9 @@ class Timer {
   //   console.log(this);
   // }
   start = () => {
+    if (this.onStart) {
+      this.onStart()
+    }
     // This runs on tick immediately
     this.tick()
     // const timer = setInterval(this.tick, 1000)
@@ -53,9 +61,18 @@ const startButton = document.querySelector('#start')
 const pauseButton = document.querySelector('#pause')
 
 // Create our instance of the timer and pass in those three elements
-const timer = new Timer(durationInput, startButton, pauseButton)
+// The fourth argument is going to be totally optional so we can use our timer with or without fourth argument
+const timer = new Timer(durationInput, startButton, pauseButton, {
+  onStart() {
+    console.log('Timer started')
+  },
+  onTick() {},
+  onComplete() {},
+})
 // timer.start()
 
+// ####################
+// ####################
 // version 1
 // tick = () => {
 //   console.log('tick')
