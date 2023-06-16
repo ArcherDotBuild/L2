@@ -21,7 +21,7 @@ class Timer {
     this.tick()
     // const timer = setInterval(this.tick, 1000)
     this.interval = setInterval(this.tick, 1000)
-    console.log(timer);
+    console.log(timer)
     // function that is built into the browser
     // clearInterval(timer)
   }
@@ -32,7 +32,11 @@ class Timer {
 
   tick = () => {
     console.log('tick')
-    this.timeRemaining = this.timeRemaining - 1
+    if (this.timeRemaining <= 0) {
+      this.pause()
+    } else {
+      this.timeRemaining = this.timeRemaining - 1
+    }
   }
 
   get timeRemaining() {
@@ -51,7 +55,6 @@ const pauseButton = document.querySelector('#pause')
 // Create our instance of the timer and pass in those three elements
 const timer = new Timer(durationInput, startButton, pauseButton)
 // timer.start()
-
 
 // version 1
 // tick = () => {

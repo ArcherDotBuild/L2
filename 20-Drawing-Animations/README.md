@@ -121,3 +121,19 @@ class Timer {
     return this.durationInput = time
   }
 ```
+
+```javascript
+  tick = () => {
+    console.log('tick')
+    this.timeRemaining = this.timeRemaining - 1
+  }
+
+  get timeRemaining() {
+    return parseFloat(this.durationInput.value)
+  }
+
+  set timeRemaining(time) {
+    this.durationInput.value = time
+  }
+```
+## 6. 14 Stopping the Timer
