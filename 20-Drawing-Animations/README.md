@@ -223,7 +223,7 @@ The X axis increases from left to right and the Y axis increases from top to bot
 
 ## 11. 20 Advanced Circle Properties
 
-````html
+```html
 <circle
   r="90"
   cx="100"
@@ -232,7 +232,12 @@ The X axis increases from left to right and the Y axis increases from top to bot
   stroke="blue"
   stroke-width="10"
   stroke-dasharray="560"
-  stroke-offset="560"
+  stroke-dashoffset="-100"
 />
-````
+```
 
+## 12. 21 The Secret to the Animation
+
+`transform="rotate(-90, 100, 100)"`
+
+## 13. 22 First Pass on the Animation
