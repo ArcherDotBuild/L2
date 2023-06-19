@@ -1,5 +1,7 @@
 ## 19-Prototypes-Classes-And-The-New-Operator
 
+**folder 01**
+
 ## 1. 06 Binding Events in a Class
 
 ## 2. 08 Determining the Value of 'This'
@@ -156,8 +158,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
   onStart() {
     console.log('Timer started')
   },
-  onTick() {
-  },
+  onTick() {},
   onComplete() {},
 })
 ```
@@ -178,29 +179,60 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
   }
 ```
 
-
 ## 8. 16 OnTick and OnComplete
 
 ```javascript
-    if (callbacks) {
-      this.onStart = callbacks.onStart
-      this.onTick = callbacks.onTick
-      this.onComplete = callbacks.onComplete
-    }
+if (callbacks) {
+  this.onStart = callbacks.onStart
+  this.onTick = callbacks.onTick
+  this.onComplete = callbacks.onComplete
+}
 ```
 
 ```javascript
-  tick = () => {
-    if (this.timeRemaining <= 0) {
-      this.pause()
-      if(this.onComplete) {
-        this.onComplete()
-      }
-    } else {
-      this.timeRemaining = this.timeRemaining - 1
-      if(this.onTick) {
-        this.onTick()
-      }
+tick = () => {
+  if (this.timeRemaining <= 0) {
+    this.pause()
+    if (this.onComplete) {
+      this.onComplete()
+    }
+  } else {
+    this.timeRemaining = this.timeRemaining - 1
+    if (this.onTick) {
+      this.onTick()
     }
   }
+}
 ```
+
+## 8. 17 Extracting Timer Code
+
+**folder 02**
+
+## 9. 18 Introducing SVG
+
+```html
+<svg height="200" widht="200">
+  <circle r="20" cx="30" cy="30" />
+</svg>
+```
+
+## 10. 19 Rules of SVGs
+
+The X axis increases from left to right and the Y axis increases from top to bottom
+
+## 11. 20 Advanced Circle Properties
+
+````html
+<circle
+  r="90"
+  cx="100"
+  cy="100"
+  fill="transparent"
+  stroke="blue"
+  stroke-width="10"
+  stroke-dasharray="560"
+  stroke-offset="560"
+/>
+````
+
