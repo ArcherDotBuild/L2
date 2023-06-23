@@ -242,3 +242,4 @@ The X axis increases from left to right and the Y axis increases from top to bot
 
 ## 13. 22 First Pass on the Animation
 
+## 14. 23 Smoothing the Animation
