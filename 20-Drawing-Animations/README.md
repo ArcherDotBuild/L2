@@ -247,3 +247,5 @@ The X axis increases from left to right and the Y axis increases from top to bot
 ## 15. 24 Adjusting by an Even Interval
 
 ## 16. 25 Using Icons
+
+## 17. 26 Styling and Wrapup
