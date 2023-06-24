@@ -245,3 +245,5 @@ The X axis increases from left to right and the Y axis increases from top to bot
 ## 14. 23 Smoothing the Animation
 
 ## 15. 24 Adjusting by an Even Interval
+
+## 16. 25 Using Icons
