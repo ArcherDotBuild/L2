@@ -43,3 +43,5 @@ fetchData()
 ```
 
 **XHR** request will show only the requests that my JavaScript code have issued
+
+## 4. 05 Fetching a Single Movie
