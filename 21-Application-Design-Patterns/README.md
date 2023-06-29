@@ -32,11 +32,11 @@ const fetchData = async () => {
     // request and appended to the end of that URL
     params: {
       apikey: apikey,
-      s: 'avengers'
+      s: 'avengers',
     },
   })
 
-  console.log(response.data);
+  console.log(response.data)
 }
 
 fetchData()
@@ -45,3 +45,21 @@ fetchData()
 **XHR** request will show only the requests that my JavaScript code have issued
 
 ## 4. 05 Fetching a Single Movie
+
+```javascript
+// Helper function ID
+const fetchData = async () => {
+  const response = await axios.get('http://www.omdbapi.com/', {
+    params: {
+      apikey: apikey,
+      i: 'tt0848228',
+    },
+  })
+
+  console.log(response.data)
+}
+
+fetchData()
+```
+
+## 5. 07 Searching the API on Input Change
