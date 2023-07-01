@@ -130,3 +130,5 @@ input.addEventListener('input', debounce(onInput, 1000))
 ```
 
 ## 7. 11 Extracting Utility Functions
+
+## 8. 12 Awaiting Async Functions
