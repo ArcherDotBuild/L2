@@ -106,3 +106,27 @@ input.addEventListener('input', onInput)
 clearTimeout(1), means look at the timer that was created with the id of 1. Stop that running timer and don't call that function ever even after ten seconds has pass.
 
 ## 6. 10 Implementing a Reusable Debounce
+
+```javascript
+const input = document.querySelector('input')
+
+const debounce = (func, delay = 1000) => {
+  let timeoutId
+  return (...arg) => {
+    if(timeoutId) {
+      clearTimeout(timeoutId)
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, arg)
+    }, delay)
+  }
+}
+
+let timeoutId
+const onInput = (event) => {
+  fetchData(event.target.value)
+}
+input.addEventListener('input', debounce(onInput, 1000))
+```
+
+## 7. 11 Extracting Utility Functions
