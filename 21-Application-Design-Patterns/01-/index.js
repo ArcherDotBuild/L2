@@ -40,18 +40,23 @@ const fetchData = async(searchTerm) => {
 }
 const input = document.querySelector('input')
 
+const debounce = (func, delay = 1000) => {
+  let timeoutId
+  return (...arg) => {
+    if(timeoutId) {
+      clearTimeout(timeoutId)
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, arg)
+    }, delay)
+  }
+}
+
 let timeoutId
 const onInput = (event) => {
-  if(timeoutId) {
-    clearTimeout(timeoutId)
-  }
-  timeoutId = setTimeout(() => {
-    // Whatever the user just typed into that input
-    fetchData(event.target.value)
-  }, 1000)
-  
+  fetchData(event.target.value)
 }
-input.addEventListener('input', onInput)
+input.addEventListener('input', debounce(onInput, 1000))
 
  
 

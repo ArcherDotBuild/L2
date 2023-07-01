@@ -74,6 +74,8 @@ input.addEventListener('input', (event) => {
 
 ## 5. 08 Delaying Search Input
 
+**Debouncing an input**: Waiting for some time to pass after the last event to actually do something.
+
 Any time we call a **setTimeout** we get back an intenger value, these numbers are essentially identifiers and they identify the timer that we just created. If we want to, we can call the **clearTimeout** function to stop that pending timer and prevent that function from being called.
 
 ```javascript
@@ -84,4 +86,23 @@ setTimeout(() => {
 clearTimeout(1)
 ```
 
+```javascript
+const input = document.querySelector('input')
+
+let timeoutId
+const onInput = (event) => {
+  if(timeoutId) {
+    clearTimeout(timeoutId)
+  }
+  timeoutId = setTimeout(() => {
+    // Whatever the user just typed into that input
+    fetchData(event.target.value)
+  }, 1000)
+  
+}
+input.addEventListener('input', onInput)
+```
+
 clearTimeout(1), means look at the timer that was created with the id of 1. Stop that running timer and don't call that function ever even after ten seconds has pass.
+
+## 6. 10 Implementing a Reusable Debounce
