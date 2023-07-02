@@ -36,12 +36,14 @@ const fetchData = async (searchTerm) => {
     },
   })
 
+  if(response.data.Error) {
+    return []
+  }
   // console.log(response.data);
   return response.data.Search
 }
 const input = document.querySelector('input')
 
-let timeoutId
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value)
   // console.log(movies);

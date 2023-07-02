@@ -91,14 +91,13 @@ const input = document.querySelector('input')
 
 let timeoutId
 const onInput = (event) => {
-  if(timeoutId) {
+  if (timeoutId) {
     clearTimeout(timeoutId)
   }
   timeoutId = setTimeout(() => {
     // Whatever the user just typed into that input
     fetchData(event.target.value)
   }, 1000)
-  
 }
 input.addEventListener('input', onInput)
 ```
@@ -113,7 +112,7 @@ const input = document.querySelector('input')
 const debounce = (func, delay = 1000) => {
   let timeoutId
   return (...arg) => {
-    if(timeoutId) {
+    if (timeoutId) {
       clearTimeout(timeoutId)
     }
     timeoutId = setTimeout(() => {
@@ -122,7 +121,6 @@ const debounce = (func, delay = 1000) => {
   }
 }
 
-let timeoutId
 const onInput = (event) => {
   fetchData(event.target.value)
 }
@@ -133,6 +131,48 @@ input.addEventListener('input', debounce(onInput, 1000))
 
 ## 8. 12 Awaiting Async Functions
 
+```javascript
+const onInput = async (event) => {
+  const movies = await fetchData(event.target.value)
+  console.log(movies);
+  }
+}
+```
+
 ## 9. 13 Rendering Movies
 
-## 10. 13 Rendering Movies
+```javascript
+const onInput = async (event) => {
+  const movies = await fetchData(event.target.value)
+
+  for (let movie of movies) {
+    const div = document.createElement('div')
+
+    div.innerHTML = `
+      <img src="${movie.Poster}" />
+      <h1>${movie.Title}</h1>
+    `
+
+    document.querySelector('#target').appendChild(div)
+  }
+}
+```
+
+## 10. 14 Handling Errored Responses
+
+```javascript
+const fetchData = async (searchTerm) => {
+  const response = await axios.get('http://www.omdbapi.com/', {
+    params: {
+      apikey: apikey,
+      s: searchTerm,
+    },
+  })
+  // If there is an error, let's just return an empty array and essentially say
+  // we didn't get any movies whatsoever to show to the user
+  if(response.data.Error) {
+    return []
+  }
+
+  return response.data.Search
+}
