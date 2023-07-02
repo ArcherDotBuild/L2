@@ -176,3 +176,6 @@ const fetchData = async (searchTerm) => {
 
   return response.data.Search
 }
+```
+
+## 11. 15 Opening a Menu
