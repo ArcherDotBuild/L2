@@ -170,7 +170,7 @@ const fetchData = async (searchTerm) => {
   })
   // If there is an error, let's just return an empty array and essentially say
   // we didn't get any movies whatsoever to show to the user
-  if(response.data.Error) {
+  if (response.data.Error) {
     return []
   }
 
@@ -179,3 +179,21 @@ const fetchData = async (searchTerm) => {
 ```
 
 ## 11. 15 Opening a Menu
+
+```html
+<div class="container">
+  <div class="dropdown is-active">
+    <input />
+    <div class="dropdown-menu">
+      <div class="dropdown-content">
+        <a class="dropdown-item">Movie #1</a>
+        <a class="dropdown-item">Movie #2</a>
+        <a class="dropdown-item">Movie #3</a>
+      </div>
+    </div>
+  </div>
+  <div id="target"></div>
+</div>
+```
+
+## 12. 17 Moving HTML Generation

@@ -36,19 +36,33 @@ const fetchData = async (searchTerm) => {
     },
   })
 
-  if(response.data.Error) {
+  if (response.data.Error) {
     return []
   }
   // console.log(response.data);
   return response.data.Search
 }
+
+const root = document.querySelector('.autocomplete')
+root.innerHTML = `
+  <label><b>Search For a Movie</b></label>
+  <input class="input" />
+  <div class="dropdown is-active">
+    <div class="dropdown-menu">
+      <div class="dropdown-content results"></div>
+    </div>
+  </div>
+`
+
 const input = document.querySelector('input')
+const dropdown = document.querySelector('.dropdown')
+const resultsWrapper = document.querySelector('.results')
 
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value)
   // console.log(movies);
-  
-  for(let movie of movies) {
+
+  for (let movie of movies) {
     const div = document.createElement('div')
 
     div.innerHTML = `
