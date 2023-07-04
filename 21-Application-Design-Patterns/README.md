@@ -240,20 +240,31 @@ const imSrc = movie.Poster === 'N/A' ? '' : movie.Poster
 ## 15. 21 Automatically Closing the Dropdown
 
 This will tell us what gets clicked in the page
+
 ```javascript
-document.addEventListener('click', event => {
-  console.log(event.target);
+document.addEventListener('click', (event) => {
+  console.log(event.target)
   // Removes the dropdown when we click outside the dropdown
-  if(!root.contains(event.target)) {
+  if (!root.contains(event.target)) {
     dropdown.classList.remove('is-active')
   }
 })
 ```
 
 ## 16. 22 Handling Empty Responses
+
 ```javascript
-  if (!movies.length) {
-    dropdown.classList.remove('is-active')
-    return
-  }
+if (!movies.length) {
+  dropdown.classList.remove('is-active')
+  return
+}
+```
+
+## 17. 23 Handling Movie Selection
+
+```javascript
+option.addEventListener('click', () => {
+  dropdown.classList.remove('is-active')
+  input.value = movie.Title
+})
 ```
