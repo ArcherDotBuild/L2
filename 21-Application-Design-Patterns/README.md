@@ -251,3 +251,9 @@ document.addEventListener('click', event => {
 ```
 
 ## 16. 22 Handling Empty Responses
+```javascript
+  if (!movies.length) {
+    dropdown.classList.remove('is-active')
+    return
+  }
+```
