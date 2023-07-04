@@ -197,3 +197,44 @@ const fetchData = async (searchTerm) => {
 ```
 
 ## 12. 17 Moving HTML Generation
+
+```javascript
+root.innerHTML = `
+  <label><b>Search For a Movie</b></label>
+  <input class="input" />
+  <div class="dropdown is-active">
+    <div class="dropdown-menu">
+      <div class="dropdown-content results"></div>
+    </div>
+  </div>
+`
+```
+
+## 13. 19 Repairing References
+
+```javascript
+const onInput = async (event) => {
+  const movies = await fetchData(event.target.value)
+
+  dropdown.classList.add('is-active')
+  for (let movie of movies) {
+    const option = document.createElement('a')
+
+    option.classList.add('dropdown-item')
+    option.innerHTML = `
+      <img src="${movie.Poster}" />
+      ${movie.Title}
+    `
+
+    resultsWrapper.appendChild(option)
+  }
+}
+```
+
+## 14. 20 Handling Broken Images
+
+```javascript
+const imSrc = movie.Poster === 'N/A' ? '' : movie.Poster
+```
+
+

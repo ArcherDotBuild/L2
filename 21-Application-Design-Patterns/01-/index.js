@@ -47,7 +47,7 @@ const root = document.querySelector('.autocomplete')
 root.innerHTML = `
   <label><b>Search For a Movie</b></label>
   <input class="input" />
-  <div class="dropdown is-active">
+  <div class="dropdown">
     <div class="dropdown-menu">
       <div class="dropdown-content results"></div>
     </div>
@@ -60,17 +60,27 @@ const resultsWrapper = document.querySelector('.results')
 
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value)
-  // console.log(movies);
 
+  resultsWrapper.innerHTML = ''
+  dropdown.classList.add('is-active')
   for (let movie of movies) {
-    const div = document.createElement('div')
+    const option = document.createElement('a')
+    const imSrc = movie.Poster === 'N/A' ? '' : movie.Poster
 
-    div.innerHTML = `
-      <img src="${movie.Poster}" />
-      <h1>${movie.Title}</h1>
+    option.classList.add('dropdown-item')
+    option.innerHTML = `
+      <img src="${imSrc}" />
+      ${movie.Title}
     `
 
-    document.querySelector('#target').appendChild(div)
+    resultsWrapper.appendChild(option)
   }
 }
 input.addEventListener('input', debounce(onInput, 1000))
+
+document.addEventListener('click', (event) => {
+  console.log(event.target)
+  if (!root.contains(event.target)) {
+    dropdown.classList.remove('is-active')
+  }
+})
