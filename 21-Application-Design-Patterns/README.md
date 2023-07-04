@@ -268,3 +268,21 @@ option.addEventListener('click', () => {
   input.value = movie.Title
 })
 ```
+
+## 18. 24 Making a Followup Request
+
+```javascript
+const onMovieSelect = async (movie) => {
+  console.log(movie)
+  
+  const response = await axios.get('http://www.omdbapi.com/', {
+    params: {
+      apikey: apikey,
+      i: movie.imdbID
+    },
+  })
+
+  console.log(response.data);
+}
+```
+
