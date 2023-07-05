@@ -274,15 +274,16 @@ option.addEventListener('click', () => {
 ```javascript
 const onMovieSelect = async (movie) => {
   console.log(movie)
-  
+
   const response = await axios.get('http://www.omdbapi.com/', {
     params: {
       apikey: apikey,
-      i: movie.imdbID
+      i: movie.imdbID,
     },
   })
 
-  console.log(response.data);
+  console.log(response.data)
 }
 ```
 
+## 19. 25 Rendering an Expanded Summary
