@@ -287,3 +287,27 @@ const onMovieSelect = async (movie) => {
 ```
 
 ## 19. 25 Rendering an Expanded Summary
+
+```javascript
+const movieTemplate = (movieDetail) => {
+  return `
+    <article class="media">
+      <figure class="media-left">
+        <p class="image">
+          <img src="${movieDetail.Poster}" />
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <h1>${movieDetail.Title}</h1>
+          <h4>${movieDetail.Genre}</h4>
+          <p>${movieDetail.Plot}</p>
+        </div>
+      </div>
+    </article>
+  `
+}
+```
+# Phase 2 of our Movie APP Api
+
+## 20. 27 Issues with the Codebase
