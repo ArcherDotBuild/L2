@@ -308,6 +308,7 @@ const movieTemplate = (movieDetail) => {
   `
 }
 ```
+
 # Phase 2 of our Movie APP Api
 
-## 20. 27 Issues with the Codebase
+## 20. 28 Making the Autocomplete Reusable
