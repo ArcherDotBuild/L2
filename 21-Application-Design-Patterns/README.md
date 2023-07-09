@@ -313,5 +313,6 @@ const movieTemplate = (movieDetail) => {
 
 ## 20. 28 Making the Autocomplete Reusable
 
-
 ## 21. 29 Displaying Multiple Autocompletes
+
+## 22. 30 Extracting Rendering Logic
