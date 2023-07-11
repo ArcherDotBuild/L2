@@ -316,3 +316,7 @@ const movieTemplate = (movieDetail) => {
 ## 21. 29 Displaying Multiple Autocompletes
 
 ## 22. 30 Extracting Rendering Logic
+
+## 23. 31 Extracting Selection Logic
+
+## 24. 32 Removing Movie References
