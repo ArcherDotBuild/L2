@@ -320,3 +320,5 @@ const movieTemplate = (movieDetail) => {
 ## 23. 31 Extracting Selection Logic
 
 ## 24. 32 Removing Movie References
+
+## 25. 34 Refreshed HTML Structure
