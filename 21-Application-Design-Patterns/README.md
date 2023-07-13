@@ -322,3 +322,5 @@ const movieTemplate = (movieDetail) => {
 ## 24. 32 Removing Movie References
 
 ## 25. 34 Refreshed HTML Structure
+
+## 26. 35 Avoiding Duplication of Config
