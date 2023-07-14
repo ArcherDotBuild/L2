@@ -326,3 +326,5 @@ const movieTemplate = (movieDetail) => {
 ## 26. 35 Avoiding Duplication of Config
 
 ## 27. 36 Hiding the Tutorial
+
+## 28. 37 Showing Two Summaries
