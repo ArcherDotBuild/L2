@@ -324,3 +324,5 @@ const movieTemplate = (movieDetail) => {
 ## 25. 34 Refreshed HTML Structure
 
 ## 26. 35 Avoiding Duplication of Config
+
+## 27. 36 Hiding the Tutorial
