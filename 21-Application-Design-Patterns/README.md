@@ -328,3 +328,5 @@ const movieTemplate = (movieDetail) => {
 ## 27. 36 Hiding the Tutorial
 
 ## 28. 37 Showing Two Summaries
+
+## 29. 38 When to Compare
