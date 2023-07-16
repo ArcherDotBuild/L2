@@ -334,3 +334,17 @@ const movieTemplate = (movieDetail) => {
 ## 30. 40 Extracting Statistic Values
 
 ## 31. 41 Parsing Number of Awards
+
+```javascript
+let count = 0
+const awards = movieDetail.Awards.split(' ').forEach((word) => {
+  const value = parseInt(word)
+
+  if (isNaN(value)) {
+    return
+  } else {
+    count = count + value
+  }
+})
+console.log(count)
+```
