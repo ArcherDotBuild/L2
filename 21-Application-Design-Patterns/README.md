@@ -330,3 +330,5 @@ const movieTemplate = (movieDetail) => {
 ## 28. 37 Showing Two Summaries
 
 ## 29. 38 When to Compare
+
+## 30. 40 Extracting Statistic Values
