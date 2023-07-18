@@ -348,3 +348,5 @@ const awards = movieDetail.Awards.split(' ').forEach((word) => {
 })
 console.log(count)
 ```
+
+## 32. 42 Applying Parsed Properties
