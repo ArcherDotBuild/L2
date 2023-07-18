@@ -350,3 +350,11 @@ console.log(count)
 ```
 
 ## 32. 42 Applying Parsed Properties
+
+## 33. 43 Updating Styles
+
+```javascript
+// Both return same result
+document.querySelector('#left-summary').querySelector('.notification')
+document.querySelector('#left-summary .notification')
+  ```
