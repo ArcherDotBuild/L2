@@ -357,4 +357,6 @@ console.log(count)
 // Both return same result
 document.querySelector('#left-summary').querySelector('.notification')
 document.querySelector('#left-summary .notification')
-  ```
+```
+
+## 34. 45 App Wrapup

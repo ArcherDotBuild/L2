@@ -70,16 +70,18 @@ const onMovieSelect = async (movie, summaryElement, side) => {
 const runComparison = () => {
   // console.log('Time for comparison')
   const leftSideStats = document.querySelectorAll('#left-summary .notification')
-  const rightSideStats = document.querySelectorAll('#right-summary .notification')
+  const rightSideStats = document.querySelectorAll(
+    '#right-summary .notification'
+  )
 
   leftSideStats.forEach((leftStat, index) => {
     const rightStat = rightSideStats[index]
 
     // console.log(leftStat, rightStat);
-    const leftSideValue = leftStat.dataset.value
-    const rightSideValue = rightStat.dataset.value
+    const leftSideValue = parseInt(leftStat.dataset.value)
+    const rightSideValue = parseInt(rightStat.dataset.value)
 
-    if(rightSideValue > leftSideValue) {
+    if (rightSideValue > leftSideValue) {
       leftStat.classList.remove('is-primary')
       leftStat.classList.add('is-warning')
     } else {
@@ -107,7 +109,7 @@ const movieTemplate = (movieDetail) => {
       return prev
     } else {
       return prev + value
-    }    
+    }
   }, 0)
   console.log(awards)
 
