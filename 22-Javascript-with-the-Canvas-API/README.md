@@ -2,4 +2,4 @@
 
 **folder 01**
 
-## 1. 
+## 1. 02 Project Setup
