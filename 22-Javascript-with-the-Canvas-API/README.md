@@ -27,3 +27,7 @@ World.add(world, shape)
 ## 4. 06 Drawing Borders
 
 ## 5. 07 Clicking and Dragging
+
+## 6. 08 Generating Random Shapes
+
+
