@@ -30,4 +30,6 @@ World.add(world, shape)
 
 ## 6. 08 Generating Random Shapes
 
+## 7. 09 Maze Generation Algorithm
+
 
