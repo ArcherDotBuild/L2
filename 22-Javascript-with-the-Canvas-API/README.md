@@ -33,3 +33,5 @@ World.add(world, shape)
 ## 7. 11 Configuration Variables
 
 **folder 02**
+
+## 8. 12 Grid Generation
