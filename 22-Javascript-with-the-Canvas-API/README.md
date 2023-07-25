@@ -35,3 +35,24 @@ World.add(world, shape)
 **folder 02**
 
 ## 8. 12 Grid Generation
+
+```javascript
+// Maze generation
+const grid = []
+
+for(let i = 0; i < 3; i++) {
+  grid.push([])
+  for(let j = 0; j < 3; j++) {
+    grid[i].push(false)
+  }
+}
+console.log(grid);
+```
+
+```javascript
+const grid = Array(3).fill(null)
+
+console.log(grid)
+```
+
+## 9. 13 Verticals and Horizontals
