@@ -40,13 +40,13 @@ World.add(world, shape)
 // Maze generation
 const grid = []
 
-for(let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i++) {
   grid.push([])
-  for(let j = 0; j < 3; j++) {
+  for (let j = 0; j < 3; j++) {
     grid[i].push(false)
   }
 }
-console.log(grid);
+console.log(grid)
 ```
 
 ```javascript
@@ -62,3 +62,5 @@ console.log(grid)
 ## 11. 15 Guiding Comments
 
 ## 12. 16 Neighbor Coordinates
+
+## 13. 17 Shuffling Neighbor Pairs
