@@ -60,3 +60,5 @@ console.log(grid)
 ## 10. 14 Abstracting Maze Dimensions
 
 ## 11. 15 Guiding Comments
+
+## 12. 16 Neighbor Coordinates
