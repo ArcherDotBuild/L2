@@ -66,3 +66,5 @@ console.log(grid)
 ## 13. 17 Shuffling Neighbor Pairs
 
 ## 14. 18 Determining Movement Direction
+
+## 15. 19 Updating Vertical Wall Values
