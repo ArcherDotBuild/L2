@@ -64,3 +64,5 @@ console.log(grid)
 ## 12. 16 Neighbor Coordinates
 
 ## 13. 17 Shuffling Neighbor Pairs
+
+## 14. 18 Determining Movement Direction
