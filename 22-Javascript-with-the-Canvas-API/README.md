@@ -74,3 +74,5 @@ console.log(grid)
 ## 17. 21 Validating Wall Structure
 
 ## 18. 22 Iterating Over Walls
+
+## 19. 23 Drawing Horizontal Segments
