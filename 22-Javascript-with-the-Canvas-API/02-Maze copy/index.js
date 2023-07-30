@@ -1,7 +1,7 @@
 // Matter.js library
 const { Engine, Render, Runner, World, Bodies } = Matter
 
-const cells = 3
+const cells = 15
 const width = 600
 const height = 600
 
@@ -24,10 +24,10 @@ Runner.run(Runner.create(), engine)
 
 // Walls
 const walls = [
-  Bodies.rectangle(width / 2, 0, width, 40, { isStatic: true }),
-  Bodies.rectangle(width / 2, height, width, 40, { isStatic: true }),
-  Bodies.rectangle(0, height / 2, 40, height, { isStatic: true }),
-  Bodies.rectangle(width, height / 2, 40, height, { isStatic: true }),
+  Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true }),
+  Bodies.rectangle(width / 2, height, width, 2, { isStatic: true }),
+  Bodies.rectangle(0, height / 2, 2, height, { isStatic: true }),
+  Bodies.rectangle(width, height / 2, 2, height, { isStatic: true }),
 ]
 
 World.add(world, walls)
@@ -91,7 +91,12 @@ const stepThroughCell = (row, column) => {
     const [nextRow, nextColumn, direction] = neighbor
 
     // See if that neighbor is out of bounds
-    if (nextRow < 0 || nextRow >= cells || nextColumn < 0 || nextColumn >= cells) {
+    if (
+      nextRow < 0 ||
+      nextRow >= cells ||
+      nextColumn < 0 ||
+      nextColumn >= cells
+    ) {
       continue
     }
 
@@ -101,18 +106,17 @@ const stepThroughCell = (row, column) => {
     }
 
     // Remove a wall from either horizontals or verticals
-    if(direction === 'left') {
+    if (direction === 'left') {
       verticals[row][column - 1] = true
     } else if (direction === 'right') {
       verticals[row][column] = true
     } else if (direction === 'up') {
       horizontals[row - 1][column] = true
-    } else if(direction === 'down') {
+    } else if (direction === 'down') {
       horizontals[row][column] = true
     }
 
     stepThroughCell(nextRow, nextColumn)
-
   }
   // Visit that next cell
 }
@@ -123,10 +127,9 @@ stepThroughCell(startRow, startColumn)
 // console.log(verticals);
 // console.log(horizontals);
 
-
 horizontals.forEach((row, rowIndex) => {
   row.forEach((open, columnIndex) => {
-    if(open === true) {
+    if (open === true) {
       return
     }
 
@@ -145,7 +148,7 @@ horizontals.forEach((row, rowIndex) => {
 
 verticals.forEach((row, rowIndex) => {
   row.forEach((open, columnIndex) => {
-    if(open) {
+    if (open) {
       return
     }
 
@@ -155,9 +158,20 @@ verticals.forEach((row, rowIndex) => {
       10,
       unitLength,
       {
-        isStatic: true
+        isStatic: true,
       }
     )
     World.add(world, wall)
   })
 })
+
+const goal = Bodies.rectangle(
+  width - unitLength / 2,
+  height - unitLength / 2,
+  unitLength * 0.7,
+  unitLength * 0.7,
+  {
+    isStatic: true
+  }
+)
+World.add(world, goal)
