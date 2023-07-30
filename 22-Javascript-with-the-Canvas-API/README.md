@@ -80,3 +80,5 @@ console.log(grid)
 ## 20. 24 Drawing Vertical Segments
 
 ## 21. 25 Drawing the Goal
+
+## 22. 26 Drawing the Playing Ball
