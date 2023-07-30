@@ -118,6 +118,16 @@ const stepThroughCell = (row, column) => {
 stepThroughCell(startRow, startColumn)
 // stepThroughCell(1, 1)
 // console.log(grid)
-console.log(verticals);
-console.log(horizontals);
+// console.log(verticals);
+// console.log(horizontals);
 
+
+horizontals.forEach((row) => {
+  row.forEach((open) => {
+    if(open === true) {
+      return
+    }
+
+    const wall = Bodies.rectangle()
+  })
+})

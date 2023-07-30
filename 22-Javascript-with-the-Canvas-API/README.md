@@ -72,3 +72,5 @@ console.log(grid)
 ## 16. 20 Updating Horizontal Wall Values
 
 ## 17. 21 Validating Wall Structure
+
+## 18. 22 Iterating Over Walls
