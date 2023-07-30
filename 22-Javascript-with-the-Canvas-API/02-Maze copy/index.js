@@ -82,7 +82,7 @@ const stepThroughCell = (row, column) => {
     [row + 1, column, 'down'],
     [row, column - 1, 'left'],
   ])
-  console.log(neighbors)
+  // console.log(neighbors)
 
   // For each neighbor....
   for (let neighbor of neighbors) {
@@ -108,6 +108,9 @@ const stepThroughCell = (row, column) => {
     } else if(direction === 'down') {
       horizontals[row][column] = true
     }
+
+    stepThroughCell(nextRow, nextColumn)
+
   }
   // Visit that next cell
 }
@@ -115,5 +118,6 @@ const stepThroughCell = (row, column) => {
 stepThroughCell(startRow, startColumn)
 // stepThroughCell(1, 1)
 // console.log(grid)
-// console.log(verticals);
-// console.log(horizontals);
+console.log(verticals);
+console.log(horizontals);
+

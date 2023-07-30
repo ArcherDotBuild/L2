@@ -70,3 +70,5 @@ console.log(grid)
 ## 15. 19 Updating Vertical Wall Values
 
 ## 16. 20 Updating Horizontal Wall Values
+
+## 17. 21 Validating Wall Structure
