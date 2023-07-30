@@ -76,3 +76,7 @@ console.log(grid)
 ## 18. 22 Iterating Over Walls
 
 ## 19. 23 Drawing Horizontal Segments
+
+## 20. 24 Drawing Vertical Segments
+
+## 21. 25 Drawing the Goal
