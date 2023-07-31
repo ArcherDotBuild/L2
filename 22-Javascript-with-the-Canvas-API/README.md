@@ -90,3 +90,5 @@ console.log(grid)
 ## 25. 29 Disabling Gravity
 
 ## 26. 30 Detecting a Win
+
+## 27. 31 Adding a Win Animation
