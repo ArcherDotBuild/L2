@@ -82,3 +82,5 @@ console.log(grid)
 ## 21. 25 Drawing the Goal
 
 ## 22. 26 Drawing the Playing Ball
+
+## 23. 27 Handling Keypresses
