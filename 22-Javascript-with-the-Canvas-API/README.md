@@ -86,3 +86,5 @@ console.log(grid)
 ## 23. 27 Handling Keypresses
 
 ## 24. 28 Adding Keyboard Controls
+
+## 25. 29 Disabling Gravity
