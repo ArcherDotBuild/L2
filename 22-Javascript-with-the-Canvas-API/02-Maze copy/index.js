@@ -2,8 +2,8 @@
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter
 
 const cells = 6
-const width = 600
-const height = 600
+const width = window.innerWidth
+const height = window.innerHeight
 
 const unitLength = width / cells
 

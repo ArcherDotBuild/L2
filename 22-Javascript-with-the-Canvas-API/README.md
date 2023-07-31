@@ -92,3 +92,5 @@ console.log(grid)
 ## 26. 30 Detecting a Win
 
 ## 27. 31 Adding a Win Animation
+
+## 28. 32 Stretching the Canvas
