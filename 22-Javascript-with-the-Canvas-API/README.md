@@ -88,3 +88,5 @@ console.log(grid)
 ## 24. 28 Adding Keyboard Controls
 
 ## 25. 29 Disabling Gravity
+
+## 26. 30 Detecting a Win
