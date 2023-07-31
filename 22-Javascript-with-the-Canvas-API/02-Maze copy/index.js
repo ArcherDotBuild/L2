@@ -1,5 +1,5 @@
 // Matter.js library
-const { Engine, Render, Runner, World, Bodies } = Matter
+const { Engine, Render, Runner, World, Bodies, Body } = Matter
 
 const cells = 15
 const width = 600
@@ -186,18 +186,25 @@ const ball = Bodies.circle(
 World.add(world, ball)
 
 document.addEventListener('keydown', event => {
-  console.log(event.keyCode)
-  console.log(event);
+  // console.log(event.keyCode)
+  // console.log(event);
+
+  const {x, y} = ball.velocity
+  console.log(x, y);
   if (event.keyCode === 38) {
-    console.log('move ball up')
+    // console.log('move ball up')
+    Body.setVelocity(ball, {x, y: y - 5})
   }
   if (event.keyCode === 39) {
-    console.log('move ball right')
+    // console.log('move ball right')
+    Body.setVelocity(ball, { x: x + 5, y })
   }
   if (event.keyCode === 40) {
-    console.log('move ball down')
+    // console.log('move ball down')
+    Body.setVelocity(ball, { x, y: y + 5 })
   }
   if (event.keyCode === 37) {
-    console.log('move ball left')
+    // console.log('move ball left')
+    Body.setVelocity(ball, { x: x - 5, y })
   }
 })
