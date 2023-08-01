@@ -98,3 +98,5 @@ console.log(grid)
 ## 29. 33 Understanding the New Unit Variables
 
 ## 30. 34 Refactoring for Rectangular Mazes
+
+## 31. 35 Adding Fill Colors
