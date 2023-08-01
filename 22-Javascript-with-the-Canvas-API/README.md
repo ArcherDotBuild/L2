@@ -100,3 +100,5 @@ console.log(grid)
 ## 30. 34 Refactoring for Rectangular Mazes
 
 ## 31. 35 Adding Fill Colors
+
+## 32. 36 Displaying a Success Message
