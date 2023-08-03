@@ -9,7 +9,11 @@ document.querySelector('form').addEventListener('submit', event => {
   console.log(input.value);
   console.log('\n')
 
-  document.querySelector('#link-input').value = encrypted
+  // document.querySelector('#link-input').value = encrypted
+  // document.querySelector('#link-input').value = `${window.location}#${encrypted}`
+  const inputLink = document.querySelector('#link-input')
+  inputLink.value = `${window.location}#${encrypted}`
+  inputLink.select()
 
 })
 
