@@ -13,3 +13,5 @@
 ## 5. 08 Toggling Element Visibility
 
 ## 6. 09 Decoding the Message
+
+## 7. 10 Displaying the Message
