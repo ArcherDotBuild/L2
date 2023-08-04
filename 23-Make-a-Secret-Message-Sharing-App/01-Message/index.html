@@ -8,20 +8,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <title>Message App</title>
+    <style>
+      .row {
+        margin-top: 25vh;
+      }
+    </style>
   </head>
   <body>
     <div class="row">
       <div class="col s8 offset-s2">
-        <div class="card-panel">
+        <div id="message-form" class="card-panel">
           <form>
             <label>Enter a Secret Message</label>
             <input id="message-input" />
             <button class="btn">Create Link</button>
           </form>
         </div>
-        <div>
-          Share this link with a friend
-          <input id="link-input" />
+        <div id="link-form" class="card-panel hide">
+          <div>
+            Share this link with a friend
+            <input id="link-input" />
+          </div>
         </div>
       </div>
     </div>

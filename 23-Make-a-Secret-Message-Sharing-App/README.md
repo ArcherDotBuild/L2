@@ -9,3 +9,7 @@
 ## 3. 05 Encoding the Entered String
 
 ## 4. 07 Generating the URL
+
+## 5. 08 Toggling Element Visibility
+
+## 6. 09 Decoding the Message
