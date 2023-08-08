@@ -1,5 +1,8 @@
-// const message = require('./myscript.js')
-// console.log(message)
+const counterObject = require('./myscript.js')
 
-require('./myscript.js')
-console.log(require.cache);
+console.log(counterObject.getCounter());
+counterObject.incrementCounter()
+console.table(counterObject.getCounter());
+
+const newCounterObject = require('./myscript.js')
+console.log(newCounterObject.getCounter())
