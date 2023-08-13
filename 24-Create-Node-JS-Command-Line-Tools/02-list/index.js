@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+// Allow us to run it like an executable
+
 const fs = require('fs')
 
 fs.readdir(process.cwd(), (err, filenames) => {
