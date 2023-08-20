@@ -11,7 +11,12 @@ const chalk = require('chalk')
 // Method #3
 const { lstat } = fs.promises
 
-fs.readdir(process.cwd(), async (err, filenames) => {
+// console.log(process.argv);
+
+const targetDir = process.argv[2] || process.cwd()
+
+// fs.readdir(process.cwd(), async (err, filenames) => {
+fs.readdir(targetDir, async (err, filenames) => {
   if (err) {
     console.log(err)
   }
@@ -22,13 +27,13 @@ fs.readdir(process.cwd(), async (err, filenames) => {
 
   const allStats = await Promise.all(statPromises)
 
-  for(let stats of allStats) {
+  for (let stats of allStats) {
     const index = allStats.indexOf(stats)
 
-    if(stats.isFile()) {
-      console.log(filenames[index]);
+    if (stats.isFile()) {
+      console.log(filenames[index])
     } else {
-      console.log(chalk.bold(filenames[index]));
+      console.log(chalk.bold(filenames[index]))
     }
   }
 })
