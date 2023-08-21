@@ -11,5 +11,8 @@
   "license": "ISC",
   "bin": {
     "watchit": "index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.3.0"
   }
 }
