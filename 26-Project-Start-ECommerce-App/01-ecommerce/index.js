@@ -17,18 +17,29 @@ app.get('/', (req, res) => {
   </div>`)
 })
 
-app.post('/', (req, res) => {
+const bodyParser = (req, res, next) => {
   // get access to email, password, and passwordConfirmation
-  req.on('data', data => {
-    // console.log(data.toString('utf-8'));
-    const parsed = data.toString('utf-8').split('&')
-    const formData = {}
-    for(let pair of parsed) {
-      const [key, value] = pair.split('=')
-      formData[key] = value
-    }
-    console.log(formData);                                                                                                            
-  })
+  if (req.method === 'POST') {
+    req.on('data', (data) => {
+      // console.log(data.toString('utf-8'));
+      const parsed = data.toString('utf-8').split('&')
+      const formData = {}
+      for (let pair of parsed) {
+        const [key, value] = pair.split('=')
+        formData[key] = value
+      }
+      // console.log(formData)
+      req.body = formData
+      next() // Express will continue processing
+    })
+  } else {
+    next()
+  }
+}
+
+app.post('/', bodyParser, (req, res) => {
+  // console.log(req);
+  console.log(req.body)
   res.send('Account created!!!')
 })
 
