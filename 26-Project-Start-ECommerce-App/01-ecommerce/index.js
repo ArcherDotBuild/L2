@@ -1,8 +1,12 @@
 // console.log('hi there');
 
 const express = require('express')
+const bodyParser = require('body-parser')
 
 const app = express()
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
 app.get('/', (req, res) => {
   res.send(`
   <div>
@@ -17,27 +21,7 @@ app.get('/', (req, res) => {
   </div>`)
 })
 
-const bodyParser = (req, res, next) => {
-  // get access to email, password, and passwordConfirmation
-  if (req.method === 'POST') {
-    req.on('data', (data) => {
-      // console.log(data.toString('utf-8'));
-      const parsed = data.toString('utf-8').split('&')
-      const formData = {}
-      for (let pair of parsed) {
-        const [key, value] = pair.split('=')
-        formData[key] = value
-      }
-      // console.log(formData)
-      req.body = formData
-      next() // Express will continue processing
-    })
-  } else {
-    next()
-  }
-}
-
-app.post('/', bodyParser, (req, res) => {
+app.post('/', (req, res) => {
   // console.log(req);
   console.log(req.body)
   res.send('Account created!!!')
