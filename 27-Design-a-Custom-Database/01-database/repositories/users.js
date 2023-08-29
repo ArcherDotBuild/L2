@@ -12,14 +12,31 @@ class UsersRepository {
     try {
       // To check to see if that file exist
       fs.accessSync(this.filename)
-    } catch {
+    } catch (err) {
       // File does not exist
       fs.writeFileSync(this.filename, '[]')
     }
   }
 
-  async checkForFile() {}
+  async getAll() {
+    // Open the file called this.filename
+    const contents = await fs.promises.readFile(this.filename, {
+      encoding: 'utf8',
+    })
+
+    // Read its contents
+    console.log(contents)
+
+    // Parse the contents
+
+    // Return the parsed data
+  }
 }
 
-const repo = new UsersRepository('users.json')
-repo.checkForFile()
+const test = async () => {
+  const repo = new UsersRepository('users.json')
+
+  await repo.getAll()
+}
+
+test()
