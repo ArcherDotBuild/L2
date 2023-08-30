@@ -26,10 +26,25 @@ class UsersRepository {
       })
     )
   }
+
+  async create(attrs) {
+    // Object { email: 'elfgodd@elfgodd.com', password: '1234 }
+    const records = await this.getAll()
+    records.push(attrs)
+
+    await this.writeAll(records)
+  }
+
+  async writeAll(records) {
+    // write the updated 'records' array back to this.filename
+    await fs.promises.writeFile(this.filename, JSON.stringify(records, null, 2))
+  }
 }
 
 const test = async () => {
   const repo = new UsersRepository('users.json')
+
+  await repo.create({ email: 'elfgodd@elfgodd.com', password: '12345' })
 
   const users = await repo.getAll()
 
