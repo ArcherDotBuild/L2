@@ -46,16 +46,25 @@ class UsersRepository {
     // return Math.random() * 9999999
     return crypto.randomBytes(4).toString('hex')
   }
+
+  async getOne(id) {
+    const records = await this.getAll()
+    return records.find((record) => record.id === id)
+  }
 }
 
 const test = async () => {
   const repo = new UsersRepository('users.json')
 
-  await repo.create({ email: 'elfgodd@elfgodd.com', password: '12345' })
+  // await repo.create({ email: 'elfgodd@elfgodd.com', password: '12345' })
 
-  const users = await repo.getAll()
+  // const users = await repo.getAll()
 
-  console.log(users)
+  const user = await repo.getOne('918b2447')
+  // const user = await repo.getOne('xxx') // undefined, user doesn't exists
+
+  // console.log(users)
+  console.log(user)
 }
 
 test()
