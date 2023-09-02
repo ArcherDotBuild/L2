@@ -51,6 +51,12 @@ class UsersRepository {
     const records = await this.getAll()
     return records.find((record) => record.id === id)
   }
+
+  async delete(id) {
+    const records = await this.getAll()
+    const filteredRecords = records.filter((record) => record.id !== id)
+    await this.writeAll(filteredRecords)
+  }
 }
 
 const test = async () => {
@@ -60,11 +66,14 @@ const test = async () => {
 
   // const users = await repo.getAll()
 
-  const user = await repo.getOne('918b2447')
+  // const user = await repo.getOne('918b2447')
   // const user = await repo.getOne('xxx') // undefined, user doesn't exists
 
+  await repo.delete('5985b553')
+  await repo.delete('918b2447')
+
   // console.log(users)
-  console.log(user)
+  // console.log(user)
 }
 
 test()
