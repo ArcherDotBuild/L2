@@ -57,6 +57,24 @@ class UsersRepository {
     const filteredRecords = records.filter((record) => record.id !== id)
     await this.writeAll(filteredRecords)
   }
+
+  async update(id, attrs) {
+    const records = await this.getAll()
+    const record = records.find((record) => record.id === id)
+    if (!record) {
+      throw new Error(`Record with id: ${id} not found`)
+    }
+
+    // Takes all the different properties and key value pairs inside
+    // the attrs object and copy them on by on onto the record object
+    // Example:
+    // record === { email: elfgodd@elfgodd.com }
+    // attrs === { password: '12345' }
+    Object.assign(record, attrs)
+    // new record === { email: elfgodd@elfgodd.com, password: '12345' }
+
+    await this.writeAll(records)
+  }
 }
 
 const test = async () => {
@@ -69,8 +87,11 @@ const test = async () => {
   // const user = await repo.getOne('918b2447')
   // const user = await repo.getOne('xxx') // undefined, user doesn't exists
 
-  await repo.delete('5985b553')
-  await repo.delete('918b2447')
+  // await repo.delete('5985b553')
+  // await repo.delete('918b2447')
+
+  // await repo.update('a89fa519', { password: '54321' })
+  await repo.update('1235gg633', { password: '54321' })
 
   // console.log(users)
   // console.log(user)
