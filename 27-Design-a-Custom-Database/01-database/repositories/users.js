@@ -75,6 +75,23 @@ class UsersRepository {
 
     await this.writeAll(records)
   }
+
+  async getOneBy(filters) {
+    const records = await this.getAll()
+
+    // Iterating through an array
+    for (let record of records) {
+      let found = true
+
+      // Iterating through an object
+      for (let key in filters) {
+        if (record[key] !== filters[key]) found = false
+      }
+      if (found) {
+        return record
+      }
+    }
+  }
 }
 
 const test = async () => {
@@ -91,10 +108,25 @@ const test = async () => {
   // await repo.delete('918b2447')
 
   // await repo.update('a89fa519', { password: '54321' })
-  await repo.update('1235gg633', { password: '54321' })
+  // await repo.update('1235gg633', { password: '54321' })
+
+  // const user = await repo.getOneBy({
+  //   email: 'elfgodd@elfgodd.com',
+  //   // password: '54321',
+  //   "password": "11111"
+  // })
+
+  const user = await repo.getOneBy({
+    // id: 'a89fa519',
+    id: '111111111',
+  })
+
+  // const user = await repo.getOneBy({
+  //   userDontExist: 'userDontExist',
+  // })
 
   // console.log(users)
-  // console.log(user)
+  console.log(user)
 }
 
 test()
