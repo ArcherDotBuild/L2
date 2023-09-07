@@ -93,40 +93,5 @@ class UsersRepository {
     }
   }
 }
-
-const test = async () => {
-  const repo = new UsersRepository('users.json')
-
-  // await repo.create({ email: 'elfgodd@elfgodd.com', password: '12345' })
-
-  // const users = await repo.getAll()
-
-  // const user = await repo.getOne('918b2447')
-  // const user = await repo.getOne('xxx') // undefined, user doesn't exists
-
-  // await repo.delete('5985b553')
-  // await repo.delete('918b2447')
-
-  // await repo.update('a89fa519', { password: '54321' })
-  // await repo.update('1235gg633', { password: '54321' })
-
-  // const user = await repo.getOneBy({
-  //   email: 'elfgodd@elfgodd.com',
-  //   // password: '54321',
-  //   "password": "11111"
-  // })
-
-  const user = await repo.getOneBy({
-    // id: 'a89fa519',
-    id: '111111111',
-  })
-
-  // const user = await repo.getOneBy({
-  //   userDontExist: 'userDontExist',
-  // })
-
-  // console.log(users)
-  console.log(user)
-}
-
-test()
+  
+module.exports = UsersRepository('users.json')
