@@ -27,13 +27,20 @@ app.post('/', async (req, res) => {
   // Check the email if the user has signed up before
   // const UsersRepo = require('./repositories/users')
   const existingUser = await usersRepo.getOneBy({ email })
-  if(existingUser) {
+  if (existingUser) {
     return res.send('Email in use')
   }
 
-  if(password !== passwordConfirmation) {
+  if (password !== passwordConfirmation) {
     return res.send('Passwords most match')
   }
+
+  // Create a user in our user repo to represent this person
+  // const user =  await usersRepo.create({email: email, password: password})
+  const user = await usersRepo.create({ email, password })
+
+  //  Store the id of that user inside the users cookie
+  
 
   res.send('Account created!!!')
 })
