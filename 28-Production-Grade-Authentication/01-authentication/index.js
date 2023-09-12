@@ -14,7 +14,7 @@ app.use(cookieSession({
   keys: ['randomcharacters']
 }))
 
-app.get('/', (req, res) => {
+app.get('/signup', (req, res) => {
   res.send(`
   <p>Your id is: ${req.session.userId}</p>
   <div>
@@ -24,12 +24,12 @@ app.get('/', (req, res) => {
     <input name="email" placeholder="email" />
     <input name="password" placeholder="password" />
     <input name="passwordConfirmation" placeholder="password confirmation" />
-    <button>Sign up </button>
+    <button>Sign up</button>
   </form>
   </div>`)
 })
 
-app.post('/', async (req, res) => {
+app.post('/signup', async (req, res) => {
   console.log(req.body)
   const { email, password, passwordConfirmation } = req.body
 
@@ -55,6 +55,33 @@ app.post('/', async (req, res) => {
   
 
   res.send('Account created!!!')
+})
+
+
+app.get('/signout', (req, res) => {
+  // forget all the information that is stored inside their cookie
+  // the information inside the cookie is what alone proves that
+  // someone is authenticated
+  req.session = null
+  res.send('You are logged out')
+})
+
+app.get('/signin', (req, res) => {
+  res.send(`
+  <div>
+  <br />
+  <br />
+  <form method="POST">
+    <input name="email" placeholder="email" />
+    <input name="password" placeholder="password" />
+    <button>Sign in</button>
+  </form>
+  </div>
+  `)
+})
+
+app.post('/signin', async (req, res) => {
+  
 })
 
 app.listen(3000, () => {
