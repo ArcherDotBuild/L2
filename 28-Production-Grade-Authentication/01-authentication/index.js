@@ -6,13 +6,15 @@ const usersRepo = require('./repositories/users')
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cookieSession({
-  // Configuration object
+app.use(
+  cookieSession({
+    // Configuration object
 
-  // This key property is used to encrypt all the info that
-  // is stored inside the cookie
-  keys: ['randomcharacters']
-}))
+    // This key property is used to encrypt all the info that
+    // is stored inside the cookie
+    keys: ['randomcharacters'],
+  })
+)
 
 app.get('/signup', (req, res) => {
   res.send(`
@@ -52,11 +54,9 @@ app.post('/signup', async (req, res) => {
   // req.session === {} Added by cookie-session
   // we can add in anyu property name we want
   req.session.userId = user.id
-  
 
   res.send('Account created!!!')
 })
-
 
 app.get('/signout', (req, res) => {
   // forget all the information that is stored inside their cookie
@@ -81,7 +81,21 @@ app.get('/signin', (req, res) => {
 })
 
 app.post('/signin', async (req, res) => {
-  
+  const { email, password } = req.body
+
+  const user = await usersRepo.getOneBy({ email })
+
+  if(!user) {
+    return res.send('Email not found')
+  }
+
+  if(user.password !== password) {
+    return res.send('Invalid password')
+  }
+
+  req.session.userId = user.id
+
+  res.send('You are signed in!!!')
 })
 
 app.listen(3000, () => {
