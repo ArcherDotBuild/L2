@@ -15,4 +15,4 @@ Cookies allow us inside of our application and many other applications out there
 
 ## 5. 05 Signing In
 
-## 6. 06 Hashing Passwords voy por aqui
+## 6. 08 Salting + Hashing Passwords
