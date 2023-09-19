@@ -60,10 +60,9 @@ class UsersRepository {
     // const hashed = result[0]
     // const salt = result[1]
     const [hashed, salt] = saved.split('.')
+    const hashedSuppliedBuf = await scrypt(supplied, salt, 64)
 
-    const hashedSupplied = await scrypt(supplied, salt, 64)
-
-    return hashed === hashedSupplied
+    return hashed === hashedSuppliedBuf.toString('hex')
   }
 
   async writeAll(records) {
