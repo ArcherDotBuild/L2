@@ -1,4 +1,5 @@
 const express = require('express')
+const { check } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
@@ -12,32 +13,40 @@ router.get('/signup', (req, res) => {
   )
 })
 
-router.post('/signup', async (req, res) => {
-  console.log(req.body)
-  const { email, password, passwordConfirmation } = req.body
+router.post(
+  '/signup',
+  [
+    check('email').isEmail(),
+    check('password'),
+    check('passwordConfirmation')
+  ],
+  async (req, res) => {
+    console.log(req.body)
+    const { email, password, passwordConfirmation } = req.body
 
-  // Check the email if the user has signed up before
-  // const UsersRepo = require('./repositories/users')
-  const existingUser = await usersRepo.getOneBy({ email })
-  if (existingUser) {
-    return res.send('Email in use')
+    // Check the email if the user has signed up before
+    // const UsersRepo = require('./repositories/users')
+    const existingUser = await usersRepo.getOneBy({ email })
+    if (existingUser) {
+      return res.send('Email in use')
+    }
+
+    if (password !== passwordConfirmation) {
+      return res.send('Passwords most match')
+    }
+
+    // Create a user in our user repo to represent this person
+    // const user =  await usersRepo.create({email: email, password: password})
+    const user = await usersRepo.create({ email, password })
+
+    //  Store the id of that user inside the users cookie
+    // req.session === {} Added by cookie-session
+    // we can add in anyu property name we want
+    req.session.userId = user.id
+
+    res.send('Account created!!!')
   }
-
-  if (password !== passwordConfirmation) {
-    return res.send('Passwords most match')
-  }
-
-  // Create a user in our user repo to represent this person
-  // const user =  await usersRepo.create({email: email, password: password})
-  const user = await usersRepo.create({ email, password })
-
-  //  Store the id of that user inside the users cookie
-  // req.session === {} Added by cookie-session
-  // we can add in anyu property name we want
-  req.session.userId = user.id
-
-  res.send('Account created!!!')
-})
+)
 
 router.get('/signout', (req, res) => {
   // forget all the information that is stored inside their cookie
