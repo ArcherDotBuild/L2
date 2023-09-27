@@ -1,6 +1,31 @@
 const layout = require('../layout')
 
-module.exports = ({ req }) => {
+const getError = (errors, prop) => {
+  // prop === 'email' || 'password' || 'passwordConfirmation'
+  // if (errors) {
+  //   return errors.mapped()[prop].msg
+
+  // errors.mapped() === Object {
+  //    email: {
+  //      msg: 'Invalid Email'
+  //    },
+  //    password: {
+  //      msg: 'Password too short'
+  //    },
+  //    passwordConformation: {
+  //      msg: 'Passwords must match'
+  //    }
+  // }
+  // }
+
+  try {
+    return errors.mapped()[prop].msg
+  } catch (err) {
+    return ''
+  }
+}
+
+module.exports = ({ req, errors }) => {
   return layout({
     content: `
     <div>
@@ -9,9 +34,11 @@ module.exports = ({ req }) => {
       <br />
       <form method="POST">
         <input name="email" placeholder="email" />
+        ${getError(errors, 'email')}
         <input name="password" placeholder="password" />
+        ${getError(errors, 'password')}
         <input name="passwordConfirmation" placeholder="password confirmation" />
-        <button>Sign up</button>
+        ${getError(errors, 'passwordConfirmation')}        <button>Sign up</button>
       </form>
     </div>
   `,
