@@ -11,7 +11,7 @@ const {
 
 const router = express.Router()
 
-router.get('/signup', (req, res) => {
+router.get('/signup', [check('email'), check('password')], (req, res) => {
   res.send(
     // res.send(signupTemplate({req: req}))
     res.send(signupTemplate({ req }))

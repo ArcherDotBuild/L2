@@ -16,3 +16,7 @@ Cookies allow us inside of our application and many other applications out there
 ## 5. 05 Signing In
 
 ## 6. 08 Salting + Hashing Passwords
+
+## 7. 09 Comparing Hashed Passwords
+
+## 8. 10 Testing the Full Flow
