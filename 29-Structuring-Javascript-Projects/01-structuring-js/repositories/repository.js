@@ -19,6 +19,16 @@ module.exports = class Repository {
     }
   }
 
+  async create(attrs) {
+    attrs.id = this.randomId()
+
+    const records = await this.getAll()
+    records.push(attrs)
+    await this.writeAll(records)
+
+    return attrs
+  }
+
   async getAll() {
     // Open the file called this.filename
     return JSON.parse(
