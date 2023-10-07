@@ -2,6 +2,8 @@ const { check } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 
 module.exports = {
+  requireTitle: check('title').trim().isLength({ min: 5, max: 40 }),
+  requirePrice: check('price').trim().toFloat().isFloat({ min: 1 }),
   requireEmail: check('email')
     .trim()
     .normalizeEmail()
@@ -40,19 +42,19 @@ module.exports = {
       }
     }),
   requireValidPasswordForUser: check('password')
-      .trim()
-      .custom(async (password, { req }) => {
-        const user = await usersRepo.getOneBy({ email: req.body.email })
-        if(!user) {
-          throw new Error('Invalid password')
-        }
-        const validPassword = await usersRepo.comparePasswords(
-          user.password,
-          password
-        )
+    .trim()
+    .custom(async (password, { req }) => {
+      const user = await usersRepo.getOneBy({ email: req.body.email })
+      if (!user) {
+        throw new Error('Invalid password')
+      }
+      const validPassword = await usersRepo.comparePasswords(
+        user.password,
+        password
+      )
 
-        if (!validPassword) {
-          throw new Error('Invalid password')
-        }
-      })
+      if (!validPassword) {
+        throw new Error('Invalid password')
+      }
+    }),
 }
