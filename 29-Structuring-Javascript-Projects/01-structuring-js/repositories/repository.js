@@ -1,4 +1,4 @@
-const fs = reqire('fs')
+const fs = require('fs')
 const crypto = require('crypto')
 
 module.exports = class Repository {
