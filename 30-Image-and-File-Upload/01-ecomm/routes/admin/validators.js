@@ -17,8 +17,6 @@ module.exports = {
     .isEmail()
     .withMessage('Must be a valid email')
     .custom(async (email) => {
-      // Check the email if the user has signed up before
-      // const UsersRepo = require('./repositories/users')
       const existingUser = await usersRepo.getOneBy({ email })
       if (existingUser) {
         throw new Error('Email in use')
@@ -55,11 +53,11 @@ module.exports = {
       if (!user) {
         throw new Error('Invalid password')
       }
+
       const validPassword = await usersRepo.comparePasswords(
         user.password,
         password
       )
-
       if (!validPassword) {
         throw new Error('Invalid password')
       }
