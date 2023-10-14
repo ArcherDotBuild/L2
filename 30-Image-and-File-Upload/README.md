@@ -15,3 +15,5 @@ Encoding type that can safely transmit raw file data
 ## 3. 03 Accessing the Uploaded File
 
 ## 4. 05 Saving the Image
+
+## 5. 06 A Subtle Middleware Bug
