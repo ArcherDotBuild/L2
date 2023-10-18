@@ -17,3 +17,15 @@ Encoding type that can safely transmit raw file data
 ## 4. 05 Saving the Image
 
 ## 5. 06 A Subtle Middleware Bug
+
+## 6. 07 Better Styling
+
+## 7. 08 Reusable Error Handling Middleware
+
+## 8. 09 Products Listing
+
+## 9. 10 Redirect on Success Actions
+
+## 10. 11 Requiring Authentication
+
+## 11. 12 Template Update

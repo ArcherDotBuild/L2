@@ -62,3 +62,7 @@ const getError = (errors, prop) => {
 ## 12. 020 Code Reuse with Classes
 
 ## 13. 21 Creating the Products Repository
+
+## 14. 22 Building the Product Creation Form
+
+## 15. 23 Some Quick Validation
