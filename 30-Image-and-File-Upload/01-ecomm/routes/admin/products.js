@@ -34,4 +34,17 @@ router.post(
   }
 )
 
+// :id is a wildcard anything can be there
+router.get('/admin/products/:id/edit', async (req, res) => {
+  console.log(req.params.id);
+  const product = await productsRepo.getOne(req.params.id)
+  // We may not find a product corresponding to that ID
+  
+  if(!product) {
+    return res.send('Product not found')
+  }
+
+  res.send(productsEditTemplate({ product }))
+})
+
 module.exports = router
