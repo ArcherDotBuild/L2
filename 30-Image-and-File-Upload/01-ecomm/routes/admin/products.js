@@ -5,6 +5,7 @@ const { handleErrors, requireAuth } = require('./middlewares')
 const productsRepo = require('../../repositories/products')
 const productsNewTemplate = require('../../views/admin/products/new')
 const productsIndexTemplate = require('../../views/admin/products/index')
+const productsEditTemplate = require('../../views/admin/products/edit')
 const { requireTitle, requirePrice } = require('./validators')
 
 const router = express.Router()
@@ -35,16 +36,20 @@ router.post(
 )
 
 // :id is a wildcard anything can be there
-router.get('/admin/products/:id/edit', async (req, res) => {
-  console.log(req.params.id);
+router.get('/admin/products/:id/edit', requireAuth, async (req, res) => {
+  console.log(req.params.id)
   const product = await productsRepo.getOne(req.params.id)
   // We may not find a product corresponding to that ID
-  
-  if(!product) {
+
+  if (!product) {
     return res.send('Product not found')
   }
 
   res.send(productsEditTemplate({ product }))
+})
+
+router.post('/admin/products/:id/edit', requireAuth, (req, res) => {
+  
 })
 
 module.exports = router
