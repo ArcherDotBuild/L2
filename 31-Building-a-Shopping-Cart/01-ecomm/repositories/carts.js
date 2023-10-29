@@ -1,4 +1,4 @@
-const repository = require('./repository')
+const Repository = require('./repository')
 
 class CartsRepository extends Repository {
 
