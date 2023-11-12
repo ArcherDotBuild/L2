@@ -23,3 +23,5 @@
 ## 4. 04 Test Driven Development
 
 ## 5. 05 Fixing Three Issues
+
+## 6. 06 The Assert Module
