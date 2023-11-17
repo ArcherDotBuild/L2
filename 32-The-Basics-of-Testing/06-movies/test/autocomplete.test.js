@@ -12,4 +12,12 @@ it('Shows an autocomplete', () => {
       return movie.Title
     }
   })
+
+  const dropdown = document.querySelector('.dropdown')
+
+  // no real, we don't have access to the assert library inside of the browser
+  // assert.strictEquals(dropdown.className, 'dropdown')
+
+  // Mocha inside the browser
+  
 })

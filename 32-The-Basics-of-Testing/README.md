@@ -25,3 +25,19 @@
 ## 5. 05 Fixing Three Issues
 
 ## 6. 06 The Assert Module
+
+## 7. 07 Using Mocha darle play
+
+`npm run test index.test.js`
+
+## 8. 08 App Setup
+
+## 9. 11 Mocha in the Browser
+
+## 10. 12 Displaying the Autocomplete
+
+## 11. 13 Verifying the Dropdown State
+
+#### Chai.js
+
+Is what we call an expectation library or an assertion library is the library that allows us to use those same kind of assert statements that we saw at that node module.
