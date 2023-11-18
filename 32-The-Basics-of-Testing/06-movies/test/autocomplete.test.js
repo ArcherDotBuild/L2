@@ -19,5 +19,7 @@ it('Shows an autocomplete', () => {
   // assert.strictEquals(dropdown.className, 'dropdown')
 
   // Mocha inside the browser
-  
+  expect(dropdown.className).not.to.include('is-active')
+  // Fail the test
+  // expect(dropdown.className).to.include('is-active')
 })

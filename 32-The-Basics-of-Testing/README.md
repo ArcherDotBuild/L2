@@ -40,4 +40,10 @@
 
 #### Chai.js
 
+https://chaijs.com
 Is what we call an expectation library or an assertion library is the library that allows us to use those same kind of assert statements that we saw at that node module.
+
+## 12. 14 Writing Assertions
+
+https://www.chaijs.com/guide/styles/#expect
+
