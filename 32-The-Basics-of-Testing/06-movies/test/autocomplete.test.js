@@ -1,3 +1,20 @@
+const waitFor= ((selector) => {
+  return new Promise((resolve, reject) => {
+    const interval = setInterval(() => {
+      if (document.querySelector(selector)) {
+        clearInterval(interval)
+        clearInterval(timeout)
+        resolve()
+      }
+    }, 30)
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval)
+      reject()
+    }, 2000)
+  })
+})
+
 beforeEach(() => {
   document.querySelectorAll('#target').innerHTML = ''
   createAutoComplete({
@@ -35,6 +52,5 @@ it('After searching, dropdown opens up', async () => {
   await waitFor('.dropdown-item')
 
   const dropdown = document.querySelector('.dropdown')
-
   expect(dropdown.className).to.include('is-active')
 })
