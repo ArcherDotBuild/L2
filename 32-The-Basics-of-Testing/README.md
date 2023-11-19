@@ -47,3 +47,10 @@ Is what we call an expectation library or an assertion library is the library th
 
 https://www.chaijs.com/guide/styles/#expect
 
+
+## 13. 15 Fake DOM Events
+
+`document.querySelector('input').value = 'Avenger'`
+
+Faking the event with mocha
+`document.querySelector('input').dispatchEvent(new Event('input'))`
