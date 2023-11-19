@@ -54,3 +54,5 @@ https://www.chaijs.com/guide/styles/#expect
 
 Faking the event with mocha
 `document.querySelector('input').dispatchEvent(new Event('input'))`
+
+## 14. 16 Holding Up Assertions

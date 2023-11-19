@@ -27,12 +27,14 @@ it('Dropdown starts closed', () => {
   // expect(dropdown.className).to.include('is-active')
 })
 
-it('After searching, dropdown opens up', () => {
+it('After searching, dropdown opens up', async () => {
   const input = document.querySelector('input')
   input.value = 'avengers'
   input.dispatchEvent(new Event('input'))
 
-    const dropdown = document.querySelector('.dropdown')
+  await waitFor('.dropdown-item')
 
-    expect(dropdown.className).to.include('is-active')
+  const dropdown = document.querySelector('.dropdown')
+
+  expect(dropdown.className).to.include('is-active')
 })
