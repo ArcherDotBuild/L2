@@ -58,3 +58,5 @@ Faking the event with mocha
 ## 14. 16 Holding Up Assertions
 
 ## 15. 17 Implementing WaitFor
+
+## 16. 18 Asserting Records Fetched
