@@ -10,3 +10,13 @@
 - CLI must have a 'watch mode' so we don't have to keep restarting it over and over
 - CLI must automatically find and run all files in our project that have a name of '*.test.js'
 
+
+## 2. 02 Project Setup
+
+`npm link` To setup the command line command `testme`
+
+## 3. 03 Implementation Steps
+
+## 4. 05 Implementing Breadth First Search
+
+## 4. 06 Collecting Test Files
