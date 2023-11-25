@@ -19,4 +19,6 @@
 
 ## 4. 05 Implementing Breadth First Search
 
-## 4. 06 Collecting Test Files
+## 5. 06 Collecting Test Files
+
+## 6. 07 Running Test Files

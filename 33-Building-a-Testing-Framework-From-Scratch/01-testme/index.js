@@ -10,7 +10,8 @@ const run = async () => {
   // console.log(results);
 
   await runner.collectFiles(process.cwd())
-  console.log(runner.testFiles);
+  // console.log(runner.testFiles);
+  runner.runTests()
 }
 
 run()
