@@ -26,3 +26,5 @@
 ## 7. 08 A Quick Test Harness
 
 Terminal command: `testme`
+
+## 8. 09 Implementing 'beforeEach' and 'it'
