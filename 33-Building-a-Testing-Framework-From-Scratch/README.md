@@ -22,3 +22,7 @@
 ## 5. 06 Collecting Test Files
 
 ## 6. 07 Running Test Files
+
+## 7. 08 A Quick Test Harness
+
+Terminal command: `testme`
