@@ -30,3 +30,5 @@ Terminal command: `testme`
 ## 8. 09 Implementing 'beforeEach' and 'it'
 
 ## 9. 10 Adding Basic Reporting
+
+## 10. 11 Adding Colors
