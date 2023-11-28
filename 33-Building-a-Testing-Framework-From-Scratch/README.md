@@ -34,3 +34,5 @@ Terminal command: `testme`
 ## 10. 11 Adding Colors
 
 ## 11. 12 Better Formatting
+
+## 12. 13 Ignoring Directories
