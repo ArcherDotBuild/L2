@@ -3,7 +3,7 @@ const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 
 const render = async (filename) => {
-  const filepath = path.join(process.cwd(), filename)
+  const filePath = path.join(process.cwd(), filename)
 
   const dom = await JSDOM.fromFile(filePath, {
     runScripts: 'dangerously',

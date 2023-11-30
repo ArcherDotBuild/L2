@@ -40,3 +40,5 @@ Terminal command: `testme`
 ## 13. 15 A Sample Web App
 
 ## 14. 17 Building a Render Function
+
+## 15. 18 HTML Element Assertions
