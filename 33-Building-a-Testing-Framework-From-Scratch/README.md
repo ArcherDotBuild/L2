@@ -36,3 +36,7 @@ Terminal command: `testme`
 ## 11. 12 Better Formatting
 
 ## 12. 13 Ignoring Directories
+
+## 13. 15 A Sample Web App
+
+## 14. 17 Building a Render Function
