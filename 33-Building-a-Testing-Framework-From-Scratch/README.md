@@ -1,4 +1,5 @@
 ## 33-Building-a-Testing-Framework-From-Scratch
+
 **folder 01**
 
 ## 1. 01 Test Framework Requirements
@@ -8,8 +9,7 @@
 - Must require very, very little setup
 - Must be able to test a whole application, not just one little widget
 - CLI must have a 'watch mode' so we don't have to keep restarting it over and over
-- CLI must automatically find and run all files in our project that have a name of '*.test.js'
-
+- CLI must automatically find and run all files in our project that have a name of '\*.test.js'
 
 ## 2. 02 Project Setup
 
@@ -44,3 +44,5 @@ Terminal command: `testme`
 ## 15. 18 HTML Element Assertions
 
 ## 16. 19 An Incorrectly Passing Test
+
+## 17. 20 Another Small Issue
