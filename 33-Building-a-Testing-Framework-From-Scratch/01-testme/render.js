@@ -7,7 +7,14 @@ const render = async (filename) => {
 
   const dom = await JSDOM.fromFile(filePath, {
     runScripts: 'dangerously',
-    resources: 'usable'
+    resources: 'usable',
+  })
+
+  return new Promise((resolve, reject) => {
+    dom.window.document.addEventListener('DOMContentLoaded', () => {
+      // console.log('All done loading!!!')
+      resolve(dom)
+    })
   })
 
   return dom
